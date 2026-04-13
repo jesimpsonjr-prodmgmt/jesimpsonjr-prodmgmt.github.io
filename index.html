@@ -72,6 +72,20 @@
 
     .mobile-menu { display: none; }
     .mobile-menu.open { display: flex; }
+
+    .nav-card {
+      transition: all 0.2s ease;
+    }
+
+    .nav-card:hover {
+      transform: translateY(-2px);
+      border-color: #2563eb;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+    }
+
+    .nav-card:hover .nav-card-icon {
+      color: #2563eb;
+    }
   </style>
 </head>
 <body class="bg-slate-50 selection:bg-blue-100">
@@ -118,13 +132,72 @@
   <!-- ══════════════════════════════════
        HERO
   ══════════════════════════════════ -->
-  <section class="pt-36 pb-10 px-6 bg-white overflow-hidden">
+  <section class="pt-36 pb-6 px-6 bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto relative">
       <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
       <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-3">
         John Simpson
       </h1>
       <p class="text-sm md:text-base font-bold text-blue-600 uppercase tracking-[0.15em]">Fintech Expert. AI Practitioner.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       QUICK NAV CARDS
+  ══════════════════════════════════ -->
+  <section class="pb-10 px-6 bg-white md:sticky md:top-20 md:z-40 md:py-4 md:shadow-sm">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+        <a href="#highlights" class="nav-card bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-chart-line nav-card-icon text-slate-400 text-sm"></i>
+            <span class="text-sm font-semibold text-slate-700">Impact</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-slate-300 text-xs group-hover:text-blue-600 transition"></i>
+        </a>
+        <a href="#about" class="nav-card bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-user nav-card-icon text-slate-400 text-sm"></i>
+            <span class="text-sm font-semibold text-slate-700">About</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-slate-300 text-xs group-hover:text-blue-600 transition"></i>
+        </a>
+        <a href="#skills" class="nav-card bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-wrench nav-card-icon text-slate-400 text-sm"></i>
+            <span class="text-sm font-semibold text-slate-700">Skills</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-slate-300 text-xs group-hover:text-blue-600 transition"></i>
+        </a>
+        <a href="#experience" class="nav-card bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-briefcase nav-card-icon text-slate-400 text-sm"></i>
+            <span class="text-sm font-semibold text-slate-700">Experience</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-slate-300 text-xs group-hover:text-blue-600 transition"></i>
+        </a>
+        <a href="#projects" class="nav-card bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <i class="fa-brands fa-github nav-card-icon text-slate-400 text-sm"></i>
+            <span class="text-sm font-semibold text-slate-700">Projects</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-slate-300 text-xs group-hover:text-blue-600 transition"></i>
+        </a>
+        <a href="#testimonials" class="nav-card bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-quote-left nav-card-icon text-slate-400 text-sm"></i>
+            <span class="text-sm font-semibold text-slate-700">Recommendations</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-slate-300 text-xs group-hover:text-blue-600 transition"></i>
+        </a>
+        <a href="#contact" class="nav-card bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-envelope nav-card-icon text-slate-400 text-sm"></i>
+            <span class="text-sm font-semibold text-slate-700">Connect</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-slate-300 text-xs group-hover:text-blue-600 transition"></i>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -481,12 +554,12 @@
           My favorite kind of problem is the one nobody else wants to own. The messy, cross-functional, "who does this even belong to?" kind. I've found that the work nobody is touching is usually the work that matters most, and stepping into it is where I've made the biggest impact in every role I've held.
         </p>
         <p>
-          I was hired as the first Product Manager at a 39-person payments startup in 2019, owning four products with no formal process in place. One month later, a merger doubled the company overnight, and I helped unify two separate product organizations into a cohesive structure. I continued owning the four original products as they grew to 60% of combined company revenue. By my departure, the company had crossed 400 employees with multiple PM teams running on the framework we built. Greenfield problems and post-merger complexity are where I do my best work.</p>
+          I was hired as the first Product Manager at a 39-person payments startup in 2019, owning four products with no formal process in place. One month later, a merger doubled the company overnight, and I helped unify two separate product organizations into a cohesive structure. I continued owning the four original products as they grew to 60% of combined company revenue. By my departure, the company had crossed 400 employees with multiple PM teams running on the framework we built. Undefined problems and post-merger complexity are where I do my best work.</p>
         <p>
-          More recently, I made a deliberate investment in AI. Not because it was trendy, but because I saw firsthand how it was reshaping the products I had spent my career building. I started learning prompt engineering, deploying local language models, and building AI-powered prototypes. One of those prototypes, a social media monitoring tool, grew a client's sales pipeline by 40%. That combination of deep fintech domain knowledge and hands-on AI capability is what I bring to every engagement.
+          More recently, I made a deliberate investment in AI. I saw firsthand how it was reshaping the products I had spent my career building. I started learning prompt engineering, deploying local language models, and building AI-powered prototypes. One of those prototypes, a social media monitoring tool, grew a client's sales pipeline by 40%. That combination of deep fintech domain knowledge and hands-on AI capability is what I bring to every engagement.
         </p>
         <p>
-          The skill I've leaned on most throughout my career isn't strategy or technical depth. It's translation. Executives speak in outcomes, engineers speak in constraints, and customers speak in frustration. The Product Managers who connect all three are the ones who ship work that actually matters, and that's the discipline I bring to every team I join.
+          The skill I've leaned on most throughout my career isn't strategy or technical depth. It's translation. Executives speak in outcomes, engineers speak in constraints, and customers speak in problems. The Product Managers who connect all three are the ones who ship work that actually matters, and that's the discipline I bring to every team I join.
         </p>
         <p class="text-slate-900 font-semibold italic" style="font-family:'Outfit',sans-serif; font-size:1.1rem;">
           I learn fast, take ownership of what I ship, and care deeply about building products that solve real problems for real people.
@@ -512,7 +585,17 @@
           <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
         </a>
       </div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <a href="https://jesimpsonjr-prodmgmt.github.io/ai-appeal-optimizer/" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition block relative">
+          <span class="absolute top-4 right-4 bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full">Live Demo</span>
+          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
+            <i class="fa-solid fa-church text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-slate-900">AI Annual Appeal Optimizer</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">AI-powered annual appeal optimizer for Catholic dioceses and parishes. Analyzes donor segments and generates personalized outreach strategies using Claude AI.</p>
+        </a>
+
         <a href="https://jesimpsonjr-prodmgmt.github.io/fundraising-portfolio-optimizer/" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition block relative">
           <span class="absolute top-4 right-4 bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full">Live Demo</span>
           <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
@@ -521,6 +604,7 @@
           <h3 class="text-xl font-bold mb-2 text-slate-900">Fundraising Portfolio Optimizer</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Interactive prototype combining portfolio-level AI optimization with Monte Carlo scenario simulation for capital campaign planning. Built as a product concept for the fundraising intelligence market.</p>
         </a>
+
         <a href="https://github.com/jesimpsonjr-prodmgmt/payment-gateway-simulator" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition block">
           <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
             <i class="fa-solid fa-credit-card text-xl"></i>
@@ -528,6 +612,7 @@
           <h3 class="text-xl font-bold mb-2 text-slate-900">Payment Gateway Simulator</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Flask app demonstrating the payment authorization lifecycle with Stripe sandbox, SQLite transaction logging, and SQL analytics dashboard.</p>
         </a>
+
         <a href="https://github.com/jesimpsonjr-prodmgmt/payment-transaction-analyzer" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition block">
           <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
             <i class="fa-solid fa-chart-bar text-xl"></i>
@@ -535,6 +620,7 @@
           <h3 class="text-xl font-bold mb-2 text-slate-900">Transaction Data Analyzer</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Python CLI tool for analyzing payment transaction data including auth rates, declines, chargebacks, and volume metrics.</p>
         </a>
+
         <a href="https://github.com/jesimpsonjr-prodmgmt/prd-generator" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition block">
           <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
             <i class="fa-solid fa-file-lines text-xl"></i>
@@ -542,6 +628,7 @@
           <h3 class="text-xl font-bold mb-2 text-slate-900">AI-Powered PRD Generator</h3>
           <p class="text-slate-500 text-sm leading-relaxed">CLI tool that generates structured PRDs from feature ideas using Anthropic Claude or local Ollama models.</p>
         </a>
+
         <a href="https://github.com/jesimpsonjr-prodmgmt/scheduled-report-generator" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition block">
           <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
             <i class="fa-solid fa-clock text-xl"></i>
@@ -549,6 +636,7 @@
           <h3 class="text-xl font-bold mb-2 text-slate-900">Automated Report Engine</h3>
           <p class="text-slate-500 text-sm leading-relaxed">Configuration-driven Python tool for generating and distributing automated HTML/PDF reports from multiple data sources.</p>
         </a>
+
         <a href="https://github.com/jesimpsonjr-prodmgmt/lead-monitor" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition block">
           <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
             <i class="fa-solid fa-robot text-xl"></i>
@@ -556,6 +644,7 @@
           <h3 class="text-xl font-bold mb-2 text-slate-900">Social Media Lead Monitor</h3>
           <p class="text-slate-500 text-sm leading-relaxed">AI-assisted lead generation tool that monitors social media for high-intent sales signals and sends real-time Discord alerts.</p>
         </a>
+
         <a href="https://github.com/jesimpsonjr-prodmgmt/fintech-buzzword-bingo" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition block">
           <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
             <i class="fa-solid fa-comments text-xl"></i>
@@ -563,6 +652,7 @@
           <h3 class="text-xl font-bold mb-2 text-slate-900">Fintech Buzzword Bingo</h3>
           <p class="text-slate-500 text-sm leading-relaxed">A tongue-in-cheek Python tool that analyzes earnings calls and corporate communications for buzzword density.</p>
         </a>
+
       </div>
     </div>
   </section>
