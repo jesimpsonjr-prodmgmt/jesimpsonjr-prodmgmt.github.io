@@ -1,819 +1,1608 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Simpson | Fintech Expert. AI Practitioner.</title>
-  <meta name="description" content="Professional portfolio of John Simpson. Product leader in fintech, payments, and AI with a track record of driving $40M ARR growth, owning 60% of company revenue, and building AI-powered tools.">
-  <meta property="og:title" content="John Simpson | Fintech Expert. AI Practitioner.">
-  <meta property="og:description" content="Product leader in fintech, payments, and AI with a track record of driving $40M ARR growth, owning 60% of company revenue, and building AI-powered tools.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://jesimpsonjr-prodmgmt.github.io">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="John Simpson | Fintech Expert. AI Practitioner.">
-  <meta name="twitter:description" content="Product leader in fintech, payments, and AI with a track record of driving $40M ARR growth and building AI-powered tools.">
-  <script>window.console.warn=function(){}</script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
-
-    :root {
-      --brand-blue: #2563eb;
-      --deep-slate: #0f172a;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      color: #1e293b;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Outfit', sans-serif;
-    }
-
-    .glass-nav {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-
-    .highlight-card {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .highlight-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--brand-blue);
-      background: rgba(255,255,255,0.08);
-    }
-
-    .pill {
-      background: #f1f5f9;
-      color: #475569;
-      padding: 5px 14px;
-      border-radius: 9999px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      display: inline-block;
-      margin: 2px;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    .testimonial-card {
-      transition: all 0.3s ease;
-    }
-
-    .testimonial-card:hover {
-      border-color: rgba(255,255,255,0.3);
-    }
-
-    .mobile-menu { display: none; }
-    .mobile-menu.open { display: flex; }
-
-    .nav-card {
-      transition: all 0.2s ease;
-    }
-
-    .nav-card:hover {
-      transform: translateY(-2px);
-      border-color: #2563eb;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
-    }
-
-    .nav-card:hover .nav-card-icon {
-      color: #2563eb;
-    }
-  </style>
-</head>
-<body class="bg-slate-50 selection:bg-blue-100">
-
-  <!-- ══════════════════════════════════
-       NAVIGATION
-  ══════════════════════════════════ -->
-  <nav class="fixed w-full z-50 glass-nav border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div class="flex flex-col">
-        <span class="text-xl font-extrabold tracking-tight text-slate-900" style="font-family:'Outfit',sans-serif;">John Simpson</span>
-        <span class="text-xs font-bold text-blue-600 uppercase tracking-[0.15em]">Fintech Expert. AI Practitioner.</span>
-      </div>
-      <div class="hidden md:flex space-x-10 text-xs font-bold uppercase tracking-widest text-slate-500">
-        <a href="#highlights" class="hover:text-blue-600 transition">Impact</a>
-        <a href="#about" class="hover:text-blue-600 transition">About</a>
-        <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
-        <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
-        <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
-        <a href="#testimonials" class="hover:text-blue-600 transition">Recommendations</a>
-        <a href="#contact" class="hover:text-blue-600 transition">Connect</a>
-      </div>
-      <div class="flex items-center space-x-5">
-        <a href="https://github.com/jesimpsonjr-prodmgmt" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-600 transition"><i class="fa-brands fa-github text-xl"></i></a>
-        <a href="https://www.linkedin.com/in/johnsjr" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-600 transition"><i class="fa-brands fa-linkedin text-xl"></i></a>
-        <button id="navToggle" class="md:hidden flex flex-col gap-1.5" aria-label="Toggle navigation">
-          <span class="block w-6 h-0.5 bg-slate-700"></span>
-          <span class="block w-6 h-0.5 bg-slate-700"></span>
-          <span class="block w-6 h-0.5 bg-slate-700"></span>
-        </button>
-      </div>
-    </div>
-    <div id="mobileMenu" class="mobile-menu flex-col md:hidden bg-white border-t border-slate-200 px-6 py-4 space-y-3 text-sm font-bold text-slate-600">
-      <a href="#highlights" class="hover:text-blue-600">Impact</a>
-      <a href="#about" class="hover:text-blue-600">About</a>
-      <a href="#skills" class="hover:text-blue-600">Skills</a>
-      <a href="#experience" class="hover:text-blue-600">Experience</a>
-      <a href="#projects" class="hover:text-blue-600">Projects</a>
-      <a href="#testimonials" class="hover:text-blue-600">Recommendations</a>
-      <a href="#contact" class="hover:text-blue-600">Connect</a>
-    </div>
-  </nav>
-
-  <!-- ══════════════════════════════════
-       HERO
-  ══════════════════════════════════ -->
-  <section class="pt-36 pb-6 px-6 bg-white overflow-hidden">
-    <div class="max-w-7xl mx-auto relative">
-      <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
-      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-3">
-        John Simpson
-      </h1>
-      <p class="text-sm md:text-base font-bold text-blue-600 uppercase tracking-[0.15em]">Fintech Expert. AI Practitioner.</p>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       QUICK NAV CARDS
-  ══════════════════════════════════ -->
-  <section class="pb-10 px-6 bg-white md:sticky md:top-20 md:z-40 md:py-4 md:shadow-sm">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
-        <a href="#highlights" class="nav-card bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between group">
-          <div class="flex items-center gap-3">
-            <i class="fa-solid fa-chart-line nav-card-icon text-slate-400 text-sm"></i>
-            <span class="text-sm font-semibold text-slate-700">Impact</span>
-          </div>
-          <i class="fa-solid fa-chevron-right text-slate-300 text-xs group-hover:text-blue-600 transition"></i>
-        </a>
-        <a href="#about" class="nav-card bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between group">
-          <div class="flex items-center gap-3">
-            <i class="fa-solid fa-user nav-card-icon text-slate-400 text-sm"></i>
-            <span class="text-sm font-semibold text-slate-700">About</span>
-          </div>
-          <i class="fa-solid fa-chevron-right text-slate-300 text-xs group-hover:text-blue-600 transition"></i>
-        </a>
-        <a href="#skills" class="nav-card bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between group">
-          <div class="flex items-center gap-3">
-            <i class="fa-solid fa-wrench nav-card-icon text-slate-400 text-sm"></i>
-            <span class="text-sm font-semibold text-slate-700">Skills</span>
-          </div>
-          <i class="fa-solid fa-chevron-right text-slate-300 text-xs group-hover:text-blue-600 transition"></i>
-        </a>
-        <a href="#experience" class="nav-card bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between group">
-          <div class="flex items-center gap-3">
-            <i class="fa-solid fa-briefcase nav-card-icon text-slate-400 text-sm"></i>
-            <span class="text-sm font-semibold text-slate-700">Experience</span>
-          </div>
-          <i class="fa-solid fa-chevron-right text-slate-300 text-xs group-hover:text-blue-600 transition"></i>
-        </a>
-        <a href="#projects" class="nav-card bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between group">
-          <div class="flex items-center gap-3">
-            <i class="fa-brands fa-github nav-card-icon text-slate-400 text-sm"></i>
-            <span class="text-sm font-semibold text-slate-700">Projects</span>
-          </div>
-          <i class="fa-solid fa-chevron-right text-slate-300 text-xs group-hover:text-blue-600 transition"></i>
-        </a>
-        <a href="#testimonials" class="nav-card bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between group">
-          <div class="flex items-center gap-3">
-            <i class="fa-solid fa-quote-left nav-card-icon text-slate-400 text-sm"></i>
-            <span class="text-sm font-semibold text-slate-700">Recommendations</span>
-          </div>
-          <i class="fa-solid fa-chevron-right text-slate-300 text-xs group-hover:text-blue-600 transition"></i>
-        </a>
-        <a href="#contact" class="nav-card bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between group">
-          <div class="flex items-center gap-3">
-            <i class="fa-solid fa-envelope nav-card-icon text-slate-400 text-sm"></i>
-            <span class="text-sm font-semibold text-slate-700">Connect</span>
-          </div>
-          <i class="fa-solid fa-chevron-right text-slate-300 text-xs group-hover:text-blue-600 transition"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       CAREER HIGHLIGHTS (dark)
-  ══════════════════════════════════ -->
-  <section id="highlights" class="py-14 bg-slate-900">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="mb-10">
-        <h2 class="text-3xl font-extrabold mb-3 text-white">Career Highlights</h2>
-        <div class="w-20 h-1.5 bg-blue-600 rounded-full"></div>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-        <div class="highlight-card bg-slate-800/50 p-6 rounded-3xl">
-          <div class="text-blue-400 font-black text-4xl mb-2">$40M <span style="color:#4ade80;font-size:0.6em">&#8593;</span></div>
-          <h3 class="font-bold text-white text-sm mb-2">ARR Growth</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">Product Manager of semi-integrated EMV payment solution that grew from $5M to $40M ARR, adopted by Fortune 500 retailers, QSRs, and ISVs.</p>
-        </div>
-
-        <div class="highlight-card bg-slate-800/50 p-6 rounded-3xl">
-          <div class="text-blue-400 font-black text-4xl mb-2">60% <span style="color:#4ade80;font-size:0.6em">&#8593;</span></div>
-          <h3 class="font-bold text-white text-sm mb-2">Revenue Ownership</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">Management of 4 payment products simultaneously that generated 60% of overall company revenue.</p>
-        </div>
-
-        <div class="highlight-card bg-slate-800/50 p-6 rounded-3xl">
-          <div class="text-blue-400 font-black text-4xl mb-2">50% <span style="color:#4ade80;font-size:0.6em">&#8593;</span></div>
-          <h3 class="font-bold text-white text-sm mb-2">Operational Speed</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">Accelerated underwriting and implementation timelines by 50% through automation of PayFac and ERP integration processes.</p>
-        </div>
-
-        <div class="highlight-card bg-slate-800/50 p-6 rounded-3xl">
-          <div class="text-blue-400 font-black text-4xl mb-2">30% <span style="color:#4ade80;font-size:0.6em">&#8593;</span></div>
-          <h3 class="font-bold text-white text-sm mb-2">Revenue Increase</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">Led refresh of EMV device product offering which resulted in 30% boost in EMV card-present revenue alongside a 70% support case reduction.</p>
-        </div>
-
-        <div class="highlight-card bg-slate-800/50 p-6 rounded-3xl">
-          <div class="text-blue-400 font-black text-4xl mb-2">6-Week <span style="color:#4ade80;font-size:0.6em">&#8593;</span></div>
-          <h3 class="font-bold text-white text-sm mb-2">Go-Live Acceleration</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">Enabled for a fast-growing fintech through the implementation of process enhancements and role clarity.</p>
-        </div>
-
-        <div class="highlight-card bg-slate-800/50 p-6 rounded-3xl">
-          <div class="text-blue-400 font-black text-4xl mb-2">40% <span style="color:#4ade80;font-size:0.6em">&#8593;</span></div>
-          <h3 class="font-bold text-white text-sm mb-2">Pipeline Growth</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">Achieved by designing and deploying an AI-assisted lead-generation monitoring and alerting tool for a consulting client.</p>
-        </div>
-
-        <div class="highlight-card bg-slate-800/50 p-6 rounded-3xl">
-          <div class="text-blue-400 font-black text-4xl mb-2">$12M+ <span style="color:#4ade80;font-size:0.6em">&#8593;</span></div>
-          <h3 class="font-bold text-white text-sm mb-2">Influenced Revenue</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">Contributed to $12M+ in team revenue by performing 150+ client demos and POCs, increasing deal win rate by 15%.</p>
-        </div>
-
-        <div class="highlight-card bg-slate-800/50 p-6 rounded-3xl">
-          <div class="text-blue-400 font-black text-4xl mb-2">100+ <span style="color:#4ade80;font-size:0.6em">&#8593;</span></div>
-          <h3 class="font-bold text-white text-sm mb-2">Merchants Onboarded</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">New merchants onboarded within 6 months of launching a next-gen ERP embedded payments solution.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       ABOUT ME (light)
-  ══════════════════════════════════ -->
-  <section id="about" class="py-14 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="mb-8">
-        <h2 class="text-3xl font-extrabold mb-3">About Me</h2>
-        <div class="w-20 h-1.5 bg-blue-600 rounded-full"></div>
-      </div>
-      <p class="text-lg text-slate-500 leading-relaxed max-w-3xl">
-        Product leader who has owned B2B, B2C, Omnichannel, and SaaS payment products generating 60% of company revenue and driven ARR growth from $5M to $40M. Demonstrated success launching products that reduced implementation timelines by 50%, increased EMV revenue by 30%, and added 100+ new customers in 6 months. Known for translating technical complexity into business outcomes across payments, embedded finance, and eCommerce.
-      </p>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       SKILLS AND EXPERTISE (white)
-  ══════════════════════════════════ -->
-  <section id="skills" class="py-14 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="mb-10">
-        <h2 class="text-3xl font-extrabold mb-3">Skills and Expertise</h2>
-        <div class="w-20 h-1.5 bg-blue-600 rounded-full"></div>
-      </div>
-      <div class="space-y-8">
-
-        <div>
-          <h3 class="text-blue-600 font-bold uppercase tracking-widest text-xs mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-chart-line"></i> Product and Leadership
-          </h3>
-          <div class="flex flex-wrap gap-1">
-            <span class="pill">Go-To-Market Strategies</span>
-            <span class="pill">Release Management</span>
-            <span class="pill">Marketing Collateral</span>
-            <span class="pill">Developer Support</span>
-            <span class="pill">Commercial Optimization</span>
-            <span class="pill">Multidisciplinary Team Coordination</span>
-            <span class="pill">C-Suite Executive Communication</span>
-            <span class="pill">Stakeholder Alignment</span>
-            <span class="pill">Linking Technical Design to Financial Outcomes</span>
-            <span class="pill">Product Discovery</span>
-            <span class="pill">Competitive Analysis</span>
-            <span class="pill">Business Strategy</span>
-            <span class="pill">Customer Experience (CX) Mapping</span>
-            <span class="pill">Multi-Year Roadmap Development</span>
-            <span class="pill">Requirements Gathering</span>
-            <span class="pill">Backlog Management</span>
-            <span class="pill">Agile/Scrum Frameworks</span>
-            <span class="pill">A/B Testing</span>
-            <span class="pill">Managing Strategic Partnerships</span>
-            <span class="pill">Core Product Pillars</span>
-          </div>
-        </div>
-
-        <div>
-          <h3 class="text-blue-600 font-bold uppercase tracking-widest text-xs mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-microchip"></i> AI/ML, Platforms, and Tools
-          </h3>
-          <div class="flex flex-wrap gap-1">
-            <span class="pill">Prompt Engineering</span>
-            <span class="pill">Skill and .md Creation</span>
-            <span class="pill">Claude Code CLI/Cowork</span>
-            <span class="pill">GitHub Copilot/Codespaces</span>
-            <span class="pill">Gemini/Gemini CLI</span>
-            <span class="pill">ChatGPT</span>
-            <span class="pill">Zed</span>
-            <span class="pill">VS Code</span>
-            <span class="pill">Cursor</span>
-            <span class="pill">OpenCode</span>
-            <span class="pill">Ollama</span>
-            <span class="pill">Open WebUI</span>
-            <span class="pill">OpenClaw</span>
-            <span class="pill">LLM Deployment Strategies</span>
-            <span class="pill">Docker</span>
-            <span class="pill">TailScale</span>
-            <span class="pill">GitHub/GitHub Pages</span>
-            <span class="pill">DataDog</span>
-            <span class="pill">Postman</span>
-            <span class="pill">HubSpot</span>
-            <span class="pill">Social Media Platforms</span>
-            <span class="pill">Jira</span>
-            <span class="pill">Confluence</span>
-            <span class="pill">Google Suite</span>
-            <span class="pill">Slack</span>
-            <span class="pill">Figma</span>
-            <span class="pill">LucidChart</span>
-            <span class="pill">Microsoft DevOps</span>
-            <span class="pill">Linux</span>
-            <span class="pill">TestRail</span>
-            <span class="pill">Salesforce</span>
-            <span class="pill">Heap Analytics</span>
-          </div>
-        </div>
-
-        <div>
-          <h3 class="text-blue-600 font-bold uppercase tracking-widest text-xs mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-wallet"></i> Emerging Technologies and APIs
-          </h3>
-          <div class="flex flex-wrap gap-1">
-            <span class="pill">Cryptocurrency Ecosystem</span>
-            <span class="pill">Centralized Exchanges</span>
-            <span class="pill">Decentralized Exchanges</span>
-            <span class="pill">Blockchain Infrastructure</span>
-            <span class="pill">Custodial and Non-Custodial Wallets</span>
-            <span class="pill">Stablecoins</span>
-            <span class="pill">Web3</span>
-            <span class="pill">Smart Contracts</span>
-            <span class="pill">CBDCs</span>
-            <span class="pill">Payment Integration APIs</span>
-            <span class="pill">Regulatory Compliance (KYC/KYB/AML/FinCEN)</span>
-            <span class="pill">PCI-DSS</span>
-            <span class="pill">Data Analytics</span>
-            <span class="pill">Alternative Payment Methods</span>
-            <span class="pill">BNPL</span>
-            <span class="pill">Real-Time Payments (RTP)</span>
-            <span class="pill">FedNow</span>
-            <span class="pill">Open Banking</span>
-            <span class="pill">Card Processing Rails</span>
-            <span class="pill">ACH</span>
-            <span class="pill">Gift Cards</span>
-            <span class="pill">EMV Terminals</span>
-            <span class="pill">Embedded Payments</span>
-            <span class="pill">Digital Payments Infrastructure</span>
-            <span class="pill">Payment Facilitation (PayFac)</span>
-            <span class="pill">Tokenization/Vaulting</span>
-            <span class="pill">PSP</span>
-            <span class="pill">Payment Orchestration Routing</span>
-            <span class="pill">Lending</span>
-            <span class="pill">Interchange Optimization</span>
-            <span class="pill">Fraud Risk Management and Detection</span>
-            <span class="pill">3DS/SCA</span>
-            <span class="pill">NACHA</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       PROFESSIONAL EXPERIENCE (dark)
-  ══════════════════════════════════ -->
-  <section id="experience" class="py-14 bg-slate-900 text-white">
-    <div class="max-w-7xl mx-auto px-6">
-
-      <!-- Seeking Full-Time Banner -->
-      <div class="mb-10 bg-blue-600/10 border border-blue-500/30 rounded-2xl px-6 py-4 flex items-start gap-4">
-        <div class="mt-0.5"><i class="fa-solid fa-briefcase text-blue-400 text-lg"></i></div>
-        <div>
-          <p class="text-blue-100 text-sm font-semibold mb-1">Actively Seeking Full-Time Opportunities</p>
-          <p class="text-slate-400 text-sm leading-relaxed">Open to full-time remote positions (non-contract) in fintech, AI, or a blend of both. Interested in a variety of roles including Product Manager, Business Analyst, Product Owner, Technical Account Manager, Sales Engineer, Solutions Architect, and more.</p>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
-
-        <div class="lg:col-span-3">
-          <div class="mb-10">
-            <h2 class="text-3xl font-extrabold mb-3 text-white">Professional Experience</h2>
-            <div class="w-20 h-1.5 bg-blue-600 rounded-full"></div>
-          </div>
-          <div class="space-y-10">
-
-            <div class="relative pl-10 border-l-2 border-blue-600">
-              <div class="absolute -left-[7px] top-1 w-3 h-3 bg-blue-600 rounded-full border-[3px] border-slate-900 shadow-[0_0_0_2px_#2563eb]"></div>
-              <h3 class="text-xl font-extrabold text-white">AI and Fintech Consultant</h3>
-              <p class="text-blue-400 font-bold text-sm italic mb-4">Self-Employed</p>
-              <ul class="space-y-3 text-slate-300 text-sm">
-                <li class="flex gap-3"><i class="fa-solid fa-check text-blue-400 mt-0.5 text-xs"></i> Grew sales pipeline by 40% for a specialty services client by designing and deploying an AI-assisted social media monitoring tool that identified high-intent prospects in real time.</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check text-blue-400 mt-0.5 text-xs"></i> Built tooling with AI assistance to automate payroll register file parsing into standardized Excel format, reducing an hours-long process into a single click.</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check text-blue-400 mt-0.5 text-xs"></i> Reduced go-live timelines by 6 weeks for a fast-growing fintech by implementing unified SOPs for sales-to-implementation handoffs.</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check text-blue-400 mt-0.5 text-xs"></i> Providing AI consulting and fintech advisory services to clients exploring how AI adoption can introduce new cost efficiencies.</li>
-              </ul>
-            </div>
-
-            <div class="relative pl-10 border-l-2 border-slate-600">
-              <div class="absolute -left-[7px] top-1 w-3 h-3 bg-slate-500 rounded-full border-[3px] border-slate-900 shadow-[0_0_0_2px_#64748b]"></div>
-              <h3 class="text-xl font-extrabold text-white">Senior Product Manager</h3>
-              <p class="text-slate-400 font-bold text-sm italic mb-4">Versapay</p>
-              <ul class="space-y-3 text-slate-300 text-sm">
-                <li class="flex gap-3"><i class="fa-solid fa-check text-slate-500 mt-0.5 text-xs"></i> Owned 4 payment products simultaneously generating 60% of company revenue across 2,200 B2B, SaaS, and B2C clients.</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check text-slate-500 mt-0.5 text-xs"></i> Launched next-gen ERP embedded payments solution, cutting underwriting and onboarding time by 50% and adding 100+ new customers in 6 months.</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check text-slate-500 mt-0.5 text-xs"></i> Drove 30% increase in EMV revenue and 70% reduction in support cases through a company-wide device portfolio refresh.</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check text-slate-500 mt-0.5 text-xs"></i> Led a cross-functional product squad (engineering, QA, UX/UI) without direct reporting lines, driving Agile ceremonies and on-time delivery.</li>
-              </ul>
-            </div>
-
-            <div class="relative pl-10 border-l-2 border-slate-600">
-              <div class="absolute -left-[7px] top-1 w-3 h-3 bg-slate-500 rounded-full border-[3px] border-slate-900 shadow-[0_0_0_2px_#64748b]"></div>
-              <h3 class="text-xl font-extrabold text-white">Product Manager</h3>
-              <p class="text-slate-400 font-bold text-sm italic mb-4">Verifone, Inc.</p>
-              <ul class="space-y-3 text-slate-300 text-sm">
-                <li class="flex gap-3"><i class="fa-solid fa-check text-slate-500 mt-0.5 text-xs"></i> Scaled EMV solutions from $5M to $40M ARR during the U.S. liability transition.</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check text-slate-500 mt-0.5 text-xs"></i> Liaison for all primary U.S. payment processors and card brands for timely EMV certification.</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check text-slate-500 mt-0.5 text-xs"></i> Gathered business requirements for Fortune 500 retail and QSR verticals.</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check text-slate-500 mt-0.5 text-xs"></i> Collaborated with Marketing and GTM teams on product launches, shaping value propositions and sales enablement content.</li>
-              </ul>
-            </div>
-
-            <div class="relative pl-10 border-l-2 border-slate-600">
-              <div class="absolute -left-[7px] top-1 w-3 h-3 bg-slate-500 rounded-full border-[3px] border-slate-900 shadow-[0_0_0_2px_#64748b]"></div>
-              <h3 class="text-xl font-extrabold text-white">Sales Engineer</h3>
-              <p class="text-slate-400 font-bold text-sm italic mb-4">Verifone, Inc.</p>
-              <ul class="space-y-3 text-slate-300 text-sm">
-                <li class="flex gap-3"><i class="fa-solid fa-check text-slate-500 mt-0.5 text-xs"></i> Led pre-sales technical consulting for enterprise payment solutions delivering 150+ demonstrations.</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check text-slate-500 mt-0.5 text-xs"></i> Contributed to $12M+ in team revenue with a 15% win rate increase.</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check text-slate-500 mt-0.5 text-xs"></i> Created sales enablement materials and deployment guides for North American implementations.</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check text-slate-500 mt-0.5 text-xs"></i> Promoted a new payment solution to 100+ early adopters. Recipient of Verifone President's Club Award.</li>
-              </ul>
-            </div>
-
-            <div class="relative pl-10 border-l-2 border-slate-600">
-              <div class="absolute -left-[7px] top-1 w-3 h-3 bg-slate-500 rounded-full border-[3px] border-slate-900 shadow-[0_0_0_2px_#64748b]"></div>
-              <h3 class="text-xl font-extrabold text-white">Developer Support</h3>
-              <p class="text-slate-400 font-bold text-sm italic mb-4">Verifone, Inc.</p>
-              <ul class="space-y-3 text-slate-300 text-sm">
-                <li class="flex gap-3"><i class="fa-solid fa-check text-slate-500 mt-0.5 text-xs"></i> Managed rollout of 400+ payment integrations for channel partners.</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check text-slate-500 mt-0.5 text-xs"></i> Supported 100+ channel partner API integrations, reducing integration time by 25%.</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check text-slate-500 mt-0.5 text-xs"></i> Established 30+ SOPs utilized by international support teams.</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check text-slate-500 mt-0.5 text-xs"></i> Built comprehensive payment processing reference library for global implementation teams.</li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="lg:col-span-2">
-          <div class="lg:sticky lg:top-28 bg-slate-800 border border-slate-700 p-8 rounded-[2rem]">
-            <h3 class="text-xl font-bold mb-8 flex items-center gap-3 text-white">
-              <span class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center shadow-lg"><i class="fa-solid fa-layer-group"></i></span>
-              How I Prioritize
-            </h3>
-            <div class="space-y-6">
-              <div class="flex gap-5">
-                <div class="text-blue-400 font-black text-lg">01</div>
-                <div>
-                  <h4 class="font-bold text-white text-sm">Evaluation of Item</h4>
-                  <p class="text-slate-400 text-xs italic">Determining if item is bug, enhancement, gap, or compliance mandate.</p>
-                </div>
-              </div>
-              <div class="flex gap-5">
-                <div class="text-blue-400 font-black text-lg">02</div>
-                <div>
-                  <h4 class="font-bold text-white text-sm">Strategic Alignment</h4>
-                  <p class="text-slate-400 text-xs italic">Alignment of item compared to company strategic initiatives and ROI.</p>
-                </div>
-              </div>
-              <div class="flex gap-5">
-                <div class="text-blue-400 font-black text-lg">03</div>
-                <div>
-                  <h4 class="font-bold text-white text-sm">Impact and Scoring</h4>
-                  <p class="text-slate-400 text-xs italic">Quantifying reach and business value against development effort.</p>
-                </div>
-              </div>
-              <div class="flex gap-5">
-                <div class="text-blue-400 font-black text-lg">04</div>
-                <div>
-                  <h4 class="font-bold text-white text-sm">Requirements Definition</h4>
-                  <p class="text-slate-400 text-xs italic">Creation of User Stories and cross-team collaboration as necessary.</p>
-                </div>
-              </div>
-              <div class="flex gap-5">
-                <div class="text-blue-400 font-black text-lg">05</div>
-                <div>
-                  <h4 class="font-bold text-white text-sm">Capacity Assessment</h4>
-                  <p class="text-slate-400 text-xs italic">Scheduling work based on capacity. Ensuring stakeholders remain informed.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       MY APPROACH (light)
-  ══════════════════════════════════ -->
-  <section id="approach" class="py-14 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="mb-8">
-        <h2 class="text-3xl font-extrabold mb-3">My Approach</h2>
-        <div class="w-20 h-1.5 bg-blue-600 rounded-full"></div>
-      </div>
-      <div class="space-y-5 text-slate-600 text-base leading-relaxed max-w-3xl">
-        <p>
-          My favorite kind of problem is the one nobody else wants to own. The messy, cross-functional, "who does this even belong to?" kind. I've found that the work nobody is touching is usually the work that matters most, and stepping into it is where I've made the biggest impact in every role I've held.
-        </p>
-        <p>
-          I was hired as the first Product Manager at a 39-person payments startup in 2019, owning four products with no formal process in place. One month later, a merger doubled the company overnight, and I helped unify two separate product organizations into a cohesive structure. I continued owning the four original products as they grew to 60% of combined company revenue. By my departure, the company had crossed 400 employees with multiple PM teams running on the framework we built. Undefined problems and post-merger complexity are where I do my best work.</p>
-        <p>
-          More recently, I made a deliberate investment in AI. I saw firsthand how it was reshaping the products I had spent my career building. I started learning prompt engineering, deploying local language models, and building AI-powered prototypes. One of those prototypes, a social media monitoring tool, grew a client's sales pipeline by 40%. That combination of deep fintech domain knowledge and hands-on AI capability is what I bring to every engagement.
-        </p>
-        <p>
-          The skill I've leaned on most throughout my career isn't strategy or technical depth. It's translation. Executives speak in outcomes, engineers speak in constraints, and customers speak in problems. The Product Managers who connect all three are the ones who ship work that actually matters, and that's the discipline I bring to every team I join.
-        </p>
-        <p class="text-slate-900 font-semibold italic" style="font-family:'Outfit',sans-serif; font-size:1.1rem;">
-          I learn fast, take ownership of what I ship, and care deeply about building products that solve real problems for real people.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       GITHUB GALLERY (white)
-  ══════════════════════════════════ -->
-  <section id="projects" class="py-14 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-10">
-        <div class="max-w-xl">
-          <h2 class="text-3xl font-extrabold mb-3">GitHub Gallery</h2>
-          <div class="w-20 h-1.5 bg-blue-600 rounded-full mb-4"></div>
-          <p class="text-slate-500">Applications designed and built through prompt engineering, demonstrating practical use of AI-assisted development workflows. This collection is actively maintained and growing.</p>
-        </div>
-        <a href="https://github.com/jesimpsonjr-prodmgmt" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 transition shadow-xl">
-          <i class="fa-brands fa-github text-2xl"></i>
-          <span>Click Here to Explore my GitHub</span>
-          <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-        </a>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-        <a href="https://jesimpsonjr-prodmgmt.github.io/ai-appeal-optimizer/" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition block relative">
-          <span class="absolute top-4 right-4 bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full">Live Demo</span>
-          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
-            <i class="fa-solid fa-church text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-2 text-slate-900">CatholicCampaignAI</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Interactive faithtech prototype for Catholic dioceses and parishes. Uses human-in-the-loop AI to analyze donor segments and generate personalized outreach strategies for annual appeals and capital campaigns.</p>
-        </a>
-
-        <a href="https://jesimpsonjr-prodmgmt.github.io/fundraising-portfolio-optimizer/" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition block relative">
-          <span class="absolute top-4 right-4 bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full">Live Demo</span>
-          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
-            <i class="fa-solid fa-hand-holding-dollar text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-2 text-slate-900">FundraiseAI</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Portfolio-level AI optimization with Monte Carlo scenario simulation for capital campaign planning. Built as a product concept for the fundraising intelligence market.</p>
-        </a>
-
-        <a href="https://github.com/jesimpsonjr-prodmgmt/payment-gateway-simulator" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition block">
-          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
-            <i class="fa-solid fa-credit-card text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-2 text-slate-900">Payment Gateway Simulator</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Flask app demonstrating the payment authorization lifecycle with Stripe sandbox, SQLite transaction logging, and SQL analytics dashboard.</p>
-        </a>
-
-        <a href="https://github.com/jesimpsonjr-prodmgmt/payment-transaction-analyzer" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition block">
-          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
-            <i class="fa-solid fa-chart-bar text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-2 text-slate-900">Transaction Data Analyzer</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Python CLI tool for analyzing payment transaction data including auth rates, declines, chargebacks, and volume metrics.</p>
-        </a>
-
-        <a href="https://github.com/jesimpsonjr-prodmgmt/prd-generator" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition block">
-          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
-            <i class="fa-solid fa-file-lines text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-2 text-slate-900">AI-Powered PRD Generator</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">CLI tool that generates structured PRDs from feature ideas using Anthropic Claude or local Ollama models.</p>
-        </a>
-
-        <a href="https://github.com/jesimpsonjr-prodmgmt/scheduled-report-generator" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition block">
-          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
-            <i class="fa-solid fa-clock text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-2 text-slate-900">Automated Report Engine</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Configuration-driven Python tool for generating and distributing automated HTML/PDF reports from multiple data sources.</p>
-        </a>
-
-        <a href="https://github.com/jesimpsonjr-prodmgmt/lead-monitor" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition block">
-          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
-            <i class="fa-solid fa-robot text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-2 text-slate-900">Social Media Lead Monitor</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">AI-assisted lead generation tool that monitors social media for high-intent sales signals and sends real-time Discord alerts.</p>
-        </a>
-
-        <a href="https://github.com/jesimpsonjr-prodmgmt/fintech-buzzword-bingo" target="_blank" rel="noopener noreferrer" class="bg-slate-50 p-8 rounded-3xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition block">
-          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-5">
-            <i class="fa-solid fa-comments text-xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-2 text-slate-900">Fintech Buzzword Bingo</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">A tongue-in-cheek Python tool that analyzes earnings calls and corporate communications for buzzword density.</p>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       RECOMMENDATIONS (dark)
-  ══════════════════════════════════ -->
-  <section id="testimonials" class="py-14 bg-slate-900 text-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="mb-10">
-        <h2 class="text-3xl font-extrabold mb-3 text-white">Recommendations</h2>
-        <div class="w-20 h-1.5 bg-blue-600 rounded-full"></div>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-
-        <div class="testimonial-card bg-slate-800 p-6 rounded-3xl border border-slate-700">
-          <p class="text-slate-300 italic mb-4 text-sm leading-relaxed">"Under John's leadership his product grew from a $5M offering to over $40M in recurring revenue in a three year period. He is a team leader, a mentor, and great communicator. He is ready to assume a role of greater challenge and leadership."</p>
-          <p class="font-bold text-xs text-blue-400">W.H., Director, Verifone Inc.</p>
-        </div>
-
-        <div class="testimonial-card bg-slate-800 p-6 rounded-3xl border border-slate-700">
-          <p class="text-slate-300 italic mb-4 text-sm leading-relaxed">"John has a unique skill set of being highly technical but also business and solution focused. I've seen John grow professionally and personally over the past decade and strongly recommend him."</p>
-          <p class="font-bold text-xs text-blue-400">J.M., CEO North America, Verifone</p>
-        </div>
-
-        <div class="testimonial-card bg-slate-800 p-6 rounded-3xl border border-slate-700">
-          <p class="text-slate-300 italic mb-4 text-sm leading-relaxed">"John Simpson is an expert in the financial payments industry. His attention to detail is one of his greatest assets. He is the go-to resource in Product Management. He has a holistic view of a solution, understanding it is not a black box but multiple components that make a solution successful."</p>
-          <p class="font-bold text-xs text-blue-400">B.M., Program Manager, Verifone</p>
-        </div>
-
-        <div class="testimonial-card bg-slate-800 p-6 rounded-3xl border border-slate-700">
-          <p class="text-slate-300 italic mb-4 text-sm leading-relaxed">"John can be trusted to drive cross-functional teams towards their goals while effectively addressing the needs of customers large and small."</p>
-          <p class="font-bold text-xs text-blue-400">C.A., Vice President, Product Management, Verifone</p>
-        </div>
-
-        <div class="testimonial-card bg-slate-800 p-6 rounded-3xl border border-slate-700">
-          <p class="text-slate-300 italic mb-4 text-sm leading-relaxed">"He brings a sense of urgency to every project, leads intuitively, and keeps client needs front and center. He's the kind of teammate who makes everyone around him better."</p>
-          <p class="font-bold text-xs text-blue-400">J.H., Solution Engineer, Chargent</p>
-        </div>
-
-        <div class="testimonial-card bg-slate-800 p-6 rounded-3xl border border-slate-700">
-          <p class="text-slate-300 italic mb-4 text-sm leading-relaxed">"John's ability to consume disparate information and mold it into an executable roadmap deliverable greatly contributed to the success of my division."</p>
-          <p class="font-bold text-xs text-blue-400">W.H., Director, Verifone Inc.</p>
-        </div>
-
-        <div class="testimonial-card bg-slate-800 p-6 rounded-3xl border border-slate-700">
-          <p class="text-slate-300 italic mb-4 text-sm leading-relaxed">"John set the bar for the North America solution Implementation Managers. As a customer facing senior project manager, John ensured complex customer solutions were delivered on time and budget with high quality and customer satisfaction."</p>
-          <p class="font-bold text-xs text-blue-400">B.F., Senior Leadership, Verifone</p>
-        </div>
-
-        <div class="testimonial-card bg-slate-800 p-6 rounded-3xl border border-slate-700">
-          <p class="text-slate-300 italic mb-4 text-sm leading-relaxed">"John was one of the most dedicated professionals I worked with while at Verifone. His ability to juggle multiple projects at once was on par with the best. This made a dramatic difference in the productivity level of our entire team."</p>
-          <p class="font-bold text-xs text-blue-400">J.W., Product and Commercial Executive, Verifone</p>
-        </div>
-
-        <div class="testimonial-card bg-slate-800 p-6 rounded-3xl border border-slate-700">
-          <p class="text-slate-300 italic mb-4 text-sm leading-relaxed">"John is a highly skilled and driven individual. He's well versed in payment terminal, POS integration, and solution delivery. He always puts the client first and executes business priorities very well even when the decision is tough to make."</p>
-          <p class="font-bold text-xs text-blue-400">J.C., Executive Director, Product Management, Verifone</p>
-        </div>
-
-        <div class="testimonial-card bg-slate-800 p-6 rounded-3xl border border-slate-700">
-          <p class="text-slate-300 italic mb-4 text-sm leading-relaxed">"John would be an outstanding asset to any company. His technical knowledge base of the payments industry is strong. He has both technical skills and communication skills that allow any level of merchant to understand the complexity of payments."</p>
-          <p class="font-bold text-xs text-blue-400">V.H-W., Senior Success Manager, Swiftlane</p>
-        </div>
-
-      </div>
-      <p class="mt-10 text-center text-slate-500 text-xs tracking-widest uppercase">Full recommendations can be verified via <a href="https://www.linkedin.com/in/johnsjr" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">LinkedIn Profile</a></p>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       EDUCATION AND CERTIFICATIONS (light)
-  ══════════════════════════════════ -->
-  <section id="education" class="py-14 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="mb-10">
-        <h2 class="text-3xl font-extrabold mb-3">Education and Certifications</h2>
-        <div class="w-20 h-1.5 bg-blue-600 rounded-full"></div>
-      </div>
-      <div class="grid md:grid-cols-2 gap-12">
-        <div>
-          <h3 class="text-blue-600 font-bold uppercase tracking-widest text-xs mb-4">Education</h3>
-          <div>
-            <p class="font-bold text-slate-900">BBA, Computer Information Systems</p>
-            <p class="text-slate-500 text-sm">Savannah State University</p>
-          </div>
-        </div>
-        <div>
-          <h3 class="text-blue-600 font-bold uppercase tracking-widest text-xs mb-4">Certifications</h3>
-          <div class="space-y-3">
-            <div class="flex justify-between items-baseline border-b border-slate-200 pb-2">
-              <span class="font-semibold text-slate-900 text-sm">AI For Everyone</span>
-              <span class="text-slate-500 text-xs">DeepLearning.AI, 2025</span>
-            </div>
-            <div class="flex justify-between items-baseline border-b border-slate-200 pb-2">
-              <span class="font-semibold text-slate-900 text-sm">Introduction to Generative AI</span>
-              <span class="text-slate-500 text-xs">Google Cloud, 2025</span>
-            </div>
-            <div class="flex justify-between items-baseline">
-              <span class="font-semibold text-slate-900 text-sm">CompTIA A+ and Network+</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       CONTACT (white)
-  ══════════════════════════════════ -->
-  <section id="contact" class="py-20 bg-white text-center">
-    <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-4xl font-extrabold mb-6">Ready to Connect?</h2>
-      <p class="text-slate-500 text-lg mb-10">
-        I would love to hear from you. Whether you have a role in mind or just want to connect, feel free to reach out.
-      </p>
-      <div class="flex flex-col md:flex-row justify-center items-center gap-6">
-        <a href="mailto:jesimpsonjr@gmail.com" class="w-full md:w-auto bg-blue-600 text-white px-12 py-5 rounded-2xl font-bold hover:bg-blue-700 transition shadow-2xl shadow-blue-200 text-lg">Send an Email</a>
-        <a href="https://www.linkedin.com/in/johnsjr" target="_blank" rel="noopener noreferrer" class="w-full md:w-auto bg-slate-900 text-white px-12 py-5 rounded-2xl font-bold hover:bg-slate-800 transition text-lg">LinkedIn</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-       FOOTER
-  ══════════════════════════════════ -->
-  <footer class="py-8 border-t border-slate-100 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-slate-400 text-xs font-medium uppercase tracking-widest">
-      <p>&copy; 2026 John Simpson. Fintech Expert. AI Practitioner.</p>
-      <div class="flex space-x-8 mt-4 md:mt-0">
-        <a href="#highlights" class="hover:text-blue-600 transition">Impact</a>
-        <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
-        <a href="#contact" class="hover:text-blue-600 transition">Connect</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const toggle = document.getElementById('navToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (toggle && mobileMenu) {
-      toggle.addEventListener('click', () => {
-        const open = mobileMenu.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-      });
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          const offset = 96;
-          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-          window.scrollTo({ top, behavior: 'smooth' });
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Simpson | Fintech Expert. AI Practitioner.</title>
+    <meta name="description" content="Senior Product Manager with 20+ years in enterprise fintech, payments, and AI. Portfolio showcasing product leadership, AI prototypes, and domain expertise.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Source Serif 4', Georgia, serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --radius: 12px;
+            --radius-lg: 20px;
+            --max-width: 1200px;
         }
-      });
-    });
-  </script>
+
+        [data-theme="dark"] {
+            --bg-primary: #0a0e17;
+            --bg-secondary: #111827;
+            --bg-card: #1a2035;
+            --bg-card-hover: #212b45;
+            --bg-accent: rgba(56, 189, 248, 0.08);
+            --text-primary: #f0f4f8;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #38bdf8;
+            --accent-secondary: #818cf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --border: rgba(148, 163, 184, 0.1);
+            --border-accent: rgba(56, 189, 248, 0.25);
+            --gradient-hero: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(56, 189, 248, 0.12) 0%, rgba(129, 140, 248, 0.06) 40%, transparent 70%);
+            --shadow-card: 0 4px 24px rgba(0,0,0,0.3);
+            --shadow-card-hover: 0 8px 40px rgba(0,0,0,0.4);
+            --tag-bg: rgba(56, 189, 248, 0.1);
+            --tag-border: rgba(56, 189, 248, 0.2);
+            --toggle-bg: #1e293b;
+            --nav-bg: rgba(10, 14, 23, 0.85);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f1f5f9;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f8fafc;
+            --bg-accent: rgba(15, 82, 186, 0.05);
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --accent: #0f52ba;
+            --accent-secondary: #6366f1;
+            --accent-glow: rgba(15, 82, 186, 0.1);
+            --border: rgba(15, 23, 42, 0.08);
+            --border-accent: rgba(15, 82, 186, 0.2);
+            --gradient-hero: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(15, 82, 186, 0.08) 0%, rgba(99, 102, 241, 0.04) 40%, transparent 70%);
+            --shadow-card: 0 4px 24px rgba(0,0,0,0.06);
+            --shadow-card-hover: 0 8px 40px rgba(0,0,0,0.1);
+            --tag-bg: rgba(15, 82, 186, 0.06);
+            --tag-border: rgba(15, 82, 186, 0.15);
+            --toggle-bg: #e2e8f0;
+            --nav-bg: rgba(248, 250, 252, 0.85);
+        }
+
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            transition: background 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: background 0.4s ease;
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            background: var(--toggle-bg);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            cursor: pointer;
+            padding: 4px 12px;
+            transition: background 0.3s;
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            height: 28px;
+            letter-spacing: 0.02em;
+        }
+
+        .theme-toggle:hover { color: var(--accent); border-color: var(--border-accent); }
+
+        .theme-toggle .label-dark,
+        .theme-toggle .label-light { display: none; }
+
+        [data-theme="dark"] .theme-toggle .label-dark { display: inline; }
+        [data-theme="light"] .theme-toggle .label-light { display: inline; }
+
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .nav-hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 6rem 2rem 4rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-hero);
+            pointer-events: none;
+        }
+
+        .hero-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.4;
+            mask-image: radial-gradient(ellipse 60% 50% at 50% 40%, black 20%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 40%, black 20%, transparent 70%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: var(--bg-accent);
+            border: 1px solid var(--border-accent);
+            border-radius: 100px;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            animation: fadeSlideUp 0.8s var(--ease-out-expo) both;
+        }
+
+        .hero-badge .pulse {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 1.5rem;
+            animation: fadeSlideUp 0.8s 0.1s var(--ease-out-expo) both;
+        }
+
+        .hero h1 .accent-text {
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+            animation: fadeSlideUp 0.8s 0.2s var(--ease-out-expo) both;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeSlideUp 0.8s 0.3s var(--ease-out-expo) both;
+        }
+
+        .btn {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 100px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s var(--ease-out-expo);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--accent-glow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 6rem 2rem;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        /* ===== HIGHLIGHTS / METRICS ===== */
+        .highlights {
+            padding: 5rem 2rem;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            transition: background 0.4s ease;
+        }
+
+        .highlights-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .metric-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card-hover);
+            border-color: var(--border-accent);
+        }
+
+        .metric-card:hover::before { opacity: 1; }
+
+        .metric-number {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-suffix {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .metric-label {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-desc {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p:first-of-type::first-line {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .about-sidebar {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+        }
+
+        .about-sidebar h3 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .status-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 1.25rem;
+        }
+
+        .status-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: var(--tag-bg);
+            border: 1px solid var(--tag-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .status-text {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .status-sub {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: var(--font-display);
+            font-weight: 400;
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-section {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 6rem 2rem;
+            transition: background 0.4s ease;
+        }
+
+        .skills-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .skill-category h3 {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            font-family: var(--font-display);
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 4px 10px;
+            background: var(--tag-bg);
+            border: 1px solid var(--tag-border);
+            border-radius: 100px;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .skill-tag:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            background: var(--accent-glow);
+        }
+
+        /* ===== EXPERIENCE ===== */
+        .timeline {
+            position: relative;
+            margin-top: 2.5rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-secondary), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            background: var(--bg-primary);
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .timeline-item:hover::before {
+            background: var(--accent);
+        }
+
+        .timeline-role {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.15rem;
+        }
+
+        .timeline-company {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-bullets {
+            list-style: none;
+        }
+
+        .timeline-bullets li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .timeline-bullets li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 5px;
+            height: 5px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        /* ===== PROJECTS ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1.5rem;
+            align-items: center;
+            transition: all 0.3s var(--ease-out-expo);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .project-card:hover {
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-card-hover);
+            transform: translateY(-2px);
+        }
+
+        .project-card.featured {
+            border-color: var(--border-accent);
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-accent) 100%);
+        }
+
+        .project-featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-family: var(--font-display);
+            font-size: 0.68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            background: var(--tag-bg);
+            border: 1px solid var(--tag-border);
+            padding: 3px 10px;
+            border-radius: 100px;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-name {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .project-tag {
+            font-family: var(--font-display);
+            font-size: 0.68rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            background: var(--tag-bg);
+            border: 1px solid var(--tag-border);
+            border-radius: 100px;
+            color: var(--text-muted);
+        }
+
+        .project-cta {
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s;
+        }
+
+        .project-card:hover .project-cta { gap: 10px; }
+
+        .github-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* ===== PROJECTS SECTION WRAPPER ===== */
+        .projects-section {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 6rem 2rem;
+            transition: background 0.4s ease;
+        }
+
+        .projects-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        /* ===== APPROACH ===== */
+        .approach-content {
+            max-width: 760px;
+        }
+
+        .approach-content p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-section {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 6rem 2rem;
+            transition: background 0.4s ease;
+        }
+
+        .testimonials-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .testimonial-quote {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            flex: 1;
+            margin-bottom: 1.25rem;
+            font-style: italic;
+        }
+
+        .testimonial-quote::before {
+            content: '\201C';
+            font-size: 2rem;
+            color: var(--accent);
+            line-height: 0;
+            vertical-align: -0.5em;
+            margin-right: 4px;
+        }
+
+        .testimonial-author {
+            font-family: var(--font-display);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .testimonial-role {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .testimonials-footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .testimonials-footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ===== EDUCATION ===== */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .edu-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+        }
+
+        .edu-card h3 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .edu-item {
+            margin-bottom: 0.75rem;
+        }
+
+        .edu-item .degree {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .edu-item .school {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-section {
+            text-align: center;
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-hero);
+            pointer-events: none;
+        }
+
+        .contact-section > * { position: relative; z-index: 1; }
+
+        .contact-section .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .contact-section .section-desc {
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            font-family: var(--font-display);
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== MOBILE NAV ===== */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: var(--bg-primary);
+            padding: 6rem 2rem 2rem;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .mobile-menu.open { display: flex; }
+
+        .mobile-menu a {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.2s;
+        }
+
+        .mobile-menu a:hover { color: var(--accent); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-content { grid-template-columns: 1fr; gap: 2rem; }
+            .skills-categories { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .edu-grid { grid-template-columns: 1fr; }
+
+            .project-card {
+                grid-template-columns: 1fr;
+            }
+
+            .mobile-menu.open { display: flex; }
+        }
+
+        @media (max-width: 600px) {
+            .metrics-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+            .metric-card { padding: 1.25rem 1rem; }
+            .metric-number { font-size: 2.2rem; }
+            .hero { padding: 5rem 1.25rem 3rem; }
+            .section { padding: 4rem 1.25rem; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">JS</a>
+            <ul class="nav-links">
+                <li><a href="#highlights">Impact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#testimonials">Recommendations</a></li>
+                <li><a href="#contact">Connect</a></li>
+                <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode"><span class="label-dark">Light Mode</span><span class="label-light">Dark Mode</span></button></li>
+            </ul>
+            <div style="display:flex;align-items:center;gap:12px;">
+                <button class="theme-toggle" id="themeToggleMobile" aria-label="Toggle dark/light mode" style="display:none;"><span class="label-dark">Light Mode</span><span class="label-light">Dark Mode</span></button>
+                <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#highlights" onclick="closeMobile()">Impact</a>
+        <a href="#about" onclick="closeMobile()">About</a>
+        <a href="#experience" onclick="closeMobile()">Experience</a>
+        <a href="#projects" onclick="closeMobile()">Projects</a>
+        <a href="#testimonials" onclick="closeMobile()">Recommendations</a>
+        <a href="#contact" onclick="closeMobile()">Connect</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-grid-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse"></span>
+                Open to full-time opportunities
+            </div>
+            <h1>John Simpson<br><span class="accent-text">Fintech &times; AI</span></h1>
+            <p class="hero-subtitle">Senior Product Manager with 20+ years in enterprise payments, embedded finance, and AI. I turn technical complexity into products that ship and revenue that scales.</p>
+            <div class="hero-ctas">
+                <a href="#projects" class="btn btn-primary">View Projects &darr;</a>
+                <a href="#experience" class="btn btn-primary">Experience &darr;</a>
+                <a href="#contact" class="btn btn-primary">Get in Touch &darr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="highlights" id="highlights">
+        <div class="highlights-inner">
+            <div class="section-label reveal">Career Impact</div>
+            <div class="section-title reveal">The numbers behind the work.</div>
+            <div class="metrics-grid">
+                <div class="metric-card reveal">
+                    <div class="metric-number"><span class="counter" data-target="40" data-prefix="$" data-suffix="M">$0</span></div>
+                    <div class="metric-label">ARR Growth</div>
+                    <div class="metric-desc">Scaled EMV payment solution from $5M to $40M ARR across Fortune 500 retailers, QSRs, and ISVs.</div>
+                </div>
+                <div class="metric-card reveal">
+                    <div class="metric-number"><span class="counter" data-target="60" data-suffix="%">0</span></div>
+                    <div class="metric-label">Revenue Ownership</div>
+                    <div class="metric-desc">Managed 4 payment products simultaneously generating 60% of overall company revenue.</div>
+                </div>
+                <div class="metric-card reveal">
+                    <div class="metric-number"><span class="counter" data-target="50" data-suffix="%">0</span></div>
+                    <div class="metric-label">Faster Onboarding</div>
+                    <div class="metric-desc">Accelerated underwriting and implementation timelines by 50% through PayFac and ERP automation.</div>
+                </div>
+                <div class="metric-card reveal">
+                    <div class="metric-number"><span class="counter" data-target="100" data-suffix="+">0</span></div>
+                    <div class="metric-label">Merchants Launched</div>
+                    <div class="metric-desc">Onboarded within 6 months of launching a next-gen ERP embedded payments solution.</div>
+                </div>
+                <div class="metric-card reveal">
+                    <div class="metric-number"><span class="counter" data-target="30" data-suffix="%">0</span></div>
+                    <div class="metric-label">Revenue Increase</div>
+                    <div class="metric-desc">EMV device portfolio refresh drove 30% revenue boost and 70% support case reduction.</div>
+                </div>
+                <div class="metric-card reveal">
+                    <div class="metric-number"><span class="counter" data-target="40" data-suffix="%">0</span></div>
+                    <div class="metric-label">Pipeline Growth</div>
+                    <div class="metric-desc">AI-assisted lead monitoring tool for a consulting client grew sales pipeline by 40%.</div>
+                </div>
+                <div class="metric-card reveal">
+                    <div class="metric-number"><span class="counter" data-target="12" data-prefix="$" data-suffix="M+">0</span></div>
+                    <div class="metric-label">Influenced Revenue</div>
+                    <div class="metric-desc">150+ client demos and POCs contributed to $12M+ in team revenue with 15% win rate increase.</div>
+                </div>
+                <div class="metric-card reveal">
+                    <div class="metric-number"><span class="counter" data-target="6" data-suffix="-Week">0</span></div>
+                    <div class="metric-label">Go-Live Acceleration</div>
+                    <div class="metric-desc">Process enhancements and role clarity enabled faster go-lives for a fast-growing fintech.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+        <div class="section-label reveal">About</div>
+        <div class="section-title reveal">Payments expertise.<br>AI fluency. One product leader.</div>
+        <div class="about-content">
+            <div class="about-text reveal">
+                <p>Product leader who has owned B2B, B2C, omnichannel, and SaaS payment products generating 60% of company revenue and driven ARR growth from $5M to $40M. Demonstrated success launching products that reduced implementation timelines by 50%, increased EMV revenue by 30%, and added 100+ new customers in 6 months.</p>
+                <p>Known for translating technical complexity into business outcomes across payments, embedded finance, and eCommerce. I made a deliberate investment in AI because I saw firsthand how it was reshaping the products I had spent my career building. That combination of deep fintech domain knowledge and hands-on AI capability is what I bring to every engagement.</p>
+            </div>
+            <div class="about-sidebar reveal">
+                <h3>Current Status</h3>
+                <div class="status-item">
+                    <div class="status-icon">&#128188;</div>
+                    <div>
+                        <div class="status-text">Open to New Opportunities</div>
+                        <div class="status-sub">Full-time remote</div>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">&#127919;</div>
+                    <div>
+                        <div class="status-text">Target Roles</div>
+                        <div class="status-sub">Product Manager, Solutions Architect, Sales Engineer, TPM</div>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">&#127758;</div>
+                    <div>
+                        <div class="status-text">Domains</div>
+                        <div class="status-sub">Fintech, Payments, AI, Embedded Finance</div>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <div class="status-icon">&#128205;</div>
+                    <div>
+                        <div class="status-text">Location</div>
+                        <div class="status-sub">Savannah, GA (remote)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills-section" id="skills">
+        <div class="skills-inner">
+            <div class="section-label reveal">Expertise</div>
+            <div class="section-title reveal">Skills &amp; Tools</div>
+            <div class="skills-categories">
+                <div class="skill-category reveal">
+                    <h3>Product &amp; Leadership</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Go-To-Market Strategy</span>
+                        <span class="skill-tag">Release Management</span>
+                        <span class="skill-tag">C-Suite Communication</span>
+                        <span class="skill-tag">Stakeholder Alignment</span>
+                        <span class="skill-tag">Product Discovery</span>
+                        <span class="skill-tag">Competitive Analysis</span>
+                        <span class="skill-tag">CX Mapping</span>
+                        <span class="skill-tag">Multi-Year Roadmaps</span>
+                        <span class="skill-tag">Agile / Scrum</span>
+                        <span class="skill-tag">Backlog Management</span>
+                        <span class="skill-tag">A/B Testing</span>
+                        <span class="skill-tag">Requirements Gathering</span>
+                        <span class="skill-tag">Strategic Partnerships</span>
+                        <span class="skill-tag">Developer Support</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <h3>AI/ML &amp; Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">Claude Code CLI</span>
+                        <span class="skill-tag">GitHub Copilot</span>
+                        <span class="skill-tag">Gemini CLI</span>
+                        <span class="skill-tag">Ollama</span>
+                        <span class="skill-tag">Open WebUI</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Tailscale</span>
+                        <span class="skill-tag">GitHub Pages</span>
+                        <span class="skill-tag">Jira</span>
+                        <span class="skill-tag">Confluence</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">DataDog</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Salesforce</span>
+                        <span class="skill-tag">HubSpot</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <h3>Fintech &amp; Payments</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Card Processing Rails</span>
+                        <span class="skill-tag">EMV Terminals</span>
+                        <span class="skill-tag">PayFac</span>
+                        <span class="skill-tag">Embedded Payments</span>
+                        <span class="skill-tag">ACH</span>
+                        <span class="skill-tag">RTP / FedNow</span>
+                        <span class="skill-tag">Open Banking</span>
+                        <span class="skill-tag">Interchange Optimization</span>
+                        <span class="skill-tag">Tokenization / Vaulting</span>
+                        <span class="skill-tag">Fraud / 3DS / SCA</span>
+                        <span class="skill-tag">PCI-DSS</span>
+                        <span class="skill-tag">KYC / KYB / AML</span>
+                        <span class="skill-tag">BNPL</span>
+                        <span class="skill-tag">Stablecoins</span>
+                        <span class="skill-tag">Blockchain / Web3</span>
+                        <span class="skill-tag">Cryptocurrency</span>
+                        <span class="skill-tag">Payment Orchestration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+        <div class="section-label reveal">Experience</div>
+        <div class="section-title reveal">20+ years of shipping products<br>that move money.</div>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-role">AI &amp; Fintech Consultant</div>
+                <div class="timeline-company">Self-Employed</div>
+                <ul class="timeline-bullets">
+                    <li>Grew sales pipeline by 40% for a specialty services client by designing and deploying an AI-assisted social media monitoring tool that identified high-intent prospects in real time.</li>
+                    <li>Built tooling with AI assistance to automate payroll register file parsing into standardized Excel format, reducing an hours-long process into a single click.</li>
+                    <li>Reduced go-live timelines by 6 weeks for a fast-growing fintech by implementing unified SOPs for sales-to-implementation handoffs.</li>
+                    <li>Providing AI consulting and fintech advisory services to clients exploring how AI adoption can introduce new cost efficiencies.</li>
+                </ul>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-role">Senior Product Manager</div>
+                <div class="timeline-company">Versapay</div>
+                <ul class="timeline-bullets">
+                    <li>Owned 4 payment products simultaneously generating 60% of company revenue across 2,200 B2B, SaaS, and B2C clients.</li>
+                    <li>Launched next-gen ERP embedded payments solution, cutting underwriting and onboarding time by 50% and adding 100+ new customers in 6 months.</li>
+                    <li>Drove 30% increase in EMV revenue and 70% reduction in support cases through a company-wide device portfolio refresh.</li>
+                    <li>Led a cross-functional product squad (engineering, QA, UX/UI) without direct reporting lines, driving Agile ceremonies and on-time delivery.</li>
+                </ul>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-role">Product Manager</div>
+                <div class="timeline-company">Verifone, Inc.</div>
+                <ul class="timeline-bullets">
+                    <li>Scaled EMV solutions from $5M to $40M ARR during the U.S. liability transition.</li>
+                    <li>Liaison for all primary U.S. payment processors and card brands for timely EMV certification.</li>
+                    <li>Gathered business requirements for Fortune 500 retail and QSR verticals.</li>
+                    <li>Collaborated with Marketing and GTM teams on product launches, shaping value propositions and sales enablement content.</li>
+                </ul>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-role">Sales Engineer</div>
+                <div class="timeline-company">Verifone, Inc.</div>
+                <ul class="timeline-bullets">
+                    <li>Led pre-sales technical consulting for enterprise payment solutions delivering 150+ demonstrations.</li>
+                    <li>Contributed to $12M+ in team revenue with a 15% win rate increase.</li>
+                    <li>Created sales enablement materials and deployment guides for North American implementations.</li>
+                    <li>Promoted a new payment solution to 100+ early adopters. Recipient of Verifone President's Club Award.</li>
+                </ul>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-role">Developer Support</div>
+                <div class="timeline-company">Verifone, Inc.</div>
+                <ul class="timeline-bullets">
+                    <li>Managed rollout of 400+ payment integrations for channel partners.</li>
+                    <li>Supported 100+ channel partner API integrations, reducing integration time by 25%.</li>
+                    <li>Established 30+ SOPs utilized by international support teams.</li>
+                    <li>Built comprehensive payment processing reference library for global implementation teams.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects-section" id="projects">
+        <div class="projects-inner">
+        <div class="section-label reveal">Projects</div>
+        <div class="section-title reveal">Where fintech expertise<br>meets product thinking.</div>
+        <div class="section-desc reveal">Applications demonstrating domain depth in payments, fundraising, and commerce alongside practical AI-assisted development workflows.</div>
+
+        <div class="projects-grid">
+            <!-- FEATURED: Stripe Commerce Explorer -->
+            <a href="https://jesimpsonjr-prodmgmt.github.io/stripe-commerce-explorer" target="_blank" class="project-card featured reveal">
+                <div>
+                    <div class="project-featured-badge">&#9733; Featured Project</div>
+                    <div class="project-name">Stripe Commerce Explorer</div>
+                    <div class="project-desc">Three interactive simulations showcasing how Stripe's checkout, identity, and fraud products work together to power modern commerce. Includes Payment Element, Link one-click checkout, and Radar fraud scoring with a rules engine.</div>
+                    <div class="project-tags">
+                        <span class="project-tag">Stripe</span>
+                        <span class="project-tag">Payments</span>
+                        <span class="project-tag">Fraud</span>
+                        <span class="project-tag">Interactive</span>
+                        <span class="project-tag">Live Demo</span>
+                    </div>
+                </div>
+                <div class="project-cta">Live Demo &rarr;</div>
+            </a>
+
+            <a href="https://jesimpsonjr-prodmgmt.github.io/fundraising-portfolio-optimizer/" target="_blank" class="project-card reveal">
+                <div>
+                    <div class="project-name">FundraiseAI</div>
+                    <div class="project-desc">Portfolio-level AI optimization with Monte Carlo scenario simulation for capital campaign planning. Built as a product concept for the fundraising intelligence market.</div>
+                    <div class="project-tags">
+                        <span class="project-tag">AI / LLM</span>
+                        <span class="project-tag">Monte Carlo</span>
+                        <span class="project-tag">Analytics</span>
+                        <span class="project-tag">Live Demo</span>
+                    </div>
+                </div>
+                <div class="project-cta">Live Demo &rarr;</div>
+            </a>
+
+            <a href="https://jesimpsonjr-prodmgmt.github.io/ai-appeal-optimizer/" target="_blank" class="project-card reveal">
+                <div>
+                    <div class="project-name">CatholicCampaignAI</div>
+                    <div class="project-desc">Interactive faithtech prototype for Catholic dioceses and parishes. Uses human-in-the-loop AI to analyze donor segments and generate personalized outreach strategies for annual appeals and capital campaigns.</div>
+                    <div class="project-tags">
+                        <span class="project-tag">AI / LLM</span>
+                        <span class="project-tag">Faithtech</span>
+                        <span class="project-tag">Fundraising</span>
+                        <span class="project-tag">Live Demo</span>
+                    </div>
+                </div>
+                <div class="project-cta">Live Demo &rarr;</div>
+            </a>
+
+
+            <a href="https://github.com/jesimpsonjr-prodmgmt/payment-transaction-analyzer" target="_blank" class="project-card reveal">
+                <div>
+                    <div class="project-name">Transaction Data Analyzer</div>
+                    <div class="project-desc">Python CLI tool for analyzing payment transaction data including auth rates, declines, chargebacks, and volume metrics.</div>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">CLI</span>
+                        <span class="project-tag">Analytics</span>
+                    </div>
+                </div>
+                <div class="project-cta">View Code &rarr;</div>
+            </a>
+
+            <a href="https://github.com/jesimpsonjr-prodmgmt/prd-generator" target="_blank" class="project-card reveal">
+                <div>
+                    <div class="project-name">AI-Powered PRD Generator</div>
+                    <div class="project-desc">CLI tool that generates structured PRDs from feature ideas using Anthropic Claude or local Ollama models.</div>
+                    <div class="project-tags">
+                        <span class="project-tag">Claude API</span>
+                        <span class="project-tag">Ollama</span>
+                        <span class="project-tag">CLI</span>
+                    </div>
+                </div>
+                <div class="project-cta">View Code &rarr;</div>
+            </a>
+
+            <a href="https://github.com/jesimpsonjr-prodmgmt/scheduled-report-generator" target="_blank" class="project-card reveal">
+                <div>
+                    <div class="project-name">Automated Report Engine</div>
+                    <div class="project-desc">Configuration-driven Python tool for generating and distributing automated HTML/PDF reports from multiple data sources.</div>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Automation</span>
+                        <span class="project-tag">PDF</span>
+                    </div>
+                </div>
+                <div class="project-cta">View Code &rarr;</div>
+            </a>
+
+            <a href="https://github.com/jesimpsonjr-prodmgmt/lead-monitor" target="_blank" class="project-card reveal">
+                <div>
+                    <div class="project-name">Social Media Lead Monitor</div>
+                    <div class="project-desc">AI-assisted lead generation tool that monitors social media for high-intent sales signals and sends real-time Discord alerts.</div>
+                    <div class="project-tags">
+                        <span class="project-tag">AI</span>
+                        <span class="project-tag">Lead Gen</span>
+                        <span class="project-tag">Discord</span>
+                    </div>
+                </div>
+                <div class="project-cta">View Code &rarr;</div>
+            </a>
+
+            <a href="https://github.com/jesimpsonjr-prodmgmt/fintech-buzzword-bingo" target="_blank" class="project-card reveal">
+                <div>
+                    <div class="project-name">Fintech Buzzword Bingo</div>
+                    <div class="project-desc">A tongue-in-cheek Python tool that analyzes earnings calls and corporate communications for buzzword density.</div>
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">NLP</span>
+                        <span class="project-tag">Satire</span>
+                    </div>
+                </div>
+                <div class="project-cta">View Code &rarr;</div>
+            </a>
+        </div>
+
+        <div class="github-link reveal">
+            <a href="https://github.com/jesimpsonjr-prodmgmt" target="_blank" class="btn btn-secondary">Explore All Repos on GitHub &rarr;</a>
+        </div>
+        </div>
+    </section>
+
+    <!-- MY APPROACH -->
+    <section class="section" id="approach">
+        <div class="section-label reveal">Philosophy</div>
+        <div class="section-title reveal">My Approach</div>
+        <div class="approach-content reveal">
+            <p>My favorite kind of problem is the one nobody else wants to own. The messy, cross-functional, "who does this even belong to?" kind. I've found that the work nobody is touching is usually the work that matters most, and stepping into it is where I've made the biggest impact in every role I've held.</p>
+            <p>I was hired as the first Product Manager at a 39-person payments startup in 2019, owning four products with no formal process in place. One month later, a merger doubled the company overnight, and I helped unify two separate product organizations into a cohesive structure. I continued owning the four original products as they grew to 60% of combined company revenue. By my departure, the company had crossed 400 employees with multiple PM teams running on the framework we built.</p>
+            <p>More recently, I made a deliberate investment in AI. I saw firsthand how it was reshaping the products I had spent my career building. I started learning prompt engineering, deploying local language models, and building AI-powered prototypes. One of those prototypes, a social media monitoring tool, grew a client's sales pipeline by 40%.</p>
+            <p>The skill I've leaned on most throughout my career isn't strategy or technical depth. It's translation. Executives speak in outcomes, engineers speak in constraints, and customers speak in problems. The Product Managers who connect all three are the ones who ship work that actually matters.</p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="testimonials-inner">
+            <div class="section-label reveal">Recommendations</div>
+            <div class="section-title reveal">What colleagues say.</div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">Under John's leadership his product grew from a $5M offering to over $40M in recurring revenue in a three year period. He is a team leader, a mentor, and great communicator. He is ready to assume a role of greater challenge and leadership.</div>
+                    <div class="testimonial-author">W.H.</div>
+                    <div class="testimonial-role">Director, Verifone Inc.</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">John has a unique skill set of being highly technical but also business and solution focused. I've seen John grow professionally and personally over the past decade and strongly recommend him.</div>
+                    <div class="testimonial-author">J.M.</div>
+                    <div class="testimonial-role">CEO North America, Verifone</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">John Simpson is an expert in the financial payments industry. His attention to detail is one of his greatest assets. He has a holistic view of a solution, understanding it is not a black box but multiple components that make a solution successful.</div>
+                    <div class="testimonial-author">B.M.</div>
+                    <div class="testimonial-role">Program Manager, Verifone</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">John can be trusted to drive cross-functional teams towards their goals while effectively addressing the needs of customers large and small.</div>
+                    <div class="testimonial-author">C.A.</div>
+                    <div class="testimonial-role">VP, Product Management, Verifone</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">He brings a sense of urgency to every project, leads intuitively, and keeps client needs front and center. He's the kind of teammate who makes everyone around him better.</div>
+                    <div class="testimonial-author">J.H.</div>
+                    <div class="testimonial-role">Solution Engineer, Chargent</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">John's ability to consume disparate information and mold it into an executable roadmap deliverable greatly contributed to the success of my division.</div>
+                    <div class="testimonial-author">W.H.</div>
+                    <div class="testimonial-role">Director, Verifone Inc.</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">John set the bar for the North America solution Implementation Managers. As a customer facing senior project manager, John ensured complex customer solutions were delivered on time and budget with high quality and customer satisfaction.</div>
+                    <div class="testimonial-author">B.F.</div>
+                    <div class="testimonial-role">Senior Leadership, Verifone</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">John was one of the most dedicated professionals I worked with while at Verifone. His ability to juggle multiple projects at once was on par with the best. This made a dramatic difference in the productivity level of our entire team.</div>
+                    <div class="testimonial-author">J.W.</div>
+                    <div class="testimonial-role">Product and Commercial Executive, Verifone</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">John would be an outstanding asset to any company. His technical knowledge base of the payments industry is strong. He has both technical skills and communication skills that allow any level of merchant to understand the complexity of payments.</div>
+                    <div class="testimonial-author">V.H-W.</div>
+                    <div class="testimonial-role">Senior Success Manager, Swiftlane</div>
+                </div>
+            </div>
+            <div class="testimonials-footer reveal">
+                Full recommendations can be verified via <a href="https://www.linkedin.com/in/johnsjr" target="_blank">LinkedIn Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section" id="education">
+        <div class="section-label reveal">Credentials</div>
+        <div class="section-title reveal">Education &amp; Certifications</div>
+        <div class="edu-grid">
+            <div class="edu-card reveal">
+                <h3>Education</h3>
+                <div class="edu-item">
+                    <div class="degree">BBA, Computer Information Systems</div>
+                    <div class="school">Savannah State University</div>
+                </div>
+            </div>
+            <div class="edu-card reveal">
+                <h3>Certifications</h3>
+                <div class="edu-item">
+                    <div class="degree">AI For Everyone</div>
+                    <div class="school">DeepLearning.AI, 2025</div>
+                </div>
+                <div class="edu-item">
+                    <div class="degree">Introduction to Generative AI</div>
+                    <div class="school">Google Cloud, 2025</div>
+                </div>
+                <div class="edu-item">
+                    <div class="degree">CompTIA A+ and Network+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+        <div class="section-label reveal">Connect</div>
+        <div class="section-title reveal">Let's build something together.</div>
+        <p class="section-desc reveal">Whether you have a role in mind, a product challenge, or just want to connect, I'd love to hear from you.</p>
+        <div class="contact-links reveal">
+            <a href="mailto:jesimpsonjr@gmail.com" class="btn btn-primary">Send an Email</a>
+            <a href="https://www.linkedin.com/in/johnsjr" target="_blank" class="btn btn-secondary">LinkedIn</a>
+            <a href="https://github.com/jesimpsonjr-prodmgmt" target="_blank" class="btn btn-secondary">GitHub</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        &copy; 2026 John Simpson. Fintech Expert. AI Practitioner.
+    </footer>
+
+    <script>
+        // Theme toggle
+        const root = document.documentElement;
+        const saved = localStorage.getItem('theme');
+        if (saved) root.setAttribute('data-theme', saved);
+        else if (window.matchMedia('(prefers-color-scheme: light)').matches) root.setAttribute('data-theme', 'light');
+
+        function toggleTheme() {
+            const current = root.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        }
+
+        document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+        document.getElementById('themeToggleMobile').addEventListener('click', toggleTheme);
+
+        // Show mobile toggle at small screens
+        function checkMobileToggle() {
+            const m = document.getElementById('themeToggleMobile');
+            m.style.display = window.innerWidth <= 900 ? 'block' : 'none';
+        }
+        checkMobileToggle();
+        window.addEventListener('resize', checkMobileToggle);
+
+        // Mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        let menuOpen = false;
+
+        hamburger.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('open', menuOpen);
+            hamburger.children[0].style.transform = menuOpen ? 'rotate(45deg) translate(5px, 5px)' : '';
+            hamburger.children[1].style.opacity = menuOpen ? '0' : '1';
+            hamburger.children[2].style.transform = menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : '';
+        });
+
+        function closeMobile() {
+            menuOpen = false;
+            mobileMenu.classList.remove('open');
+            hamburger.children[0].style.transform = '';
+            hamburger.children[1].style.opacity = '1';
+            hamburger.children[2].style.transform = '';
+        }
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 60);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Animated counters
+        function animateCounters() {
+            document.querySelectorAll('.counter').forEach(counter => {
+                if (counter.dataset.animated) return;
+                const rect = counter.getBoundingClientRect();
+                if (rect.top > window.innerHeight || rect.bottom < 0) return;
+                counter.dataset.animated = 'true';
+
+                const target = parseInt(counter.dataset.target);
+                const prefix = counter.dataset.prefix || '';
+                const suffix = counter.dataset.suffix || '';
+                const duration = 1500;
+                const start = performance.now();
+
+                function update(now) {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 4);
+                    const current = Math.round(target * eased);
+                    counter.textContent = prefix + current + suffix;
+                    if (progress < 1) requestAnimationFrame(update);
+                }
+                requestAnimationFrame(update);
+            });
+        }
+
+        window.addEventListener('scroll', animateCounters);
+        animateCounters();
+    </script>
 </body>
 </html>
