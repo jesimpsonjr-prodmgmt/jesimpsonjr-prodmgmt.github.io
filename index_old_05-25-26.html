@@ -7,67 +7,63 @@
     <meta name="description" content="Senior Product Manager with 20+ years in enterprise fintech, payments, and AI. Portfolio showcasing product leadership, AI prototypes, and domain expertise.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
     <style>
         /* ===== CSS VARIABLES ===== */
         :root {
-            --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-body: 'Lora', Georgia, serif;
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Source Serif 4', Georgia, serif;
             --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
             --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
             --radius: 12px;
-            --radius-lg: 16px;
-            --max-width: 1120px;
+            --radius-lg: 20px;
+            --max-width: 1200px;
         }
 
         [data-theme="dark"] {
-            --bg-primary: #0c1220;
-            --bg-secondary: #111a2e;
-            --bg-card: #162035;
-            --bg-card-hover: #1c2a45;
-            --bg-accent: rgba(232, 197, 130, 0.06);
-            --text-primary: #e8edf5;
+            --bg-primary: #0a0e17;
+            --bg-secondary: #111827;
+            --bg-card: #1a2035;
+            --bg-card-hover: #212b45;
+            --bg-accent: rgba(56, 189, 248, 0.08);
+            --text-primary: #f0f4f8;
             --text-secondary: #94a3b8;
             --text-muted: #64748b;
-            --accent: #e8c582;
-            --accent-secondary: #c9a862;
-            --accent-glow: rgba(232, 197, 130, 0.12);
-            --border: rgba(148, 163, 184, 0.08);
-            --border-accent: rgba(232, 197, 130, 0.2);
-            --gradient-hero: radial-gradient(ellipse 70% 50% at 50% -5%, rgba(232, 197, 130, 0.07) 0%, rgba(201, 168, 98, 0.03) 40%, transparent 70%);
-            --shadow-card: 0 4px 24px rgba(0,0,0,0.25);
-            --shadow-card-hover: 0 12px 48px rgba(0,0,0,0.35);
-            --tag-bg: rgba(232, 197, 130, 0.08);
-            --tag-border: rgba(232, 197, 130, 0.15);
+            --accent: #38bdf8;
+            --accent-secondary: #818cf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --border: rgba(148, 163, 184, 0.1);
+            --border-accent: rgba(56, 189, 248, 0.25);
+            --gradient-hero: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(56, 189, 248, 0.12) 0%, rgba(129, 140, 248, 0.06) 40%, transparent 70%);
+            --shadow-card: 0 4px 24px rgba(0,0,0,0.3);
+            --shadow-card-hover: 0 8px 40px rgba(0,0,0,0.4);
+            --tag-bg: rgba(56, 189, 248, 0.1);
+            --tag-border: rgba(56, 189, 248, 0.2);
             --toggle-bg: #1e293b;
-            --nav-bg: rgba(12, 18, 32, 0.9);
-            --success: #4ade80;
-            --logo-brightness: brightness(0.85) invert(0.85);
+            --nav-bg: rgba(10, 14, 23, 0.85);
         }
 
         [data-theme="light"] {
-            --bg-primary: #fafbfc;
-            --bg-secondary: #f1f4f8;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f1f5f9;
             --bg-card: #ffffff;
             --bg-card-hover: #f8fafc;
-            --bg-accent: rgba(30, 58, 95, 0.04);
-            --text-primary: #1a202c;
-            --text-secondary: #4a5568;
+            --bg-accent: rgba(15, 82, 186, 0.05);
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
             --text-muted: #94a3b8;
-            --accent: #8b6914;
-            --accent-secondary: #6b5210;
-            --accent-glow: rgba(139, 105, 20, 0.08);
-            --border: rgba(15, 23, 42, 0.06);
-            --border-accent: rgba(139, 105, 20, 0.2);
-            --gradient-hero: radial-gradient(ellipse 70% 50% at 50% -5%, rgba(139, 105, 20, 0.05) 0%, rgba(107, 82, 16, 0.02) 40%, transparent 70%);
-            --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
-            --shadow-card-hover: 0 8px 32px rgba(0,0,0,0.08);
-            --tag-bg: rgba(139, 105, 20, 0.05);
-            --tag-border: rgba(139, 105, 20, 0.12);
+            --accent: #0f52ba;
+            --accent-secondary: #6366f1;
+            --accent-glow: rgba(15, 82, 186, 0.1);
+            --border: rgba(15, 23, 42, 0.08);
+            --border-accent: rgba(15, 82, 186, 0.2);
+            --gradient-hero: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(15, 82, 186, 0.08) 0%, rgba(99, 102, 241, 0.04) 40%, transparent 70%);
+            --shadow-card: 0 4px 24px rgba(0,0,0,0.06);
+            --shadow-card-hover: 0 8px 40px rgba(0,0,0,0.1);
+            --tag-bg: rgba(15, 82, 186, 0.06);
+            --tag-border: rgba(15, 82, 186, 0.15);
             --toggle-bg: #e2e8f0;
-            --nav-bg: rgba(250, 251, 252, 0.9);
-            --success: #16a34a;
-            --logo-brightness: brightness(0.2);
+            --nav-bg: rgba(248, 250, 252, 0.85);
         }
 
         /* ===== RESET & BASE ===== */
@@ -120,6 +116,7 @@
             letter-spacing: -0.02em;
         }
 
+
         .nav-links {
             display: flex;
             align-items: center;
@@ -129,12 +126,12 @@
 
         .nav-links a {
             font-family: var(--font-display);
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             font-weight: 500;
             color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.2s;
-            letter-spacing: 0.01em;
+            letter-spacing: 0.02em;
         }
 
         .nav-links a:hover { color: var(--accent); }
@@ -190,7 +187,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            padding: 6rem 2rem 3rem;
+            padding: 6rem 2rem 4rem;
             overflow: hidden;
         }
 
@@ -202,9 +199,21 @@
             pointer-events: none;
         }
 
+        .hero-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.4;
+            mask-image: radial-gradient(ellipse 60% 50% at 50% 40%, black 20%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 40%, black 20%, transparent 70%);
+        }
+
         .hero-content {
             text-align: center;
-            max-width: 780px;
+            max-width: 800px;
             position: relative;
             z-index: 1;
         }
@@ -213,12 +222,12 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 6px 18px;
+            padding: 6px 16px;
             background: var(--bg-accent);
             border: 1px solid var(--border-accent);
             border-radius: 100px;
             font-family: var(--font-display);
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             font-weight: 500;
             color: var(--accent);
             margin-bottom: 2rem;
@@ -228,16 +237,16 @@
         .hero-badge .pulse {
             width: 8px;
             height: 8px;
-            background: var(--success);
+            background: #22c55e;
             border-radius: 50%;
             animation: pulse 2s ease-in-out infinite;
         }
 
         .hero h1 {
             font-family: var(--font-display);
-            font-size: clamp(2.8rem, 6.5vw, 5rem);
+            font-size: clamp(3rem, 7vw, 5.5rem);
             font-weight: 800;
-            line-height: 1.08;
+            line-height: 1.05;
             letter-spacing: -0.04em;
             margin-bottom: 1.5rem;
             animation: fadeSlideUp 0.8s 0.1s var(--ease-out-expo) both;
@@ -251,25 +260,12 @@
         }
 
         .hero-subtitle {
-            font-size: 1.12rem;
+            font-size: 1.15rem;
             color: var(--text-secondary);
-            max-width: 580px;
-            margin: 0 auto 1.5rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
             line-height: 1.8;
             animation: fadeSlideUp 0.8s 0.2s var(--ease-out-expo) both;
-        }
-
-        .hero-looking-for {
-            font-family: var(--font-display);
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            animation: fadeSlideUp 0.8s 0.25s var(--ease-out-expo) both;
-        }
-
-        .hero-looking-for strong {
-            color: var(--text-secondary);
-            font-weight: 600;
         }
 
         .hero-ctas {
@@ -282,10 +278,10 @@
 
         .btn {
             font-family: var(--font-display);
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            padding: 13px 30px;
-            border-radius: 8px;
+            padding: 12px 28px;
+            border-radius: 100px;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
@@ -297,7 +293,7 @@
 
         .btn-primary {
             background: var(--accent);
-            color: #1a202c;
+            color: #ffffff;
         }
 
         .btn-primary:hover {
@@ -316,83 +312,16 @@
             color: var(--accent);
         }
 
-        /* ===== STICKY CTA ===== */
-        .sticky-cta {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 999;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s var(--ease-out-expo);
-            pointer-events: none;
-        }
-
-        .sticky-cta.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        .sticky-cta .btn {
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            font-size: 0.82rem;
-            padding: 12px 24px;
-        }
-
-        /* ===== LOGO BAR ===== */
-        .logo-bar {
-            padding: 3rem 2rem;
-            border-bottom: 1px solid var(--border);
-            overflow: hidden;
-        }
-
-        .logo-bar-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .logo-bar-label {
-            font-family: var(--font-display);
-            font-size: 0.72rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        .logo-bar-logos {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .logo-bar-item {
-            font-family: var(--font-display);
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            letter-spacing: -0.01em;
-            opacity: 0.5;
-            transition: opacity 0.3s;
-        }
-
-        .logo-bar-item:hover { opacity: 0.8; }
-
         /* ===== SECTIONS ===== */
         .section {
-            padding: 4.5rem 2rem;
+            padding: 6rem 2rem;
             max-width: var(--max-width);
             margin: 0 auto;
         }
 
         .section-label {
             font-family: var(--font-display);
-            font-size: 0.72rem;
+            font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.15em;
@@ -402,103 +331,23 @@
 
         .section-title {
             font-family: var(--font-display);
-            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 700;
             letter-spacing: -0.03em;
             margin-bottom: 1rem;
-            line-height: 1.2;
+            line-height: 1.15;
         }
 
         .section-desc {
             color: var(--text-secondary);
-            font-size: 1.02rem;
-            max-width: 580px;
+            font-size: 1.05rem;
+            max-width: 600px;
             margin-bottom: 3rem;
-        }
-
-        /* ===== SOCIAL PROOF / TESTIMONIALS (moved up) ===== */
-        .proof-section {
-            padding: 4rem 2rem;
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            transition: background 0.4s ease;
-        }
-
-        .proof-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-        }
-
-        .proof-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
-            margin-top: 2rem;
-        }
-
-        .proof-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s var(--ease-out-expo);
-        }
-
-        .proof-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-card);
-        }
-
-        .proof-quote {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            flex: 1;
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .proof-quote::before {
-            content: '\201C';
-            font-size: 1.8rem;
-            color: var(--accent);
-            line-height: 0;
-            vertical-align: -0.45em;
-            margin-right: 3px;
-        }
-
-        .proof-author {
-            font-family: var(--font-display);
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .proof-role {
-            font-family: var(--font-display);
-            font-size: 0.72rem;
-            color: var(--text-muted);
-        }
-
-        .proof-footer {
-            text-align: center;
-            margin-top: 1.5rem;
-            font-family: var(--font-display);
-            font-size: 0.82rem;
-            color: var(--text-muted);
-        }
-
-        .proof-footer a {
-            color: var(--accent);
-            text-decoration: none;
         }
 
         /* ===== HIGHLIGHTS / METRICS ===== */
         .highlights {
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             background: var(--bg-secondary);
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
@@ -513,15 +362,15 @@
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.25rem;
-            margin-top: 2rem;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
         }
 
         .metric-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 1.75rem 1.25rem;
+            padding: 2rem 1.5rem;
             text-align: center;
             transition: all 0.3s var(--ease-out-expo);
             position: relative;
@@ -534,14 +383,14 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 2px;
+            height: 3px;
             background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
             opacity: 0;
             transition: opacity 0.3s;
         }
 
         .metric-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
             box-shadow: var(--shadow-card-hover);
             border-color: var(--border-accent);
         }
@@ -550,7 +399,7 @@
 
         .metric-number {
             font-family: var(--font-display);
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 800;
             letter-spacing: -0.03em;
             color: var(--accent);
@@ -558,109 +407,39 @@
             margin-bottom: 0.25rem;
         }
 
+        .metric-suffix {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
         .metric-label {
             font-family: var(--font-display);
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
         }
 
         .metric-desc {
-            font-size: 0.78rem;
+            font-size: 0.82rem;
             color: var(--text-muted);
             line-height: 1.5;
-        }
-
-        /* ===== CASE STUDIES ===== */
-        .case-studies {
-            margin-top: 2.5rem;
-        }
-
-        .case-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            margin-bottom: 1.25rem;
-            transition: all 0.3s var(--ease-out-expo);
-        }
-
-        .case-card:hover {
-            border-color: var(--border-accent);
-            box-shadow: var(--shadow-card);
-        }
-
-        .case-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .case-company {
-            font-family: var(--font-display);
-            font-size: 0.72rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--accent);
-            background: var(--tag-bg);
-            border: 1px solid var(--tag-border);
-            padding: 3px 10px;
-            border-radius: 100px;
-        }
-
-        .case-role {
-            font-family: var(--font-display);
-            font-size: 0.82rem;
-            font-weight: 500;
-            color: var(--text-muted);
-        }
-
-        .case-title {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-
-        .case-steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        .case-step-label {
-            font-family: var(--font-display);
-            font-size: 0.68rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 0.4rem;
-        }
-
-        .case-step-text {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
         }
 
         /* ===== ABOUT ===== */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3.5rem;
+            gap: 4rem;
             align-items: start;
         }
 
         .about-text p {
             color: var(--text-secondary);
-            font-size: 1.02rem;
+            font-size: 1.05rem;
             margin-bottom: 1.5rem;
-            line-height: 1.8;
         }
 
         .about-text p:first-of-type::first-line {
@@ -677,7 +456,7 @@
 
         .about-sidebar h3 {
             font-family: var(--font-display);
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
             color: var(--text-primary);
@@ -705,13 +484,13 @@
 
         .status-text {
             font-family: var(--font-display);
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             font-weight: 500;
             color: var(--text-primary);
         }
 
         .status-sub {
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
             font-family: var(--font-display);
             font-weight: 400;
@@ -722,7 +501,7 @@
             background: var(--bg-secondary);
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
-            padding: 4rem 2rem;
+            padding: 6rem 2rem;
             transition: background 0.4s ease;
         }
 
@@ -735,12 +514,12 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
 
         .skill-category h3 {
             font-family: var(--font-display);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: var(--text-primary);
             margin-bottom: 1rem;
@@ -756,12 +535,12 @@
 
         .skill-tag {
             font-family: var(--font-display);
-            font-size: 0.7rem;
+            font-size: 0.72rem;
             font-weight: 500;
             padding: 4px 10px;
             background: var(--tag-bg);
             border: 1px solid var(--tag-border);
-            border-radius: 6px;
+            border-radius: 100px;
             color: var(--text-secondary);
             transition: all 0.2s;
             white-space: nowrap;
@@ -814,7 +593,7 @@
 
         .timeline-role {
             font-family: var(--font-display);
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 0.15rem;
@@ -822,7 +601,7 @@
 
         .timeline-company {
             font-family: var(--font-display);
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             font-weight: 500;
             color: var(--accent);
             margin-bottom: 0.75rem;
@@ -836,7 +615,7 @@
             position: relative;
             padding-left: 1.25rem;
             margin-bottom: 0.5rem;
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             color: var(--text-secondary);
         }
 
@@ -852,31 +631,18 @@
         }
 
         /* ===== PROJECTS ===== */
-        .projects-section {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 4.5rem 2rem;
-            transition: background 0.4s ease;
-        }
-
-        .projects-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-        }
-
         .projects-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.25rem;
-            margin-top: 2rem;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
         }
 
         .project-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
-            padding: 1.75rem;
+            padding: 2rem;
             display: grid;
             grid-template-columns: 1fr auto;
             gap: 1.5rem;
@@ -902,7 +668,7 @@
             align-items: center;
             gap: 4px;
             font-family: var(--font-display);
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -911,44 +677,44 @@
             border: 1px solid var(--tag-border);
             padding: 3px 10px;
             border-radius: 100px;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
         }
 
         .project-name {
             font-family: var(--font-display);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.4rem;
         }
 
         .project-desc {
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: var(--text-secondary);
             line-height: 1.6;
-            margin-bottom: 0.65rem;
+            margin-bottom: 0.75rem;
         }
 
         .project-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 5px;
+            gap: 6px;
         }
 
         .project-tag {
             font-family: var(--font-display);
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             font-weight: 500;
-            padding: 2px 8px;
+            padding: 3px 8px;
             background: var(--tag-bg);
             border: 1px solid var(--tag-border);
-            border-radius: 6px;
+            border-radius: 100px;
             color: var(--text-muted);
         }
 
         .project-cta {
             font-family: var(--font-display);
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             font-weight: 600;
             color: var(--accent);
             white-space: nowrap;
@@ -965,16 +731,110 @@
             margin-top: 2rem;
         }
 
+        /* ===== PROJECTS SECTION WRAPPER ===== */
+        .projects-section {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 6rem 2rem;
+            transition: background 0.4s ease;
+        }
+
+        .projects-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
         /* ===== APPROACH ===== */
         .approach-content {
-            max-width: 720px;
+            max-width: 760px;
         }
 
         .approach-content p {
-            font-size: 1.02rem;
+            font-size: 1.05rem;
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
             line-height: 1.8;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-section {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 6rem 2rem;
+            transition: background 0.4s ease;
+        }
+
+        .testimonials-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .testimonial-quote {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            flex: 1;
+            margin-bottom: 1.25rem;
+            font-style: italic;
+        }
+
+        .testimonial-quote::before {
+            content: '\201C';
+            font-size: 2rem;
+            color: var(--accent);
+            line-height: 0;
+            vertical-align: -0.5em;
+            margin-right: 4px;
+        }
+
+        .testimonial-author {
+            font-family: var(--font-display);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .testimonial-role {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .testimonials-footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .testimonials-footer a {
+            color: var(--accent);
+            text-decoration: none;
         }
 
         /* ===== EDUCATION ===== */
@@ -994,7 +854,7 @@
 
         .edu-card h3 {
             font-family: var(--font-display);
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 600;
             color: var(--text-primary);
             margin-bottom: 1rem;
@@ -1008,20 +868,20 @@
 
         .edu-item .degree {
             font-family: var(--font-display);
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--text-primary);
         }
 
         .edu-item .school {
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             color: var(--text-muted);
         }
 
         /* ===== CONTACT ===== */
         .contact-section {
             text-align: center;
-            padding: 5rem 2rem;
+            padding: 8rem 2rem;
             position: relative;
         }
 
@@ -1036,7 +896,7 @@
         .contact-section > * { position: relative; z-index: 1; }
 
         .contact-section .section-title {
-            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-size: clamp(2rem, 4vw, 3rem);
             margin-bottom: 1rem;
         }
 
@@ -1057,7 +917,7 @@
             text-align: center;
             padding: 2rem;
             font-family: var(--font-display);
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
             border-top: 1px solid var(--border);
         }
@@ -1119,10 +979,8 @@
             .metrics-grid { grid-template-columns: repeat(2, 1fr); }
             .about-content { grid-template-columns: 1fr; gap: 2rem; }
             .skills-categories { grid-template-columns: 1fr; }
-            .proof-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
             .edu-grid { grid-template-columns: 1fr; }
-            .case-steps { grid-template-columns: 1fr; gap: 0.75rem; }
-            .logo-bar-logos { gap: 2rem; }
 
             .project-card {
                 grid-template-columns: 1fr;
@@ -1132,15 +990,12 @@
         }
 
         @media (max-width: 600px) {
-            .metrics-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+            .metrics-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
             .metric-card { padding: 1.25rem 1rem; }
-            .metric-number { font-size: 2rem; }
+            .metric-number { font-size: 2.2rem; }
             .hero { padding: 5rem 1.25rem 3rem; }
-            .section { padding: 3rem 1.25rem; }
-            .hero h1 { font-size: 2.4rem; }
-            .logo-bar-logos { gap: 1.5rem; }
-            .logo-bar-item { font-size: 0.85rem; }
-            .sticky-cta { bottom: 1rem; right: 1rem; }
+            .section { padding: 4rem 1.25rem; }
+            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -1151,11 +1006,11 @@
         <div class="nav-inner">
             <a href="#" class="nav-logo">JS</a>
             <ul class="nav-links">
-                <li><a href="#proof">Recommendations</a></li>
                 <li><a href="#highlights">Impact</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#testimonials">Recommendations</a></li>
                 <li><a href="#contact">Connect</a></li>
                 <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode"><span class="label-dark">Light Mode</span><span class="label-light">Dark Mode</span></button></li>
             </ul>
@@ -1170,16 +1025,17 @@
 
     <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="#proof" onclick="closeMobile()">Recommendations</a>
         <a href="#highlights" onclick="closeMobile()">Impact</a>
         <a href="#about" onclick="closeMobile()">About</a>
         <a href="#experience" onclick="closeMobile()">Experience</a>
         <a href="#projects" onclick="closeMobile()">Projects</a>
+        <a href="#testimonials" onclick="closeMobile()">Recommendations</a>
         <a href="#contact" onclick="closeMobile()">Connect</a>
     </div>
 
     <!-- HERO -->
     <section class="hero" id="hero">
+        <div class="hero-grid-bg"></div>
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="pulse"></span>
@@ -1187,53 +1043,10 @@
             </div>
             <h1>John Simpson<br><span class="accent-text">Fintech &times; AI</span></h1>
             <p class="hero-subtitle">Senior Product Manager with 20+ years in enterprise payments, embedded finance, and AI. I turn technical complexity into products that ship and revenue that scales.</p>
-            <p class="hero-looking-for"><strong>Looking for:</strong> Product leadership at a growth-stage fintech or AI company where payments expertise and hands-on technical fluency drive the roadmap.</p>
             <div class="hero-ctas">
-                <a href="mailto:jesimpsonjr@gmail.com" class="btn btn-primary">Let's Talk</a>
-                <a href="#experience" class="btn btn-secondary">See My Work &darr;</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SOCIAL PROOF (moved up) -->
-    <section class="proof-section" id="proof">
-        <div class="proof-inner">
-            <div class="section-label reveal">What Colleagues Say</div>
-            <div class="section-title reveal">Trusted by leaders across payments.</div>
-            <div class="proof-grid">
-                <div class="proof-card reveal">
-                    <div class="proof-quote">Under John's leadership his product grew from a $5M offering to over $40M in recurring revenue in a three year period. He is a team leader, a mentor, and great communicator. He is ready to assume a role of greater challenge and leadership.</div>
-                    <div class="proof-author">W.H.</div>
-                    <div class="proof-role">Director, Verifone Inc.</div>
-                </div>
-                <div class="proof-card reveal">
-                    <div class="proof-quote">John has a unique skill set of being highly technical but also business and solution focused. I've seen John grow professionally and personally over the past decade and strongly recommend him.</div>
-                    <div class="proof-author">J.M.</div>
-                    <div class="proof-role">CEO North America, Verifone</div>
-                </div>
-                <div class="proof-card reveal">
-                    <div class="proof-quote">He brings a sense of urgency to every project, leads intuitively, and keeps client needs front and center. He's the kind of teammate who makes everyone around him better.</div>
-                    <div class="proof-author">J.H.</div>
-                    <div class="proof-role">Solution Engineer, Chargent</div>
-                </div>
-                <div class="proof-card reveal">
-                    <div class="proof-quote">John can be trusted to drive cross-functional teams towards their goals while effectively addressing the needs of customers large and small.</div>
-                    <div class="proof-author">C.A.</div>
-                    <div class="proof-role">VP, Product Management, Verifone</div>
-                </div>
-                <div class="proof-card reveal">
-                    <div class="proof-quote">John Simpson is an expert in the financial payments industry. His attention to detail is one of his greatest assets. He has a holistic view of a solution, understanding it is not a black box but multiple components that make a solution successful.</div>
-                    <div class="proof-author">B.M.</div>
-                    <div class="proof-role">Program Manager, Verifone</div>
-                </div>
-                <div class="proof-card reveal">
-                    <div class="proof-quote">John's ability to consume disparate information and mold it into an executable roadmap deliverable greatly contributed to the success of my division.</div>
-                    <div class="proof-author">W.H.</div>
-                    <div class="proof-role">Director, Verifone Inc.</div>
-                </div>
-            </div>
-            <div class="proof-footer reveal">
-                9 recommendations on <a href="https://www.linkedin.com/in/johnsjr" target="_blank">LinkedIn</a> &mdash; including CEOs, VPs, and Directors
+                <a href="#projects" class="btn btn-primary">View Projects &darr;</a>
+                <a href="#experience" class="btn btn-primary">Experience &darr;</a>
+                <a href="#contact" class="btn btn-primary">Get in Touch &darr;</a>
             </div>
         </div>
     </section>
@@ -1288,7 +1101,7 @@
         </div>
     </section>
 
-    <!-- ABOUT + MINI CASE STUDIES -->
+    <!-- ABOUT -->
     <section class="section" id="about">
         <div class="section-label reveal">About</div>
         <div class="section-title reveal">Payments expertise.<br>AI fluency. One product leader.</div>
@@ -1329,81 +1142,9 @@
                 </div>
             </div>
         </div>
-
-        <!-- MINI CASE STUDIES -->
-        <div class="case-studies">
-            <div class="section-label reveal" style="margin-top: 4rem;">Selected Results</div>
-            <div class="section-title reveal">How I've driven outcomes.</div>
-
-            <div class="case-card reveal">
-                <div class="case-header">
-                    <span class="case-company">Versapay</span>
-                    <span class="case-role">Senior Product Manager</span>
-                </div>
-                <div class="case-title">Launched ERP embedded payments, cutting onboarding time in half</div>
-                <div class="case-steps">
-                    <div>
-                        <div class="case-step-label">Problem</div>
-                        <div class="case-step-text">New ERP-embedded merchants faced lengthy underwriting and integration cycles, delaying time-to-revenue and frustrating partners.</div>
-                    </div>
-                    <div>
-                        <div class="case-step-label">Action</div>
-                        <div class="case-step-text">Designed a streamlined PayFac onboarding flow, worked with engineering to automate underwriting decisions, and built partner-facing integration guides.</div>
-                    </div>
-                    <div>
-                        <div class="case-step-label">Result</div>
-                        <div class="case-step-text">Cut onboarding from 6 weeks to 3. Added 100+ new merchants in 6 months. Product became the company's fastest-growing revenue line.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="case-card reveal">
-                <div class="case-header">
-                    <span class="case-company">Verifone</span>
-                    <span class="case-role">Product Manager</span>
-                </div>
-                <div class="case-title">Scaled EMV solution from $5M to $40M ARR during U.S. liability shift</div>
-                <div class="case-steps">
-                    <div>
-                        <div class="case-step-label">Problem</div>
-                        <div class="case-step-text">The October 2015 EMV liability shift created massive certification demand. Verifone needed to scale its semi-integrated solution across hundreds of merchants and processors simultaneously.</div>
-                    </div>
-                    <div>
-                        <div class="case-step-label">Action</div>
-                        <div class="case-step-text">Served as the primary liaison with every major U.S. processor and card brand. Streamlined certification pipelines and prioritized high-value verticals (Fortune 500 retail, QSR, ISVs).</div>
-                    </div>
-                    <div>
-                        <div class="case-step-label">Result</div>
-                        <div class="case-step-text">Grew ARR 8x in three years. Enabled adoption across 2,500+ retail locations. Product became Verifone's top growth driver in North America.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="case-card reveal">
-                <div class="case-header">
-                    <span class="case-company">Consulting</span>
-                    <span class="case-role">Merchant Services Consultant</span>
-                </div>
-                <div class="case-title">Built AI-powered lead monitoring tool that grew sales pipeline by 40%</div>
-                <div class="case-steps">
-                    <div>
-                        <div class="case-step-label">Problem</div>
-                        <div class="case-step-text">A specialty services client had no systematic way to identify high-intent prospects. Their sales team relied on cold outreach and word-of-mouth referrals.</div>
-                    </div>
-                    <div>
-                        <div class="case-step-label">Action</div>
-                        <div class="case-step-text">Designed and deployed an AI-assisted social media monitoring tool that surfaced real-time buying signals and routed qualified leads to sales via Discord alerts.</div>
-                    </div>
-                    <div>
-                        <div class="case-step-label">Result</div>
-                        <div class="case-step-text">40% pipeline growth within the first quarter. Client shifted budget from cold outreach to inbound follow-up, reducing cost per lead significantly.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
-    <!-- SKILLS (trimmed to most relevant) -->
+    <!-- SKILLS -->
     <section class="skills-section" id="skills">
         <div class="skills-inner">
             <div class="section-label reveal">Expertise</div>
@@ -1413,13 +1154,19 @@
                     <h3>Product &amp; Leadership</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Go-To-Market Strategy</span>
-                        <span class="skill-tag">Product Discovery</span>
-                        <span class="skill-tag">Multi-Year Roadmaps</span>
+                        <span class="skill-tag">Release Management</span>
                         <span class="skill-tag">C-Suite Communication</span>
                         <span class="skill-tag">Stakeholder Alignment</span>
-                        <span class="skill-tag">Agile / Scrum</span>
+                        <span class="skill-tag">Product Discovery</span>
                         <span class="skill-tag">Competitive Analysis</span>
-                        <span class="skill-tag">Release Management</span>
+                        <span class="skill-tag">CX Mapping</span>
+                        <span class="skill-tag">Multi-Year Roadmaps</span>
+                        <span class="skill-tag">Agile / Scrum</span>
+                        <span class="skill-tag">Backlog Management</span>
+                        <span class="skill-tag">A/B Testing</span>
+                        <span class="skill-tag">Requirements Gathering</span>
+                        <span class="skill-tag">Strategic Partnerships</span>
+                        <span class="skill-tag">Developer Support</span>
                     </div>
                 </div>
                 <div class="skill-category reveal">
@@ -1428,11 +1175,20 @@
                         <span class="skill-tag">Prompt Engineering</span>
                         <span class="skill-tag">Claude Code CLI</span>
                         <span class="skill-tag">GitHub Copilot</span>
+                        <span class="skill-tag">Gemini CLI</span>
                         <span class="skill-tag">Ollama</span>
+                        <span class="skill-tag">Open WebUI</span>
                         <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Tailscale</span>
+                        <span class="skill-tag">GitHub Pages</span>
                         <span class="skill-tag">Jira</span>
+                        <span class="skill-tag">Confluence</span>
                         <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Postman</span>
                         <span class="skill-tag">DataDog</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Salesforce</span>
+                        <span class="skill-tag">HubSpot</span>
                     </div>
                 </div>
                 <div class="skill-category reveal">
@@ -1440,12 +1196,21 @@
                     <div class="skill-tags">
                         <span class="skill-tag">Card Processing Rails</span>
                         <span class="skill-tag">EMV Terminals</span>
-                        <span class="skill-tag">PayFac / Embedded Payments</span>
-                        <span class="skill-tag">ACH / RTP / FedNow</span>
+                        <span class="skill-tag">PayFac</span>
+                        <span class="skill-tag">Embedded Payments</span>
+                        <span class="skill-tag">ACH</span>
+                        <span class="skill-tag">RTP / FedNow</span>
+                        <span class="skill-tag">Open Banking</span>
                         <span class="skill-tag">Interchange Optimization</span>
+                        <span class="skill-tag">Tokenization / Vaulting</span>
                         <span class="skill-tag">Fraud / 3DS / SCA</span>
                         <span class="skill-tag">PCI-DSS</span>
                         <span class="skill-tag">KYC / KYB / AML</span>
+                        <span class="skill-tag">BNPL</span>
+                        <span class="skill-tag">Stablecoins</span>
+                        <span class="skill-tag">Blockchain / Web3</span>
+                        <span class="skill-tag">Cryptocurrency</span>
+                        <span class="skill-tag">Payment Orchestration</span>
                     </div>
                 </div>
             </div>
@@ -1458,8 +1223,8 @@
         <div class="section-title reveal">20+ years of shipping products<br>that move money.</div>
         <div class="timeline">
             <div class="timeline-item reveal">
-                <div class="timeline-role">Merchant Services Consultant</div>
-                <div class="timeline-company">Entrepreneur</div>
+                <div class="timeline-role">AI &amp; Fintech Consultant</div>
+                <div class="timeline-company">Self-Employed</div>
                 <ul class="timeline-bullets">
                     <li>Grew sales pipeline by 40% for a specialty services client by designing and deploying an AI-assisted social media monitoring tool that identified high-intent prospects in real time.</li>
                     <li>Built tooling with AI assistance to automate payroll register file parsing into standardized Excel format, reducing an hours-long process into a single click.</li>
@@ -1523,11 +1288,12 @@
                 <div>
                     <div class="project-featured-badge">&#9733; Featured Project</div>
                     <div class="project-name">InterchangeIQ</div>
-                    <div class="project-desc">Six interactive tools for interchange fee optimization: transaction validation, downgrade simulation, routing comparison, CEDP readiness checking, rate lookup, and agentic commerce risk analysis.</div>
+                    <div class="project-desc">Six interactive tools for interchange fee optimization: transaction validation, downgrade simulation, routing comparison, CEDP readiness checking, rate lookup, and agentic commerce risk analysis. Demonstrates how data quality, processor selection, and transaction design drive the true cost of card acceptance.</div>
                     <div class="project-tags">
                         <span class="project-tag">Interchange</span>
                         <span class="project-tag">Visa / Mastercard</span>
                         <span class="project-tag">Optimization</span>
+                        <span class="project-tag">Interactive</span>
                         <span class="project-tag">Live Demo</span>
                     </div>
                 </div>
@@ -1538,10 +1304,12 @@
             <a href="https://johnsimpson.io/agent-trust-dashboard/" target="_blank" class="project-card reveal">
                 <div>
                     <div class="project-name">Agent Trust Dashboard</div>
-                    <div class="project-desc">Real-time command center for monitoring, governing, and intervening in autonomous AI purchasing agents. Features live activity feeds, decision audit trails, anomaly detection, and per-agent kill switches.</div>
+                    <div class="project-desc">Real-time command center for monitoring, governing, and intervening in autonomous AI purchasing agents. Features live activity feeds, decision audit trails, anomaly detection with severity scoring, per-agent kill switches, rolling trust scores, and budget guardrails. Includes a guided tour and three runtime modes (demo, Claude API, local LLM).</div>
                     <div class="project-tags">
                         <span class="project-tag">AI Agents</span>
                         <span class="project-tag">Governance</span>
+                        <span class="project-tag">Procurement</span>
+                        <span class="project-tag">Interactive</span>
                         <span class="project-tag">Live Demo</span>
                     </div>
                 </div>
@@ -1552,10 +1320,12 @@
             <a href="https://johnsimpson.io/nuvei-payment-rails-explorer/" target="_blank" class="project-card reveal">
                 <div>
                     <div class="project-name">Nuvei US Payment Rails Explorer</div>
-                    <div class="project-desc">Interactive product demo exploring US bank-based payment rails (ACH, RTP, FedNow) across Gaming, Prediction Market, and Crypto verticals with animated transaction lifecycle simulation.</div>
+                    <div class="project-desc">Interactive product demo exploring US bank-based payment rails (ACH, RTP, FedNow) across Gaming, Prediction Market, and Crypto verticals. Features a rail selector with PM-annotated recommendations, animated transaction lifecycle simulator, and a merchant KPI dashboard with realistic industry data.</div>
                     <div class="project-tags">
+                        <span class="project-tag">Nuvei</span>
                         <span class="project-tag">ACH / RTP / FedNow</span>
                         <span class="project-tag">Payments</span>
+                        <span class="project-tag">Interactive</span>
                         <span class="project-tag">Live Demo</span>
                     </div>
                 </div>
@@ -1566,10 +1336,12 @@
             <a href="https://jesimpsonjr-prodmgmt.github.io/stripe-commerce-explorer" target="_blank" class="project-card reveal">
                 <div>
                     <div class="project-name">Stripe Commerce Explorer</div>
-                    <div class="project-desc">Three interactive simulations showcasing how Stripe's checkout, identity, and fraud products work together to power modern commerce.</div>
+                    <div class="project-desc">Three interactive simulations showcasing how Stripe's checkout, identity, and fraud products work together to power modern commerce. Includes Payment Element, Link one-click checkout, and Radar fraud scoring with a rules engine.</div>
                     <div class="project-tags">
                         <span class="project-tag">Stripe</span>
                         <span class="project-tag">Payments</span>
+                        <span class="project-tag">Fraud</span>
+                        <span class="project-tag">Interactive</span>
                         <span class="project-tag">Live Demo</span>
                     </div>
                 </div>
@@ -1579,15 +1351,18 @@
             <a href="https://jesimpsonjr-prodmgmt.github.io/fundraising-portfolio-optimizer/" target="_blank" class="project-card reveal">
                 <div>
                     <div class="project-name">FundraiseAI</div>
-                    <div class="project-desc">Portfolio-level AI optimization with Monte Carlo scenario simulation for capital campaign planning.</div>
+                    <div class="project-desc">Portfolio-level AI optimization with Monte Carlo scenario simulation for capital campaign planning. Built as a product concept for the fundraising intelligence market.</div>
                     <div class="project-tags">
                         <span class="project-tag">AI / LLM</span>
                         <span class="project-tag">Monte Carlo</span>
+                        <span class="project-tag">Analytics</span>
                         <span class="project-tag">Live Demo</span>
                     </div>
                 </div>
                 <div class="project-cta">Live Demo &rarr;</div>
             </a>
+
+
 
             <a href="https://github.com/jesimpsonjr-prodmgmt/payment-transaction-analyzer" target="_blank" class="project-card reveal">
                 <div>
@@ -1673,6 +1448,64 @@
         </div>
     </section>
 
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="testimonials-inner">
+            <div class="section-label reveal">Recommendations</div>
+            <div class="section-title reveal">What colleagues say.</div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">Under John's leadership his product grew from a $5M offering to over $40M in recurring revenue in a three year period. He is a team leader, a mentor, and great communicator. He is ready to assume a role of greater challenge and leadership.</div>
+                    <div class="testimonial-author">W.H.</div>
+                    <div class="testimonial-role">Director, Verifone Inc.</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">John has a unique skill set of being highly technical but also business and solution focused. I've seen John grow professionally and personally over the past decade and strongly recommend him.</div>
+                    <div class="testimonial-author">J.M.</div>
+                    <div class="testimonial-role">CEO North America, Verifone</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">John Simpson is an expert in the financial payments industry. His attention to detail is one of his greatest assets. He has a holistic view of a solution, understanding it is not a black box but multiple components that make a solution successful.</div>
+                    <div class="testimonial-author">B.M.</div>
+                    <div class="testimonial-role">Program Manager, Verifone</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">John can be trusted to drive cross-functional teams towards their goals while effectively addressing the needs of customers large and small.</div>
+                    <div class="testimonial-author">C.A.</div>
+                    <div class="testimonial-role">VP, Product Management, Verifone</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">He brings a sense of urgency to every project, leads intuitively, and keeps client needs front and center. He's the kind of teammate who makes everyone around him better.</div>
+                    <div class="testimonial-author">J.H.</div>
+                    <div class="testimonial-role">Solution Engineer, Chargent</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">John's ability to consume disparate information and mold it into an executable roadmap deliverable greatly contributed to the success of my division.</div>
+                    <div class="testimonial-author">W.H.</div>
+                    <div class="testimonial-role">Director, Verifone Inc.</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">John set the bar for the North America solution Implementation Managers. As a customer facing senior project manager, John ensured complex customer solutions were delivered on time and budget with high quality and customer satisfaction.</div>
+                    <div class="testimonial-author">B.F.</div>
+                    <div class="testimonial-role">Senior Leadership, Verifone</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">John was one of the most dedicated professionals I worked with while at Verifone. His ability to juggle multiple projects at once was on par with the best. This made a dramatic difference in the productivity level of our entire team.</div>
+                    <div class="testimonial-author">J.W.</div>
+                    <div class="testimonial-role">Product and Commercial Executive, Verifone</div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-quote">John would be an outstanding asset to any company. His technical knowledge base of the payments industry is strong. He has both technical skills and communication skills that allow any level of merchant to understand the complexity of payments.</div>
+                    <div class="testimonial-author">V.H-W.</div>
+                    <div class="testimonial-role">Senior Success Manager, Swiftlane</div>
+                </div>
+            </div>
+            <div class="testimonials-footer reveal">
+                Full recommendations can be verified via <a href="https://www.linkedin.com/in/johnsjr" target="_blank">LinkedIn Profile</a>
+            </div>
+        </div>
+    </section>
+
     <!-- EDUCATION -->
     <section class="section" id="education">
         <div class="section-label reveal">Credentials</div>
@@ -1713,11 +1546,6 @@
             <a href="https://github.com/jesimpsonjr-prodmgmt" target="_blank" class="btn btn-secondary">GitHub</a>
         </div>
     </section>
-
-    <!-- STICKY CTA -->
-    <div class="sticky-cta" id="stickyCta">
-        <a href="mailto:jesimpsonjr@gmail.com" class="btn btn-primary">Let's Talk</a>
-    </div>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -1810,25 +1638,6 @@
 
         window.addEventListener('scroll', animateCounters);
         animateCounters();
-
-        // Sticky CTA - show after scrolling past hero
-        const stickyCta = document.getElementById('stickyCta');
-        const heroSection = document.getElementById('hero');
-
-        function checkStickyCta() {
-            const heroBottom = heroSection.getBoundingClientRect().bottom;
-            const contactSection = document.getElementById('contact');
-            const contactTop = contactSection.getBoundingClientRect().top;
-
-            if (heroBottom < 0 && contactTop > window.innerHeight) {
-                stickyCta.classList.add('visible');
-            } else {
-                stickyCta.classList.remove('visible');
-            }
-        }
-
-        window.addEventListener('scroll', checkStickyCta);
-        checkStickyCta();
     </script>
 </body>
 </html>
