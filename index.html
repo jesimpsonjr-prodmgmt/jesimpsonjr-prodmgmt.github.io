@@ -1,1834 +1,581 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Simpson | Fintech Expert. AI Practitioner.</title>
-    <meta name="description" content="Senior Product Manager with 20+ years in enterprise fintech, payments, and AI. Portfolio showcasing product leadership, AI prototypes, and domain expertise.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        /* ===== CSS VARIABLES ===== */
-        :root {
-            --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-body: 'Lora', Georgia, serif;
-            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-            --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
-            --radius: 12px;
-            --radius-lg: 16px;
-            --max-width: 1120px;
-        }
-
-        [data-theme="dark"] {
-            --bg-primary: #0c1220;
-            --bg-secondary: #111a2e;
-            --bg-card: #162035;
-            --bg-card-hover: #1c2a45;
-            --bg-accent: rgba(232, 197, 130, 0.06);
-            --text-primary: #e8edf5;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
-            --accent: #e8c582;
-            --accent-secondary: #c9a862;
-            --accent-glow: rgba(232, 197, 130, 0.12);
-            --border: rgba(148, 163, 184, 0.08);
-            --border-accent: rgba(232, 197, 130, 0.2);
-            --gradient-hero: radial-gradient(ellipse 70% 50% at 50% -5%, rgba(232, 197, 130, 0.07) 0%, rgba(201, 168, 98, 0.03) 40%, transparent 70%);
-            --shadow-card: 0 4px 24px rgba(0,0,0,0.25);
-            --shadow-card-hover: 0 12px 48px rgba(0,0,0,0.35);
-            --tag-bg: rgba(232, 197, 130, 0.08);
-            --tag-border: rgba(232, 197, 130, 0.15);
-            --toggle-bg: #1e293b;
-            --nav-bg: rgba(12, 18, 32, 0.9);
-            --success: #4ade80;
-            --logo-brightness: brightness(0.85) invert(0.85);
-        }
-
-        [data-theme="light"] {
-            --bg-primary: #fafbfc;
-            --bg-secondary: #f1f4f8;
-            --bg-card: #ffffff;
-            --bg-card-hover: #f8fafc;
-            --bg-accent: rgba(30, 58, 95, 0.04);
-            --text-primary: #1a202c;
-            --text-secondary: #4a5568;
-            --text-muted: #94a3b8;
-            --accent: #8b6914;
-            --accent-secondary: #6b5210;
-            --accent-glow: rgba(139, 105, 20, 0.08);
-            --border: rgba(15, 23, 42, 0.06);
-            --border-accent: rgba(139, 105, 20, 0.2);
-            --gradient-hero: radial-gradient(ellipse 70% 50% at 50% -5%, rgba(139, 105, 20, 0.05) 0%, rgba(107, 82, 16, 0.02) 40%, transparent 70%);
-            --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
-            --shadow-card-hover: 0 8px 32px rgba(0,0,0,0.08);
-            --tag-bg: rgba(139, 105, 20, 0.05);
-            --tag-border: rgba(139, 105, 20, 0.12);
-            --toggle-bg: #e2e8f0;
-            --nav-bg: rgba(250, 251, 252, 0.9);
-            --success: #16a34a;
-            --logo-brightness: brightness(0.2);
-        }
-
-        /* ===== RESET & BASE ===== */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.7;
-            transition: background 0.4s ease, color 0.4s ease;
-            overflow-x: hidden;
-        }
-
-        /* ===== NAVIGATION ===== */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: var(--nav-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            transition: background 0.4s ease;
-        }
-
-        .nav-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 2rem;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-logo {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text-primary);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-family: var(--font-display);
-            font-size: 0.82rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.2s;
-            letter-spacing: 0.01em;
-        }
-
-        .nav-links a:hover { color: var(--accent); }
-
-        .theme-toggle {
-            display: inline-flex;
-            align-items: center;
-            background: var(--toggle-bg);
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            cursor: pointer;
-            padding: 4px 12px;
-            transition: background 0.3s;
-            font-family: var(--font-display);
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            height: 28px;
-            letter-spacing: 0.02em;
-        }
-
-        .theme-toggle:hover { color: var(--accent); border-color: var(--border-accent); }
-
-        .theme-toggle .label-dark,
-        .theme-toggle .label-light { display: none; }
-
-        [data-theme="dark"] .theme-toggle .label-dark { display: inline; }
-        [data-theme="light"] .theme-toggle .label-light { display: inline; }
-
-        .nav-hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 4px;
-        }
-
-        .nav-hamburger span {
-            display: block;
-            width: 22px;
-            height: 2px;
-            background: var(--text-primary);
-            border-radius: 2px;
-            transition: all 0.3s;
-        }
-
-        /* ===== HERO ===== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 6rem 2rem 3rem;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--gradient-hero);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            text-align: center;
-            max-width: 780px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 18px;
-            background: var(--bg-accent);
-            border: 1px solid var(--border-accent);
-            border-radius: 100px;
-            font-family: var(--font-display);
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: var(--accent);
-            margin-bottom: 2rem;
-            animation: fadeSlideUp 0.8s var(--ease-out-expo) both;
-        }
-
-        .hero-badge .pulse {
-            width: 8px;
-            height: 8px;
-            background: var(--success);
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        .hero h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.8rem, 6.5vw, 5rem);
-            font-weight: 800;
-            line-height: 1.08;
-            letter-spacing: -0.04em;
-            margin-bottom: 1.5rem;
-            animation: fadeSlideUp 0.8s 0.1s var(--ease-out-expo) both;
-        }
-
-        .hero h1 .accent-text {
-            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 1.12rem;
-            color: var(--text-secondary);
-            max-width: 580px;
-            margin: 0 auto 1.5rem;
-            line-height: 1.8;
-            animation: fadeSlideUp 0.8s 0.2s var(--ease-out-expo) both;
-        }
-
-        .hero-looking-for {
-            font-family: var(--font-display);
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            animation: fadeSlideUp 0.8s 0.25s var(--ease-out-expo) both;
-        }
-
-        .hero-looking-for strong {
-            color: var(--text-secondary);
-            font-weight: 600;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeSlideUp 0.8s 0.3s var(--ease-out-expo) both;
-        }
-
-        .btn {
-            font-family: var(--font-display);
-            font-size: 0.88rem;
-            font-weight: 600;
-            padding: 13px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.25s var(--ease-out-expo);
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: #1a202c;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px var(--accent-glow);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        /* ===== STICKY CTA ===== */
-        .sticky-cta {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 999;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s var(--ease-out-expo);
-            pointer-events: none;
-        }
-
-        .sticky-cta.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        .sticky-cta .btn {
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            font-size: 0.82rem;
-            padding: 12px 24px;
-        }
-
-        /* ===== LOGO BAR ===== */
-        .logo-bar {
-            padding: 3rem 2rem;
-            border-bottom: 1px solid var(--border);
-            overflow: hidden;
-        }
-
-        .logo-bar-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .logo-bar-label {
-            font-family: var(--font-display);
-            font-size: 0.72rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        .logo-bar-logos {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .logo-bar-item {
-            font-family: var(--font-display);
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            letter-spacing: -0.01em;
-            opacity: 0.5;
-            transition: opacity 0.3s;
-        }
-
-        .logo-bar-item:hover { opacity: 0.8; }
-
-        /* ===== SECTIONS ===== */
-        .section {
-            padding: 4.5rem 2rem;
-            max-width: var(--max-width);
-            margin: 0 auto;
-        }
-
-        .section-label {
-            font-family: var(--font-display);
-            font-size: 0.72rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--accent);
-            margin-bottom: 0.75rem;
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .section-desc {
-            color: var(--text-secondary);
-            font-size: 1.02rem;
-            max-width: 580px;
-            margin-bottom: 3rem;
-        }
-
-        /* ===== SOCIAL PROOF / TESTIMONIALS (moved up) ===== */
-        .proof-section {
-            padding: 4rem 2rem;
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            transition: background 0.4s ease;
-        }
-
-        .proof-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-        }
-
-        .proof-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
-            margin-top: 2rem;
-        }
-
-        .proof-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s var(--ease-out-expo);
-        }
-
-        .proof-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-card);
-        }
-
-        .proof-quote {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            flex: 1;
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .proof-quote::before {
-            content: '\201C';
-            font-size: 1.8rem;
-            color: var(--accent);
-            line-height: 0;
-            vertical-align: -0.45em;
-            margin-right: 3px;
-        }
-
-        .proof-author {
-            font-family: var(--font-display);
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .proof-role {
-            font-family: var(--font-display);
-            font-size: 0.72rem;
-            color: var(--text-muted);
-        }
-
-        .proof-footer {
-            text-align: center;
-            margin-top: 1.5rem;
-            font-family: var(--font-display);
-            font-size: 0.82rem;
-            color: var(--text-muted);
-        }
-
-        .proof-footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        /* ===== HIGHLIGHTS / METRICS ===== */
-        .highlights {
-            padding: 4rem 2rem;
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            transition: background 0.4s ease;
-        }
-
-        .highlights-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-        }
-
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.25rem;
-            margin-top: 2rem;
-        }
-
-        .metric-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.75rem 1.25rem;
-            text-align: center;
-            transition: all 0.3s var(--ease-out-expo);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .metric-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .metric-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-card-hover);
-            border-color: var(--border-accent);
-        }
-
-        .metric-card:hover::before { opacity: 1; }
-
-        .metric-number {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            color: var(--accent);
-            line-height: 1;
-            margin-bottom: 0.25rem;
-        }
-
-        .metric-label {
-            font-family: var(--font-display);
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.4rem;
-        }
-
-        .metric-desc {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        /* ===== CASE STUDIES ===== */
-        .case-studies {
-            margin-top: 2.5rem;
-        }
-
-        .case-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            margin-bottom: 1.25rem;
-            transition: all 0.3s var(--ease-out-expo);
-        }
-
-        .case-card:hover {
-            border-color: var(--border-accent);
-            box-shadow: var(--shadow-card);
-        }
-
-        .case-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .case-company {
-            font-family: var(--font-display);
-            font-size: 0.72rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--accent);
-            background: var(--tag-bg);
-            border: 1px solid var(--tag-border);
-            padding: 3px 10px;
-            border-radius: 100px;
-        }
-
-        .case-role {
-            font-family: var(--font-display);
-            font-size: 0.82rem;
-            font-weight: 500;
-            color: var(--text-muted);
-        }
-
-        .case-title {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-
-        .case-steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        .case-step-label {
-            font-family: var(--font-display);
-            font-size: 0.68rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 0.4rem;
-        }
-
-        .case-step-text {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* ===== ABOUT ===== */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3.5rem;
-            align-items: start;
-        }
-
-        .about-text p {
-            color: var(--text-secondary);
-            font-size: 1.02rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .about-text p:first-of-type::first-line {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .about-sidebar {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-        }
-
-        .about-sidebar h3 {
-            font-family: var(--font-display);
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-        }
-
-        .status-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 1.25rem;
-        }
-
-        .status-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            background: var(--tag-bg);
-            border: 1px solid var(--tag-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-
-        .status-text {
-            font-family: var(--font-display);
-            font-size: 0.82rem;
-            font-weight: 500;
-            color: var(--text-primary);
-        }
-
-        .status-sub {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            font-family: var(--font-display);
-            font-weight: 400;
-        }
-
-        /* ===== SKILLS ===== */
-        .skills-section {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 4rem 2rem;
-            transition: background 0.4s ease;
-        }
-
-        .skills-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-        }
-
-        .skills-categories {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .skill-category h3 {
-            font-family: var(--font-display);
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .skill-tag {
-            font-family: var(--font-display);
-            font-size: 0.7rem;
-            font-weight: 500;
-            padding: 4px 10px;
-            background: var(--tag-bg);
-            border: 1px solid var(--tag-border);
-            border-radius: 6px;
-            color: var(--text-secondary);
-            transition: all 0.2s;
-            white-space: nowrap;
-        }
-
-        .skill-tag:hover {
-            color: var(--accent);
-            border-color: var(--accent);
-            background: var(--accent-glow);
-        }
-
-        /* ===== EXPERIENCE ===== */
-        .timeline {
-            position: relative;
-            margin-top: 2.5rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--accent), var(--accent-secondary), transparent);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -5px;
-            top: 6px;
-            width: 12px;
-            height: 12px;
-            background: var(--bg-primary);
-            border: 2px solid var(--accent);
-            border-radius: 50%;
-            transition: background 0.3s;
-        }
-
-        .timeline-item:hover::before {
-            background: var(--accent);
-        }
-
-        .timeline-role {
-            font-family: var(--font-display);
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.15rem;
-        }
-
-        .timeline-company {
-            font-family: var(--font-display);
-            font-size: 0.88rem;
-            font-weight: 500;
-            color: var(--accent);
-            margin-bottom: 0.75rem;
-        }
-
-        .timeline-bullets {
-            list-style: none;
-        }
-
-        .timeline-bullets li {
-            position: relative;
-            padding-left: 1.25rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-        }
-
-        .timeline-bullets li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 10px;
-            width: 5px;
-            height: 5px;
-            background: var(--accent);
-            border-radius: 50%;
-        }
-
-        /* ===== PROJECTS ===== */
-        .projects-section {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 4.5rem 2rem;
-            transition: background 0.4s ease;
-        }
-
-        .projects-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.25rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 1.75rem;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 1.5rem;
-            align-items: center;
-            transition: all 0.3s var(--ease-out-expo);
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .project-card:hover {
-            border-color: var(--border-accent);
-            box-shadow: var(--shadow-card-hover);
-            transform: translateY(-2px);
-        }
-
-        .project-card.featured {
-            border-color: var(--border-accent);
-            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-accent) 100%);
-        }
-
-        .project-featured-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            font-family: var(--font-display);
-            font-size: 0.65rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            background: var(--tag-bg);
-            border: 1px solid var(--tag-border);
-            padding: 3px 10px;
-            border-radius: 100px;
-            margin-bottom: 0.4rem;
-        }
-
-        .project-name {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.35rem;
-        }
-
-        .project-desc {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 0.65rem;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-        }
-
-        .project-tag {
-            font-family: var(--font-display);
-            font-size: 0.65rem;
-            font-weight: 500;
-            padding: 2px 8px;
-            background: var(--tag-bg);
-            border: 1px solid var(--tag-border);
-            border-radius: 6px;
-            color: var(--text-muted);
-        }
-
-        .project-cta {
-            font-family: var(--font-display);
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--accent);
-            white-space: nowrap;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: gap 0.2s;
-        }
-
-        .project-card:hover .project-cta { gap: 10px; }
-
-        .github-link {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        /* ===== APPROACH ===== */
-        .approach-content {
-            max-width: 720px;
-        }
-
-        .approach-content p {
-            font-size: 1.02rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        /* ===== EDUCATION ===== */
-        .edu-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .edu-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.75rem;
-        }
-
-        .edu-card h3 {
-            font-family: var(--font-display);
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .edu-item {
-            margin-bottom: 0.75rem;
-        }
-
-        .edu-item .degree {
-            font-family: var(--font-display);
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .edu-item .school {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        /* ===== CONTACT ===== */
-        .contact-section {
-            text-align: center;
-            padding: 5rem 2rem;
-            position: relative;
-        }
-
-        .contact-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--gradient-hero);
-            pointer-events: none;
-        }
-
-        .contact-section > * { position: relative; z-index: 1; }
-
-        .contact-section .section-title {
-            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-            margin-bottom: 1rem;
-        }
-
-        .contact-section .section-desc {
-            margin: 0 auto 2.5rem;
-            text-align: center;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            text-align: center;
-            padding: 2rem;
-            font-family: var(--font-display);
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border);
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeSlideUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.5); }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== MOBILE NAV ===== */
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 999;
-            background: var(--bg-primary);
-            padding: 6rem 2rem 2rem;
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .mobile-menu.open { display: flex; }
-
-        .mobile-menu a {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            text-decoration: none;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border);
-            transition: color 0.2s;
-        }
-
-        .mobile-menu a:hover { color: var(--accent); }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 900px) {
-            .nav-links { display: none; }
-            .nav-hamburger { display: flex; }
-
-            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-            .about-content { grid-template-columns: 1fr; gap: 2rem; }
-            .skills-categories { grid-template-columns: 1fr; }
-            .proof-grid { grid-template-columns: 1fr; }
-            .edu-grid { grid-template-columns: 1fr; }
-            .case-steps { grid-template-columns: 1fr; gap: 0.75rem; }
-            .logo-bar-logos { gap: 2rem; }
-
-            .project-card {
-                grid-template-columns: 1fr;
-            }
-
-            .mobile-menu.open { display: flex; }
-        }
-
-        @media (max-width: 600px) {
-            .metrics-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-            .metric-card { padding: 1.25rem 1rem; }
-            .metric-number { font-size: 2rem; }
-            .hero { padding: 5rem 1.25rem 3rem; }
-            .section { padding: 3rem 1.25rem; }
-            .hero h1 { font-size: 2.4rem; }
-            .logo-bar-logos { gap: 1.5rem; }
-            .logo-bar-item { font-size: 0.85rem; }
-            .sticky-cta { bottom: 1rem; right: 1rem; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Simpson | Product Manager &amp; Sales Engineer</title>
+  <meta name="description" content="Product Manager and Sales Engineer with two decades in enterprise payments, fintech, and AI. Portfolio of AI-assisted interactive prototypes for Product and Sales Engineering / Solutions Architect roles.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:        #ffffff;
+      --bg-alt:    #f4f7fc;
+      --ink:       #0f1b2e;
+      --ink-soft:  #41506a;
+      --ink-mute:  #76859c;
+      --accent:    #2456c7;
+      --accent-ink:#1b4099;
+      --accent-soft:#eaf0fd;
+      --accent-line:rgba(36, 86, 199, 0.16);
+      --live:      #16a34a;
+      --border:    #e5eaf2;
+      --shadow:    0 1px 2px rgba(15, 27, 46, 0.04), 0 10px 30px rgba(15, 27, 46, 0.05);
+      --shadow-lg: 0 18px 48px rgba(15, 27, 46, 0.10);
+
+      --font-ui:   'Inter', system-ui, -apple-system, sans-serif;
+      --font-prose:'Lora', Georgia, serif;
+
+      --max:       1080px;
+      --radius:    14px;
+      --radius-sm: 8px;
+      --ease:      cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font-ui);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--accent); }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+
+    section { padding: clamp(3.5rem, 8vw, 5.75rem) 0; }
+    .panel-alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    /* ===== Shared section heading ===== */
+    .eyebrow {
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-size: clamp(1.65rem, 3.2vw, 2.15rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.18;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .section-desc {
+      color: var(--ink-soft);
+      max-width: 760px;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .section-desc a { font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--accent-line); }
+    .section-desc a:hover { border-bottom-color: var(--accent); }
+
+    /* ===== Prose (preserved copy) ===== */
+    .prose { font-family: var(--font-prose); color: var(--ink-soft); }
+    .prose p { font-size: 1.07rem; line-height: 1.8; margin-bottom: 1.4rem; }
+    .prose strong { color: var(--ink); font-weight: 600; }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 22px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform 0.25s var(--ease), background 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease), color 0.25s var(--ease);
+    }
+    .btn svg { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-ink); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(36, 86, 199, 0.25); }
+    .btn-ghost { background: var(--bg); color: var(--ink); border-color: var(--border); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    /* ===== Hero / Intro ===== */
+    #intro { position: relative; overflow: hidden; }
+    #intro::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 85% 60% at 50% -15%, rgba(36, 86, 199, 0.08), transparent 60%);
+      pointer-events: none;
+    }
+    #intro .container { position: relative; z-index: 1; }
+    .intro-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 2.75rem;
+      align-items: center;
+    }
+    .headshot {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--bg);
+      box-shadow: var(--shadow), 0 0 0 1px var(--border);
+      background: #eef2f8;
+    }
+    .headshot img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 5%; display: block; }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 100px;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-line);
+      color: var(--accent-ink);
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      line-height: 1.35;
+      margin-bottom: 1.1rem;
+    }
+    .availability .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.15); flex-shrink: 0; }
+
+    .intro-content h1 {
+      font-size: clamp(2.3rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 0.5rem;
+    }
+    .tagline { font-size: 1.08rem; font-weight: 600; color: var(--accent); margin-bottom: 1.4rem; }
+    .intro-content .prose p { margin-bottom: 0; max-width: 620px; }
+    .intro-actions { margin-top: 1.75rem; }
+
+    /* ===== Approach ===== */
+    .approach-content { max-width: 780px; }
+    .approach-lead { font-family: var(--font-prose); font-size: 1.2rem; line-height: 1.6; color: var(--ink); font-weight: 500; margin-bottom: 1.75rem; }
+
+    .approach-list { list-style: none; margin: 1.5rem 0; display: grid; gap: 1.5rem; }
+    .approach-list li { position: relative; padding-left: 1.9rem; font-family: var(--font-prose); color: var(--ink-soft); font-size: 1.05rem; line-height: 1.75; }
+    .approach-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 9px;
+      height: 9px;
+      border-radius: 2px;
+      background: var(--accent);
+    }
+    .approach-list strong { display: block; font-family: var(--font-ui); font-size: 1.05rem; color: var(--ink); font-weight: 700; margin-bottom: 0.55rem; }
+    .approach-list li p { margin: 0 0 0.95rem; }
+    .approach-list li p:last-child { margin-bottom: 0; }
+
+    .bullet-list { margin: 0 0 1.4rem; padding-left: 1.9rem; }
+    .bullet-list li { font-family: var(--font-prose); color: var(--ink-soft); font-size: 1.05rem; line-height: 1.75; margin-bottom: 0.7rem; }
+    .bullet-list li::marker { color: var(--accent); }
+
+    /* ===== Projects ===== */
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+      background: linear-gradient(135deg, #ffffff 0%, var(--accent-soft) 140%);
+      border: 1px solid var(--accent-line);
+      border-radius: var(--radius);
+      padding: 2.25rem;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
+      margin-bottom: 1.5rem;
+    }
+    .featured-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.66rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-ink);
+      background: var(--bg);
+      border: 1px solid var(--accent-line);
+      padding: 4px 11px;
+      border-radius: 100px;
+      margin-bottom: 0.85rem;
+    }
+    .featured-card .p-name { font-size: 1.6rem; }
+    .featured-card .p-desc { font-size: 1rem; max-width: 600px; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.6rem;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
+    }
+    .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+
+    .p-name { font-family: var(--font-ui); font-size: 1.18rem; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 0.5rem; }
+    .p-desc { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 1.1rem; flex-grow: 1; }
+
+    .p-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+    .p-tag {
+      font-size: 0.68rem;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-line);
+      color: var(--accent-ink);
+    }
+
+    .p-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      transition: gap 0.25s var(--ease);
+      margin-top: auto;
+    }
+    .project-card:hover .p-cta, .featured-card:hover .p-cta { gap: 12px; }
+    .featured-card .p-cta { font-size: 0.9rem; }
+
+    .live-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--live);
+      position: relative;
+      flex-shrink: 0;
+    }
+    .live-dot::after {
+      content: '';
+      position: absolute; inset: -3px;
+      border-radius: 50%;
+      border: 1px solid var(--live);
+      opacity: 0.6;
+      animation: pulse 2.2s ease-out infinite;
+    }
+    @keyframes pulse {
+      0%   { transform: scale(0.7); opacity: 0.7; }
+      70%  { transform: scale(2.2); opacity: 0; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    .repos-link { text-align: center; margin-top: 2.75rem; }
+
+    /* ===== Connect ===== */
+    #connect { position: relative; overflow: hidden; text-align: center; }
+    #connect::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 110%, rgba(36, 86, 199, 0.09), transparent 60%);
+      pointer-events: none;
+    }
+    #connect .container { position: relative; z-index: 1; }
+    #connect .section-desc { margin-left: auto; margin-right: auto; }
+    .connect-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.9rem; }
+
+    /* ===== Footer ===== */
+    footer { padding: 2.25rem 0; text-align: center; border-top: 1px solid var(--border); }
+    footer p { font-size: 0.8rem; color: var(--ink-mute); letter-spacing: 0.01em; }
+
+    /* ===== Reveal animation ===== */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== Focus ===== */
+    a:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 860px) {
+      .intro-layout { grid-template-columns: 1fr; gap: 1.75rem; text-align: center; justify-items: center; }
+      .intro-content .prose p { margin-left: auto; margin-right: auto; }
+      .availability { margin-left: auto; margin-right: auto; }
+      .featured-card { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .live-dot::after { animation: none; }
+      .btn, .project-card, .featured-card, .p-cta { transition: none; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav class="nav">
-        <div class="nav-inner">
-            <a href="#" class="nav-logo">JS</a>
-            <ul class="nav-links">
-                <li><a href="#proof">Recommendations</a></li>
-                <li><a href="#highlights">Impact</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Connect</a></li>
-                <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode"><span class="label-dark">Light Mode</span><span class="label-light">Dark Mode</span></button></li>
-            </ul>
-            <div style="display:flex;align-items:center;gap:12px;">
-                <button class="theme-toggle" id="themeToggleMobile" aria-label="Toggle dark/light mode" style="display:none;"><span class="label-dark">Light Mode</span><span class="label-light">Dark Mode</span></button>
-                <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
+  <!-- ===== INTRO ===== -->
+  <section id="intro">
+    <div class="container">
+      <div class="intro-layout reveal">
+        <div class="headshot">
+          <img src="https://johnsimpson.io/assets/headshot.jpeg" alt="John Simpson" loading="eager">
         </div>
-    </nav>
-
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#proof" onclick="closeMobile()">Recommendations</a>
-        <a href="#highlights" onclick="closeMobile()">Impact</a>
-        <a href="#about" onclick="closeMobile()">About</a>
-        <a href="#experience" onclick="closeMobile()">Experience</a>
-        <a href="#projects" onclick="closeMobile()">Projects</a>
-        <a href="#contact" onclick="closeMobile()">Connect</a>
+        <div class="intro-content">
+          <span class="availability"><span class="dot"></span> Open to Product Management, Sales Engineering &amp; Solutions Architect positions</span>
+          <h1>John Simpson</h1>
+          <div class="tagline">Product Manager &amp; Sales Engineer | Payments, Fintech &amp; AI</div>
+          <div class="prose">
+            <p>With over 20 years of experience spanning Sales Engineering and Product Management positions, I am currently open to new opportunities in either Product Management or Sales Engineering roles. The prototypes and demonstrations below show how I apply AI in both. For the full picture of my career achievements, experience, working style, and recommendations, my LinkedIn profile is just a click away at the bottom of this page.</p>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- HERO -->
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="pulse"></span>
-                Open to full-time opportunities
-            </div>
-            <h1>John Simpson<br><span class="accent-text">Fintech &times; AI</span></h1>
-            <p class="hero-subtitle">Senior Product Manager with 20+ years in enterprise payments, embedded finance, and AI. I turn technical complexity into products that ship and revenue that scales.</p>
-            <p class="hero-looking-for"><strong>Looking for:</strong> Product leadership at a growth-stage fintech or AI company where payments expertise and hands-on technical fluency drive the roadmap.</p>
-            <div class="hero-ctas">
-                <a href="mailto:jesimpsonjr@gmail.com" class="btn btn-primary">Let's Talk</a>
-                <a href="#projects" class="btn btn-secondary">See My Work &darr;</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SOCIAL PROOF (moved up) -->
-    <section class="proof-section" id="proof">
-        <div class="proof-inner">
-            <div class="section-label reveal">What Colleagues Say</div>
-            <div class="section-title reveal">Trusted by leaders across payments.</div>
-            <div class="proof-grid">
-                <div class="proof-card reveal">
-                    <div class="proof-quote">Under John's leadership his product grew from a $5M offering to over $40M in recurring revenue in a three year period. He is a team leader, a mentor, and great communicator. He is ready to assume a role of greater challenge and leadership.</div>
-                    <div class="proof-author">W.H.</div>
-                    <div class="proof-role">Director, Verifone Inc.</div>
-                </div>
-                <div class="proof-card reveal">
-                    <div class="proof-quote">John has a unique skill set of being highly technical but also business and solution focused. I've seen John grow professionally and personally over the past decade and strongly recommend him.</div>
-                    <div class="proof-author">J.M.</div>
-                    <div class="proof-role">CEO North America, Verifone</div>
-                </div>
-                <div class="proof-card reveal">
-                    <div class="proof-quote">He brings a sense of urgency to every project, leads intuitively, and keeps client needs front and center. He's the kind of teammate who makes everyone around him better.</div>
-                    <div class="proof-author">J.H.</div>
-                    <div class="proof-role">Solution Engineer, Chargent</div>
-                </div>
-                <div class="proof-card reveal">
-                    <div class="proof-quote">John can be trusted to drive cross-functional teams towards their goals while effectively addressing the needs of customers large and small.</div>
-                    <div class="proof-author">C.A.</div>
-                    <div class="proof-role">VP, Product Management, Verifone</div>
-                </div>
-                <div class="proof-card reveal">
-                    <div class="proof-quote">John Simpson is an expert in the financial payments industry. His attention to detail is one of his greatest assets. He has a holistic view of a solution, understanding it is not a black box but multiple components that make a solution successful.</div>
-                    <div class="proof-author">B.M.</div>
-                    <div class="proof-role">Program Manager, Verifone</div>
-                </div>
-                <div class="proof-card reveal">
-                    <div class="proof-quote">John's ability to consume disparate information and mold it into an executable roadmap deliverable greatly contributed to the success of my division.</div>
-                    <div class="proof-author">W.H.</div>
-                    <div class="proof-role">Director, Verifone Inc.</div>
-                </div>
-            </div>
-            <div class="proof-footer reveal">
-                9 recommendations on <a href="https://www.linkedin.com/in/johnsjr" target="_blank">LinkedIn</a> &mdash; including CEOs, VPs, and Directors
-            </div>
-        </div>
-    </section>
-
-    <!-- HIGHLIGHTS -->
-    <section class="highlights" id="highlights">
-        <div class="highlights-inner">
-            <div class="section-label reveal">Career Impact</div>
-            <div class="section-title reveal">The numbers behind the work.</div>
-            <div class="metrics-grid">
-                <div class="metric-card reveal">
-                    <div class="metric-number"><span class="counter" data-target="40" data-prefix="$" data-suffix="M">$0</span></div>
-                    <div class="metric-label">ARR Growth</div>
-                    <div class="metric-desc">Scaled EMV payment solution from $5M to $40M ARR across Fortune 500 retailers, QSRs, and ISVs.</div>
-                </div>
-                <div class="metric-card reveal">
-                    <div class="metric-number"><span class="counter" data-target="60" data-suffix="%">0</span></div>
-                    <div class="metric-label">Revenue Ownership</div>
-                    <div class="metric-desc">Managed 4 payment products simultaneously generating 60% of overall company revenue.</div>
-                </div>
-                <div class="metric-card reveal">
-                    <div class="metric-number"><span class="counter" data-target="50" data-suffix="%">0</span></div>
-                    <div class="metric-label">Faster Onboarding</div>
-                    <div class="metric-desc">Accelerated underwriting and implementation timelines by 50% through PayFac and ERP automation.</div>
-                </div>
-                <div class="metric-card reveal">
-                    <div class="metric-number"><span class="counter" data-target="100" data-suffix="+">0</span></div>
-                    <div class="metric-label">Merchants Launched</div>
-                    <div class="metric-desc">Onboarded within 6 months of launching a next-gen ERP embedded payments solution.</div>
-                </div>
-                <div class="metric-card reveal">
-                    <div class="metric-number"><span class="counter" data-target="30" data-suffix="%">0</span></div>
-                    <div class="metric-label">Revenue Increase</div>
-                    <div class="metric-desc">EMV device portfolio refresh drove 30% revenue boost and 70% support case reduction.</div>
-                </div>
-                <div class="metric-card reveal">
-                    <div class="metric-number"><span class="counter" data-target="40" data-suffix="%">0</span></div>
-                    <div class="metric-label">Pipeline Growth</div>
-                    <div class="metric-desc">AI-assisted lead monitoring tool for a consulting client grew sales pipeline by 40%.</div>
-                </div>
-                <div class="metric-card reveal">
-                    <div class="metric-number"><span class="counter" data-target="12" data-prefix="$" data-suffix="M+">0</span></div>
-                    <div class="metric-label">Influenced Revenue</div>
-                    <div class="metric-desc">150+ client demos and POCs contributed to $12M+ in team revenue with 15% win rate increase.</div>
-                </div>
-                <div class="metric-card reveal">
-                    <div class="metric-number"><span class="counter" data-target="6" data-suffix="-Week">0</span></div>
-                    <div class="metric-label">Go-Live Acceleration</div>
-                    <div class="metric-desc">Process enhancements and role clarity enabled faster go-lives for a fast-growing fintech.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT + MINI CASE STUDIES -->
-    <section class="section" id="about">
-        <div class="section-label reveal">About</div>
-        <div class="section-title reveal">Payments expertise.<br>AI fluency. One product leader.</div>
-        <div class="about-content">
-            <div class="about-text reveal">
-                <p>I've spent 20+ years in payments and fintech, building and scaling products where complex technology has to deliver real business outcomes. At Versapay, I owned four payment products that represented 60% of company revenue and served over 2,200 clients. Before that, I helped grow a semi-integrated EMV solution from $5M to $40M in ARR at Verifone during the U.S. liability shift.</p>
-                <p>Today I'm combining that deep payments expertise with hands-on AI skills to help growth-stage companies ship faster, sell smarter, and operationalize what's next. I made a deliberate investment in AI because I saw firsthand how it was reshaping the products I had spent my career building. That combination of deep fintech domain knowledge and hands-on AI capability is what I bring to every engagement.</p>
-            </div>
-            <div class="about-sidebar reveal">
-                <h3>Current Status</h3>
-                <div class="status-item">
-                    <div class="status-icon">&#128188;</div>
-                    <div>
-                        <div class="status-text">Open to New Opportunities</div>
-                        <div class="status-sub">Full-time remote</div>
-                    </div>
-                </div>
-                <div class="status-item">
-                    <div class="status-icon">&#127919;</div>
-                    <div>
-                        <div class="status-text">Target Roles</div>
-                        <div class="status-sub">Product Manager, Senior Product Manager, Principal Product Manager, Solutions Architect, Sales Engineer</div>
-                    </div>
-                </div>
-                <div class="status-item">
-                    <div class="status-icon">&#127758;</div>
-                    <div>
-                        <div class="status-text">Domains</div>
-                        <div class="status-sub">Fintech, Payments, AI, Embedded Finance</div>
-                    </div>
-                </div>
-                <div class="status-item">
-                    <div class="status-icon">&#128205;</div>
-                    <div>
-                        <div class="status-text">Location</div>
-                        <div class="status-sub">Savannah, GA (remote)</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- MINI CASE STUDIES -->
-        <div class="case-studies">
-            <div class="section-label reveal" style="margin-top: 4rem;">Selected Results</div>
-            <div class="section-title reveal">How I've driven outcomes.</div>
-
-            <div class="case-card reveal">
-                <div class="case-header">
-                    <span class="case-company">Versapay</span>
-                    <span class="case-role">Senior Product Manager</span>
-                </div>
-                <div class="case-title">Launched ERP embedded payments, cutting onboarding time in half</div>
-                <div class="case-steps">
-                    <div>
-                        <div class="case-step-label">Problem</div>
-                        <div class="case-step-text">New ERP-embedded merchants faced lengthy underwriting and integration cycles, delaying time-to-revenue and frustrating partners.</div>
-                    </div>
-                    <div>
-                        <div class="case-step-label">Action</div>
-                        <div class="case-step-text">Designed a streamlined PayFac onboarding flow, worked with engineering to automate underwriting decisions, and built partner-facing integration guides.</div>
-                    </div>
-                    <div>
-                        <div class="case-step-label">Result</div>
-                        <div class="case-step-text">Cut onboarding from 6 weeks to 3. Added 100+ new merchants in 6 months. Product became the company's fastest-growing revenue line.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="case-card reveal">
-                <div class="case-header">
-                    <span class="case-company">Verifone</span>
-                    <span class="case-role">Product Manager</span>
-                </div>
-                <div class="case-title">Scaled EMV solution from $5M to $40M ARR during U.S. liability shift</div>
-                <div class="case-steps">
-                    <div>
-                        <div class="case-step-label">Problem</div>
-                        <div class="case-step-text">The October 2015 EMV liability shift created massive certification demand. Verifone needed to scale its semi-integrated solution across hundreds of merchants and processors simultaneously.</div>
-                    </div>
-                    <div>
-                        <div class="case-step-label">Action</div>
-                        <div class="case-step-text">Served as the primary liaison with every major U.S. processor and card brand. Streamlined certification pipelines and prioritized high-value verticals (Fortune 500 retail, QSR, ISVs).</div>
-                    </div>
-                    <div>
-                        <div class="case-step-label">Result</div>
-                        <div class="case-step-text">Grew ARR 8x in three years. Enabled adoption across 2,500+ retail locations. Product became Verifone's top growth driver in North America.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="case-card reveal">
-                <div class="case-header">
-                    <span class="case-company">Consulting</span>
-                    <span class="case-role">Merchant Services Consultant</span>
-                </div>
-                <div class="case-title">Built AI-powered lead monitoring tool that grew sales pipeline by 40%</div>
-                <div class="case-steps">
-                    <div>
-                        <div class="case-step-label">Problem</div>
-                        <div class="case-step-text">A specialty services client had no systematic way to identify high-intent prospects. Their sales team relied on cold outreach and word-of-mouth referrals.</div>
-                    </div>
-                    <div>
-                        <div class="case-step-label">Action</div>
-                        <div class="case-step-text">Designed and deployed an AI-assisted social media monitoring tool that surfaced real-time buying signals and routed qualified leads to sales via Discord alerts.</div>
-                    </div>
-                    <div>
-                        <div class="case-step-label">Result</div>
-                        <div class="case-step-text">40% pipeline growth within the first quarter. Client shifted budget from cold outreach to inbound follow-up, reducing cost per lead significantly.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SKILLS (trimmed to most relevant) -->
-    <section class="skills-section" id="skills">
-        <div class="skills-inner">
-            <div class="section-label reveal">Expertise</div>
-            <div class="section-title reveal">Skills &amp; Tools</div>
-            <div class="skills-categories">
-                <div class="skill-category reveal">
-                    <h3>Product &amp; Leadership</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Go-To-Market Strategy</span>
-                        <span class="skill-tag">Product Discovery</span>
-                        <span class="skill-tag">Multi-Year Roadmaps</span>
-                        <span class="skill-tag">C-Suite Communication</span>
-                        <span class="skill-tag">Stakeholder Alignment</span>
-                        <span class="skill-tag">Agile / Scrum</span>
-                        <span class="skill-tag">Competitive Analysis</span>
-                        <span class="skill-tag">Release Management</span>
-                    </div>
-                </div>
-                <div class="skill-category reveal">
-                    <h3>AI/ML &amp; Platforms</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Prompt Engineering</span>
-                        <span class="skill-tag">Claude Code CLI</span>
-                        <span class="skill-tag">GitHub Copilot</span>
-                        <span class="skill-tag">Ollama</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Jira</span>
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">DataDog</span>
-                    </div>
-                </div>
-                <div class="skill-category reveal">
-                    <h3>Fintech &amp; Payments</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Card Processing Rails</span>
-                        <span class="skill-tag">EMV Terminals</span>
-                        <span class="skill-tag">PayFac / Embedded Payments</span>
-                        <span class="skill-tag">ACH / RTP / FedNow</span>
-                        <span class="skill-tag">Interchange Optimization</span>
-                        <span class="skill-tag">Fraud / 3DS / SCA</span>
-                        <span class="skill-tag">PCI-DSS</span>
-                        <span class="skill-tag">KYC / KYB / AML</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section class="section" id="experience">
-        <div class="section-label reveal">Experience</div>
-        <div class="section-title reveal">20+ years of shipping products<br>that move money.</div>
-        <div class="timeline">
-            <div class="timeline-item reveal">
-                <div class="timeline-role">Merchant Services Consultant</div>
-                <div class="timeline-company">Entrepreneur</div>
-                <ul class="timeline-bullets">
-                    <li>Grew sales pipeline by 40% for a specialty services client by designing and deploying an AI-assisted social media monitoring tool that identified high-intent prospects in real time.</li>
-                    <li>Built tooling with AI assistance to automate payroll register file parsing into standardized Excel format, reducing an hours-long process into a single click.</li>
-                    <li>Reduced go-live timelines by 6 weeks for a fast-growing fintech by implementing unified SOPs for sales-to-implementation handoffs.</li>
-                    <li>Providing AI consulting and fintech advisory services to clients exploring how AI adoption can introduce new cost efficiencies.</li>
-                </ul>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-role">Senior Product Manager</div>
-                <div class="timeline-company">Versapay</div>
-                <ul class="timeline-bullets">
-                    <li>Owned 4 payment products simultaneously generating 60% of company revenue across 2,200 B2B, SaaS, and B2C clients.</li>
-                    <li>Launched next-gen ERP embedded payments solution, cutting underwriting and onboarding time by 50% and adding 100+ new customers in 6 months.</li>
-                    <li>Drove 30% increase in EMV revenue and 70% reduction in support cases through a company-wide device portfolio refresh.</li>
-                    <li>Led a cross-functional product squad (engineering, QA, UX/UI) without direct reporting lines, driving Agile ceremonies and on-time delivery.</li>
-                </ul>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-role">Product Manager</div>
-                <div class="timeline-company">Verifone, Inc.</div>
-                <ul class="timeline-bullets">
-                    <li>Scaled EMV solutions from $5M to $40M ARR during the U.S. liability transition.</li>
-                    <li>Liaison for all primary U.S. payment processors and card brands for timely EMV certification.</li>
-                    <li>Gathered business requirements for Fortune 500 retail and QSR verticals.</li>
-                    <li>Collaborated with Marketing and GTM teams on product launches, shaping value propositions and sales enablement content.</li>
-                </ul>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-role">Sales Engineer</div>
-                <div class="timeline-company">Verifone, Inc.</div>
-                <ul class="timeline-bullets">
-                    <li>Led pre-sales technical consulting for enterprise payment solutions delivering 150+ demonstrations.</li>
-                    <li>Contributed to $12M+ in team revenue with a 15% win rate increase.</li>
-                    <li>Created sales enablement materials and deployment guides for North American implementations.</li>
-                    <li>Promoted a new payment solution to 100+ early adopters. Recipient of Verifone President's Club Award.</li>
-                </ul>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-role">Developer Support</div>
-                <div class="timeline-company">Verifone, Inc.</div>
-                <ul class="timeline-bullets">
-                    <li>Managed rollout of 400+ payment integrations for channel partners.</li>
-                    <li>Supported 100+ channel partner API integrations, reducing integration time by 25%.</li>
-                    <li>Established 30+ SOPs utilized by international support teams.</li>
-                    <li>Built comprehensive payment processing reference library for global implementation teams.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="projects-section" id="projects">
-        <div class="projects-inner">
-        <div class="section-label reveal">Projects</div>
-        <div class="section-title reveal">Where fintech expertise<br>meets product thinking.</div>
-        <div class="section-desc reveal">Applications demonstrating domain depth in payments, fundraising, and commerce alongside practical AI-assisted development workflows.</div>
-
-        <div class="projects-grid">
-            <!-- FEATURED: InterchangeIQ -->
-            <a href="https://johnsimpson.io/interchange-iq/" target="_blank" class="project-card featured reveal">
-                <div>
-                    <div class="project-featured-badge">&#9733; Featured Project</div>
-                    <div class="project-name">InterchangeIQ</div>
-                    <div class="project-desc">Six interactive tools for interchange fee optimization: transaction validation, downgrade simulation, routing comparison, CEDP readiness checking, rate lookup, and agentic commerce risk analysis.</div>
-                    <div class="project-tags">
-                        <span class="project-tag">Interchange</span>
-                        <span class="project-tag">Visa / Mastercard</span>
-                        <span class="project-tag">Optimization</span>
-                        <span class="project-tag">Live Demo</span>
-                    </div>
-                </div>
-                <div class="project-cta">Live Demo &rarr;</div>
-            </a>
-
-            <!-- Agent Trust Dashboard -->
-            <a href="https://johnsimpson.io/agent-trust-dashboard/" target="_blank" class="project-card reveal">
-                <div>
-                    <div class="project-name">Agent Trust Dashboard</div>
-                    <div class="project-desc">Real-time command center for monitoring, governing, and intervening in autonomous AI purchasing agents. Features live activity feeds, decision audit trails, anomaly detection, and per-agent kill switches.</div>
-                    <div class="project-tags">
-                        <span class="project-tag">AI Agents</span>
-                        <span class="project-tag">Governance</span>
-                        <span class="project-tag">Live Demo</span>
-                    </div>
-                </div>
-                <div class="project-cta">Live Demo &rarr;</div>
-            </a>
-
-            <!-- Nuvei Payment Rails Explorer -->
-            <a href="https://johnsimpson.io/nuvei-payment-rails-explorer/" target="_blank" class="project-card reveal">
-                <div>
-                    <div class="project-name">Nuvei US Payment Rails Explorer</div>
-                    <div class="project-desc">Interactive product demo exploring US bank-based payment rails (ACH, RTP, FedNow) across Gaming, Prediction Market, and Crypto verticals with animated transaction lifecycle simulation.</div>
-                    <div class="project-tags">
-                        <span class="project-tag">ACH / RTP / FedNow</span>
-                        <span class="project-tag">Payments</span>
-                        <span class="project-tag">Live Demo</span>
-                    </div>
-                </div>
-                <div class="project-cta">Live Demo &rarr;</div>
-            </a>
-
-            <!-- Stripe Commerce Explorer -->
-            <a href="https://jesimpsonjr-prodmgmt.github.io/stripe-commerce-explorer" target="_blank" class="project-card reveal">
-                <div>
-                    <div class="project-name">Stripe Commerce Explorer</div>
-                    <div class="project-desc">Three interactive simulations showcasing how Stripe's checkout, identity, and fraud products work together to power modern commerce.</div>
-                    <div class="project-tags">
-                        <span class="project-tag">Stripe</span>
-                        <span class="project-tag">Payments</span>
-                        <span class="project-tag">Live Demo</span>
-                    </div>
-                </div>
-                <div class="project-cta">Live Demo &rarr;</div>
-            </a>
-
-            <a href="https://jesimpsonjr-prodmgmt.github.io/fundraising-portfolio-optimizer/" target="_blank" class="project-card reveal">
-                <div>
-                    <div class="project-name">FundraiseAI</div>
-                    <div class="project-desc">Portfolio-level AI optimization with Monte Carlo scenario simulation for capital campaign planning.</div>
-                    <div class="project-tags">
-                        <span class="project-tag">AI / LLM</span>
-                        <span class="project-tag">Monte Carlo</span>
-                        <span class="project-tag">Live Demo</span>
-                    </div>
-                </div>
-                <div class="project-cta">Live Demo &rarr;</div>
-            </a>
-
-            <a href="https://github.com/jesimpsonjr-prodmgmt/payment-transaction-analyzer" target="_blank" class="project-card reveal">
-                <div>
-                    <div class="project-name">Transaction Data Analyzer</div>
-                    <div class="project-desc">Python CLI tool for analyzing payment transaction data including auth rates, declines, chargebacks, and volume metrics.</div>
-                    <div class="project-tags">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">CLI</span>
-                        <span class="project-tag">Analytics</span>
-                    </div>
-                </div>
-                <div class="project-cta">View Code &rarr;</div>
-            </a>
-
-            <a href="https://github.com/jesimpsonjr-prodmgmt/prd-generator" target="_blank" class="project-card reveal">
-                <div>
-                    <div class="project-name">AI-Powered PRD Generator</div>
-                    <div class="project-desc">CLI tool that generates structured PRDs from feature ideas using Anthropic Claude or local Ollama models.</div>
-                    <div class="project-tags">
-                        <span class="project-tag">Claude API</span>
-                        <span class="project-tag">Ollama</span>
-                        <span class="project-tag">CLI</span>
-                    </div>
-                </div>
-                <div class="project-cta">View Code &rarr;</div>
-            </a>
-
-            <a href="https://github.com/jesimpsonjr-prodmgmt/scheduled-report-generator" target="_blank" class="project-card reveal">
-                <div>
-                    <div class="project-name">Automated Report Engine</div>
-                    <div class="project-desc">Configuration-driven Python tool for generating and distributing automated HTML/PDF reports from multiple data sources.</div>
-                    <div class="project-tags">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">Automation</span>
-                        <span class="project-tag">PDF</span>
-                    </div>
-                </div>
-                <div class="project-cta">View Code &rarr;</div>
-            </a>
-
-            <a href="https://github.com/jesimpsonjr-prodmgmt/lead-monitor" target="_blank" class="project-card reveal">
-                <div>
-                    <div class="project-name">Social Media Lead Monitor</div>
-                    <div class="project-desc">AI-assisted lead generation tool that monitors social media for high-intent sales signals and sends real-time Discord alerts.</div>
-                    <div class="project-tags">
-                        <span class="project-tag">AI</span>
-                        <span class="project-tag">Lead Gen</span>
-                        <span class="project-tag">Discord</span>
-                    </div>
-                </div>
-                <div class="project-cta">View Code &rarr;</div>
-            </a>
-
-            <a href="https://github.com/jesimpsonjr-prodmgmt/fintech-buzzword-bingo" target="_blank" class="project-card reveal">
-                <div>
-                    <div class="project-name">Fintech Buzzword Bingo</div>
-                    <div class="project-desc">A tongue-in-cheek Python tool that analyzes earnings calls and corporate communications for buzzword density.</div>
-                    <div class="project-tags">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">NLP</span>
-                        <span class="project-tag">Satire</span>
-                    </div>
-                </div>
-                <div class="project-cta">View Code &rarr;</div>
-            </a>
-        </div>
-
-        <div class="github-link reveal">
-            <a href="https://github.com/jesimpsonjr-prodmgmt" target="_blank" class="btn btn-secondary">Explore All Repos on GitHub &rarr;</a>
-        </div>
-        </div>
-    </section>
-
-    <!-- MY APPROACH -->
-    <section class="section" id="approach">
-        <div class="section-label reveal">Philosophy</div>
+  <!-- ===== MY APPROACH ===== -->
+  <section id="approach" class="panel-alt">
+    <div class="container">
+      <div class="approach-content">
+        <div class="eyebrow reveal">Philosophy</div>
         <div class="section-title reveal">My Approach</div>
-        <div class="approach-content reveal">
-            <p>My favorite kind of problem is the one nobody else wants to own. The messy, cross-functional, "who does this even belong to?" kind. I've found that the work nobody is touching is usually the work that matters most, and stepping into it is where I've made the biggest impact in every role I've held.</p>
-            <p>I was hired as the first Product Manager at a 39-person payments startup in 2019, owning four products with no formal process in place. One month later, a merger doubled the company overnight, and I helped unify two separate product organizations into a cohesive structure. I continued owning the four original products as they grew to 60% of combined company revenue. By my departure, the company had crossed 400 employees with multiple PM teams running on the framework we built.</p>
-            <p>More recently, I made a deliberate investment in AI. I saw firsthand how it was reshaping the products I had spent my career building. I started learning prompt engineering, deploying local language models, and building AI-powered prototypes. One of those prototypes, a social media monitoring tool, grew a client's sales pipeline by 40%.</p>
-            <p>The skill I've leaned on most throughout my career isn't strategy or technical depth. It's translation. Executives speak in outcomes, engineers speak in constraints, and customers speak in problems. The Product Managers who connect all three are the ones who ship work that actually matters.</p>
-        </div>
-    </section>
 
-    <!-- EDUCATION -->
-    <section class="section" id="education">
-        <div class="section-label reveal">Credentials</div>
-        <div class="section-title reveal">Education &amp; Certifications</div>
-        <div class="edu-grid">
-            <div class="edu-card reveal">
-                <h3>Education</h3>
-                <div class="edu-item">
-                    <div class="degree">BBA, Computer Information Systems</div>
-                    <div class="school">Savannah State University</div>
-                </div>
-            </div>
-            <div class="edu-card reveal">
-                <h3>Certifications</h3>
-                <div class="edu-item">
-                    <div class="degree">AI For Everyone</div>
-                    <div class="school">DeepLearning.AI, 2025</div>
-                </div>
-                <div class="edu-item">
-                    <div class="degree">Introduction to Generative AI</div>
-                    <div class="school">Google Cloud, 2025</div>
-                </div>
-                <div class="edu-item">
-                    <div class="degree">CompTIA A+ and Network+</div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <div class="reveal">
+          <p class="approach-lead">The focus of this site is to highlight AI-assisted prototypes and demonstrations that I have built using primarily Claude Code CLI or my hosted LLM environment.</p>
 
-    <!-- CONTACT -->
-    <section class="contact-section" id="contact">
-        <div class="section-label reveal">Connect</div>
-        <div class="section-title reveal">Let's build something together.</div>
-        <p class="section-desc reveal">Whether you have a role in mind, a product challenge, or just want to connect, I'd love to hear from you.</p>
-        <div class="contact-links reveal">
-            <a href="mailto:jesimpsonjr@gmail.com" class="btn btn-primary">Send an Email</a>
-            <a href="https://www.linkedin.com/in/johnsjr" target="_blank" class="btn btn-secondary">LinkedIn</a>
-            <a href="https://github.com/jesimpsonjr-prodmgmt" target="_blank" class="btn btn-secondary">GitHub</a>
-        </div>
-    </section>
+          <div class="prose">
+            <p><strong>You may be asking "Why the focus on AI, and how does it relate to Product Management or Sales Engineer roles?"</strong></p>
+            <p>My answer is multi-faceted:</p>
+          </div>
 
-    <!-- STICKY CTA -->
-    <div class="sticky-cta" id="stickyCta">
-        <a href="mailto:jesimpsonjr@gmail.com" class="btn btn-primary">Let's Talk</a>
+          <ul class="approach-list">
+            <li>
+              <strong>I strongly believe that AI is the future, and that future is now.</strong>
+              One must remain up-to-date on everything related to AI, or risk falling behind the learning curve.
+            </li>
+            <li>
+              <strong>AI is transforming how Product Managers and Sales Engineers work.</strong>
+              <p>As an example, in 2019, would a Product Manager be able to create a functional prototype (or ready-for-production application) in a matter of hours? Or complex Product Requirements Documents in a matter of hours? Likely not.</p>
+              <p>The same holds true for a Sales Engineer (SE) or Solutions Architect (SA) role. An example that I frequently encountered as a Sales Engineer: A prospect would like a one-day onsite deep dive whiteboard session to walk through a complex API integration. As an SE I would spend many days preparing for the walkthrough and creating demonstration materials.</p>
+              <p>However, with the assistance of AI, the SE/SA now has the ability to build an interactive walkthrough of complex API/integration scenarios in a matter of hours, instead of days. It could be tailored to the prospect's requirements, and built using the same programming language of the prospect. With the end goal of effectively demonstrating live API calls while simultaneously speaking through the details of each step.</p>
+              <p>Overall, the benefits to daily productivity and creativity that AI brings to either role only touch the surface of what is possible.</p>
+            </li>
+          </ul>
+
+          <div class="prose">
+            <p>My approach to AI-assisted prototyping is to provide detailed requirements via .MD file, breaking the work into phases rather than a singular approach. I have found this method to be effective, especially when combined with Anthropic-built skills, or open-source skills available in Github.</p>
+            <p><strong>The common theme in either role is that AI is a game changer in terms of:</strong></p>
+          </div>
+          <ul class="bullet-list">
+            <li>Translating complexity into simplicity, whether that is in the form of product requirements for engineering teams as a Product Manager, or demonstrating complex topics to prospective clients as an SE/SA.</li>
+          </ul>
+
+          <div class="prose">
+            <p><strong>With the end goal being:</strong></p>
+          </div>
+          <ul class="bullet-list">
+            <li>As a Product Manager, utilizing the benefits provided by AI to quickly and efficiently launch a successful revenue-producing product.</li>
+            <li>As an SE/SA, utilizing the benefits provided by AI to create effective job aids, leading to increased conversion rates from prospect to actual revenue-generating client for the organization.</li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        &copy; 2026 John Simpson. Fintech Expert. AI Practitioner.
-    </footer>
+  <!-- ===== PROJECTS ===== -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="eyebrow reveal">Portfolio</div>
+      <div class="section-title reveal">Prototypes &amp; Demonstrations</div>
+      <p class="section-desc reveal">The following prototypes represent various real-world use cases that a Product Manager may encounter, customized interactive demonstrations that would apply to a SE/SA position, and creative interactive demos based on concepts such as autonomous purchasing agents with human oversight. I will continue to add to this collection as I progress through emerging AI technology and use cases, such as those <a href="https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/ai-use-cases.html" target="_blank" rel="noopener">listed here</a>.</p>
 
-    <script>
-        // Theme toggle
-        const root = document.documentElement;
-        const saved = localStorage.getItem('theme');
-        if (saved) root.setAttribute('data-theme', saved);
-        else if (window.matchMedia('(prefers-color-scheme: light)').matches) root.setAttribute('data-theme', 'light');
+      <!-- Featured -->
+      <a href="https://johnsimpson.io/interchange-iq/" target="_blank" rel="noopener" class="featured-card reveal">
+        <div>
+          <span class="badge">&#9733; Featured Project</span>
+          <div class="p-name">InterchangeIQ</div>
+          <div class="p-desc">Six interactive tools for interchange fee optimization: transaction validation, downgrade simulation, routing comparison, CEDP readiness checking, rate lookup, and agentic commerce risk analysis.</div>
+          <div class="p-tags">
+            <span class="p-tag">Interchange</span>
+            <span class="p-tag">Visa / Mastercard</span>
+            <span class="p-tag">Optimization</span>
+            <span class="p-tag">Live Demo</span>
+          </div>
+        </div>
+        <div class="p-cta"><span class="live-dot"></span> Live Demo &rarr;</div>
+      </a>
 
-        function toggleTheme() {
-            const current = root.getAttribute('data-theme');
-            const next = current === 'dark' ? 'light' : 'dark';
-            root.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
+      <div class="projects-grid">
+        <!-- Agent Trust Dashboard -->
+        <a href="https://johnsimpson.io/agent-trust-dashboard/" target="_blank" rel="noopener" class="project-card reveal">
+          <div class="p-name">Agent Trust Dashboard</div>
+          <div class="p-desc">Real-time command center for monitoring, governing, and intervening in autonomous AI purchasing agents. Features live activity feeds, decision audit trails, anomaly detection, and per-agent kill switches.</div>
+          <div class="p-tags">
+            <span class="p-tag">AI Agents</span>
+            <span class="p-tag">Governance</span>
+            <span class="p-tag">Live Demo</span>
+          </div>
+          <div class="p-cta"><span class="live-dot"></span> Live Demo &rarr;</div>
+        </a>
+
+        <!-- Nuvei Payment Rails Explorer -->
+        <a href="https://johnsimpson.io/nuvei-payment-rails-explorer/" target="_blank" rel="noopener" class="project-card reveal">
+          <div class="p-name">Nuvei US Payment Rails Explorer</div>
+          <div class="p-desc">Interactive product demo exploring US bank-based payment rails (ACH, RTP, FedNow) across Gaming, Prediction Market, and Crypto verticals with animated transaction lifecycle simulation.</div>
+          <div class="p-tags">
+            <span class="p-tag">ACH / RTP / FedNow</span>
+            <span class="p-tag">Payments</span>
+            <span class="p-tag">Live Demo</span>
+          </div>
+          <div class="p-cta"><span class="live-dot"></span> Live Demo &rarr;</div>
+        </a>
+
+        <!-- Stripe Commerce Explorer -->
+        <a href="https://jesimpsonjr-prodmgmt.github.io/stripe-commerce-explorer" target="_blank" rel="noopener" class="project-card reveal">
+          <div class="p-name">Stripe Commerce Explorer</div>
+          <div class="p-desc">Three interactive simulations showcasing how Stripe's checkout, identity, and fraud products work together to power modern commerce.</div>
+          <div class="p-tags">
+            <span class="p-tag">Stripe</span>
+            <span class="p-tag">Payments</span>
+            <span class="p-tag">Live Demo</span>
+          </div>
+          <div class="p-cta"><span class="live-dot"></span> Live Demo &rarr;</div>
+        </a>
+
+        <!-- FundraiseAI -->
+        <a href="https://jesimpsonjr-prodmgmt.github.io/fundraising-portfolio-optimizer/" target="_blank" rel="noopener" class="project-card reveal">
+          <div class="p-name">FundraiseAI</div>
+          <div class="p-desc">Portfolio-level AI optimization with Monte Carlo scenario simulation for capital campaign planning.</div>
+          <div class="p-tags">
+            <span class="p-tag">AI / LLM</span>
+            <span class="p-tag">Monte Carlo</span>
+            <span class="p-tag">Live Demo</span>
+          </div>
+          <div class="p-cta"><span class="live-dot"></span> Live Demo &rarr;</div>
+        </a>
+
+        <!-- Transaction Data Analyzer -->
+        <a href="https://github.com/jesimpsonjr-prodmgmt/payment-transaction-analyzer" target="_blank" rel="noopener" class="project-card reveal">
+          <div class="p-name">Transaction Data Analyzer</div>
+          <div class="p-desc">Python CLI tool for analyzing payment transaction data including auth rates, declines, chargebacks, and volume metrics.</div>
+          <div class="p-tags">
+            <span class="p-tag">Python</span>
+            <span class="p-tag">CLI</span>
+            <span class="p-tag">Analytics</span>
+          </div>
+          <div class="p-cta">View Code &rarr;</div>
+        </a>
+
+        <!-- AI-Powered PRD Generator -->
+        <a href="https://github.com/jesimpsonjr-prodmgmt/prd-generator" target="_blank" rel="noopener" class="project-card reveal">
+          <div class="p-name">AI-Powered PRD Generator</div>
+          <div class="p-desc">CLI tool that generates structured PRDs from feature ideas using Anthropic Claude or local Ollama models.</div>
+          <div class="p-tags">
+            <span class="p-tag">Claude API</span>
+            <span class="p-tag">Ollama</span>
+            <span class="p-tag">CLI</span>
+          </div>
+          <div class="p-cta">View Code &rarr;</div>
+        </a>
+
+        <!-- Automated Report Engine -->
+        <a href="https://github.com/jesimpsonjr-prodmgmt/scheduled-report-generator" target="_blank" rel="noopener" class="project-card reveal">
+          <div class="p-name">Automated Report Engine</div>
+          <div class="p-desc">Configuration-driven Python tool for generating and distributing automated HTML/PDF reports from multiple data sources.</div>
+          <div class="p-tags">
+            <span class="p-tag">Python</span>
+            <span class="p-tag">Automation</span>
+            <span class="p-tag">PDF</span>
+          </div>
+          <div class="p-cta">View Code &rarr;</div>
+        </a>
+
+        <!-- Social Media Lead Monitor -->
+        <a href="https://github.com/jesimpsonjr-prodmgmt/lead-monitor" target="_blank" rel="noopener" class="project-card reveal">
+          <div class="p-name">Social Media Lead Monitor</div>
+          <div class="p-desc">AI-assisted lead generation tool that monitors social media for high-intent sales signals and sends real-time Discord alerts.</div>
+          <div class="p-tags">
+            <span class="p-tag">AI</span>
+            <span class="p-tag">Lead Gen</span>
+            <span class="p-tag">Discord</span>
+          </div>
+          <div class="p-cta">View Code &rarr;</div>
+        </a>
+
+        <!-- Fintech Buzzword Bingo -->
+        <a href="https://github.com/jesimpsonjr-prodmgmt/fintech-buzzword-bingo" target="_blank" rel="noopener" class="project-card reveal">
+          <div class="p-name">Fintech Buzzword Bingo</div>
+          <div class="p-desc">A tongue-in-cheek Python tool that analyzes earnings calls and corporate communications for buzzword density.</div>
+          <div class="p-tags">
+            <span class="p-tag">Python</span>
+            <span class="p-tag">NLP</span>
+            <span class="p-tag">Satire</span>
+          </div>
+          <div class="p-cta">View Code &rarr;</div>
+        </a>
+      </div>
+
+      <div class="repos-link reveal">
+        <a href="https://github.com/jesimpsonjr-prodmgmt" target="_blank" rel="noopener" class="btn btn-ghost">Explore All Repos on GitHub &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONNECT ===== -->
+  <section id="connect" class="panel-alt">
+    <div class="container">
+      <div class="eyebrow reveal">Connect</div>
+      <div class="section-title reveal">Let's build something together.</div>
+      <p class="section-desc reveal">Whether you have a role in mind, a product challenge, or just want to connect, I'd love to hear from you.</p>
+      <div class="connect-actions reveal">
+        <a href="mailto:jesimpsonjr@gmail.com" class="btn btn-primary">
+          <svg viewBox="0 0 24 24"><path d="M24 4.5v15c0 .85-.65 1.5-1.5 1.5H1.5C.65 21 0 20.35 0 19.5v-15c0-.425.162-.8.431-1.068C.7 3.16 1.075 3 1.5 3h21c.425 0 .8.162 1.069.432.27.268.431.643.431 1.068zm-1.5 0L12 12.215 1.5 4.5h21zM1.5 19.5h21V6.32L12 14.07 1.5 6.32V19.5z"/></svg>
+          Send an Email
+        </a>
+        <a href="https://www.linkedin.com/in/johnsjr" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/jesimpsonjr-prodmgmt" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 John Simpson. Product Manager &amp; Sales Engineer.</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.classList.contains('project-card') ? (i % 3) * 70 : 0;
+          setTimeout(() => entry.target.classList.add('visible'), delay);
+          observer.unobserve(entry.target);
         }
+      });
+    }, { threshold: 0.12 });
 
-        document.getElementById('themeToggle').addEventListener('click', toggleTheme);
-        document.getElementById('themeToggleMobile').addEventListener('click', toggleTheme);
-
-        // Show mobile toggle at small screens
-        function checkMobileToggle() {
-            const m = document.getElementById('themeToggleMobile');
-            m.style.display = window.innerWidth <= 900 ? 'block' : 'none';
-        }
-        checkMobileToggle();
-        window.addEventListener('resize', checkMobileToggle);
-
-        // Mobile menu
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-        let menuOpen = false;
-
-        hamburger.addEventListener('click', () => {
-            menuOpen = !menuOpen;
-            mobileMenu.classList.toggle('open', menuOpen);
-            hamburger.children[0].style.transform = menuOpen ? 'rotate(45deg) translate(5px, 5px)' : '';
-            hamburger.children[1].style.opacity = menuOpen ? '0' : '1';
-            hamburger.children[2].style.transform = menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : '';
-        });
-
-        function closeMobile() {
-            menuOpen = false;
-            mobileMenu.classList.remove('open');
-            hamburger.children[0].style.transform = '';
-            hamburger.children[1].style.opacity = '1';
-            hamburger.children[2].style.transform = '';
-        }
-
-        // Scroll reveal
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => entry.target.classList.add('visible'), i * 60);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Animated counters
-        function animateCounters() {
-            document.querySelectorAll('.counter').forEach(counter => {
-                if (counter.dataset.animated) return;
-                const rect = counter.getBoundingClientRect();
-                if (rect.top > window.innerHeight || rect.bottom < 0) return;
-                counter.dataset.animated = 'true';
-
-                const target = parseInt(counter.dataset.target);
-                const prefix = counter.dataset.prefix || '';
-                const suffix = counter.dataset.suffix || '';
-                const duration = 1500;
-                const start = performance.now();
-
-                function update(now) {
-                    const elapsed = now - start;
-                    const progress = Math.min(elapsed / duration, 1);
-                    const eased = 1 - Math.pow(1 - progress, 4);
-                    const current = Math.round(target * eased);
-                    counter.textContent = prefix + current + suffix;
-                    if (progress < 1) requestAnimationFrame(update);
-                }
-                requestAnimationFrame(update);
-            });
-        }
-
-        window.addEventListener('scroll', animateCounters);
-        animateCounters();
-
-        // Sticky CTA - show after scrolling past hero
-        const stickyCta = document.getElementById('stickyCta');
-        const heroSection = document.getElementById('hero');
-
-        function checkStickyCta() {
-            const heroBottom = heroSection.getBoundingClientRect().bottom;
-            const contactSection = document.getElementById('contact');
-            const contactTop = contactSection.getBoundingClientRect().top;
-
-            if (heroBottom < 0 && contactTop > window.innerHeight) {
-                stickyCta.classList.add('visible');
-            } else {
-                stickyCta.classList.remove('visible');
-            }
-        }
-
-        window.addEventListener('scroll', checkStickyCta);
-        checkStickyCta();
-    </script>
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
