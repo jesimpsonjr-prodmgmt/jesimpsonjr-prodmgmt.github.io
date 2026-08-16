@@ -1,577 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Simpson | Product Manager &amp; Sales Engineer</title>
-  <meta name="description" content="Product Manager and Sales Engineer with two decades in enterprise payments, fintech, and AI. Portfolio of AI-assisted interactive prototypes for Product and Sales Engineering / Solutions Architect roles.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg:        #ffffff;
-      --bg-alt:    #f4f7fc;
-      --ink:       #0f1b2e;
-      --ink-soft:  #41506a;
-      --ink-mute:  #76859c;
-      --accent:    #2456c7;
-      --accent-ink:#1b4099;
-      --accent-soft:#eaf0fd;
-      --accent-line:rgba(36, 86, 199, 0.16);
-      --live:      #16a34a;
-      --border:    #e5eaf2;
-      --shadow:    0 1px 2px rgba(15, 27, 46, 0.04), 0 10px 30px rgba(15, 27, 46, 0.05);
-      --shadow-lg: 0 18px 48px rgba(15, 27, 46, 0.10);
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Simpson | Professional Portfolio</title>
+<meta name="description" content="Solutions engineer with 20 years in payments, from developer support to product ownership. Interactive demos covering interchange optimization, US payment rails, checkout and fraud, and agentic commerce.">
+<link rel="canonical" href="https://johnsimpson.io/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="John Simpson">
 
-      --font-ui:   'Inter', system-ui, -apple-system, sans-serif;
-      --font-prose:'Lora', Georgia, serif;
+<!-- Open Graph: controls the preview card on LinkedIn, Slack, Facebook -->
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="John Simpson">
+<meta property="og:title" content="John Simpson | Solutions Engineer, Payments &amp; Fintech">
+<meta property="og:description" content="Twenty years in payments and fintech across developer support, sales engineering, and product management. Interactive demos covering interchange optimization, US payment rails, checkout and fraud, and agentic commerce.">
+<meta property="og:url" content="https://johnsimpson.io/">
+<meta property="og:image" content="https://johnsimpson.io/assets/headshot.jpeg">
+<meta property="og:image:alt" content="John Simpson">
+<meta property="profile:first_name" content="John">
+<meta property="profile:last_name" content="Simpson">
 
-      --max:       1080px;
-      --radius:    14px;
-      --radius-sm: 8px;
-      --ease:      cubic-bezier(0.16, 1, 0.3, 1);
-    }
+<!-- Twitter/X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="John Simpson | Solutions Engineer, Payments &amp; Fintech">
+<meta name="twitter:description" content="Twenty years in payments and fintech. Interactive demos covering interchange optimization, US payment rails, checkout and fraud, and agentic commerce.">
+<meta name="twitter:image" content="https://johnsimpson.io/assets/headshot.jpeg">
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-    body {
-      font-family: var(--font-ui);
-      color: var(--ink);
-      background: var(--bg);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-    a { color: var(--accent); }
+<!-- Structured data: tells Google who this page is about -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "John Simpson",
+  "url": "https://johnsimpson.io/",
+  "image": "https://johnsimpson.io/assets/headshot.jpeg",
+  "jobTitle": "Solutions Engineer",
+  "description": "Solutions engineer with twenty years in payments and fintech, across developer support, sales engineering, and product management.",
+  "knowsAbout": [
+    "Payments",
+    "Fintech",
+    "Sales Engineering",
+    "Solutions Engineering",
+    "Presales",
+    "Interchange Optimization",
+    "EMV",
+    "PayFac",
+    "ACH",
+    "RTP",
+    "FedNow",
+    "Payment Gateways",
+    "PCI DSS",
+    "Embedded Payments",
+    "Agentic Commerce",
+    "Product Management"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/johnsjr",
+    "https://github.com/jesimpsonjr-prodmgmt"
+  ]
+}
+</script>
 
-    .container { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0F14;
+  --ink-2:#141A22;
+  --paper:#F6F5F1;
+  --paper-2:#EDEBE4;
+  --text:#1A222C;
+  --text-soft:#4E5A68;
+  --text-mute:#8A93A0;
+  --brass:#A67C3D;
+  --brass-lo:#C9A063;
+  --signal:#2F8F5B;
+  --rule:#D8D5CC;
+  --rule-dk:rgba(246,245,241,.14);
 
-    section { padding: clamp(3.5rem, 8vw, 5.75rem) 0; }
-    .panel-alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  --display:'Space Grotesk',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
 
-    /* ===== Shared section heading ===== */
-    .eyebrow {
-      font-size: 0.92rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent);
-      margin-bottom: 0.8rem;
-    }
-    .section-title {
-      font-size: clamp(1.65rem, 3.2vw, 2.15rem);
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1.18;
-      color: var(--ink);
-      margin-bottom: 1rem;
-    }
-    .section-desc {
-      color: var(--ink-soft);
-      max-width: 760px;
-      font-size: 1.02rem;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
-    .section-desc a { font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--accent-line); }
-    .section-desc a:hover { border-bottom-color: var(--accent); }
+  --max:1140px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
 
-    /* ===== Prose (preserved copy) ===== */
-    .prose { font-family: var(--font-prose); color: var(--ink-soft); }
-    .prose p { font-size: 1.07rem; line-height: 1.8; margin-bottom: 1.4rem; }
-    .prose strong { color: var(--ink); font-weight: 600; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--paper);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
 
-    /* ===== Buttons ===== */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 12px 22px;
-      border-radius: var(--radius-sm);
-      font-family: var(--font-ui);
-      font-weight: 600;
-      font-size: 0.92rem;
-      text-decoration: none;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: transform 0.25s var(--ease), background 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease), color 0.25s var(--ease);
-    }
-    .btn svg { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-primary:hover { background: var(--accent-ink); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(36, 86, 199, 0.25); }
-    .btn-ghost { background: var(--bg); color: var(--ink); border-color: var(--border); }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+/* ---------- shared label system: mono, tracked, small ---------- */
+.label{
+  font-family:var(--mono);
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
 
-    /* ===== Hero / Intro ===== */
-    #intro { position: relative; overflow: hidden; }
-    #intro::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 85% 60% at 50% -15%, rgba(36, 86, 199, 0.08), transparent 60%);
-      pointer-events: none;
-    }
-    #intro .container { position: relative; z-index: 1; }
-    .intro-layout {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 2.75rem;
-      align-items: center;
-    }
-    .headshot {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 4px solid var(--bg);
-      box-shadow: var(--shadow), 0 0 0 1px var(--border);
-      background: #eef2f8;
-    }
-    .headshot img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 5%; display: block; }
+/* ---------- HERO ---------- */
+.hero{background:var(--ink);color:var(--paper);
+  padding:clamp(3rem,7vw,5rem) 0 clamp(2.5rem,5vw,3.5rem)}
+.hero-top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;
+  padding-bottom:clamp(2rem,5vw,3rem);border-bottom:1px solid var(--rule-dk)}
+.hero-name{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,3.4vw,2.5rem);
+  letter-spacing:-.025em;color:var(--brass-lo);line-height:1.1}
+.status{display:inline-flex;align-items:center;gap:.55rem;color:#B9C2CC}
+.status .dot{width:7px;height:7px;border-radius:50%;background:var(--signal);flex:none;position:relative}
+.status .dot::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--signal);opacity:.5;animation:pulse 2.4s var(--ease) infinite}
+@keyframes pulse{0%{transform:scale(.7);opacity:.6}70%{transform:scale(1.5);opacity:0}100%{opacity:0}}
 
-    .availability {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border-radius: 100px;
-      background: var(--accent-soft);
-      border: 1px solid var(--accent-line);
-      color: var(--accent-ink);
-      font-size: 0.76rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      line-height: 1.35;
-      margin-bottom: 1.1rem;
-    }
-    .availability .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.15); flex-shrink: 0; }
+.hero-main{display:grid;grid-template-columns:1fr 272px;gap:clamp(2rem,5vw,4rem);align-items:center;
+  padding:clamp(2.25rem,5vw,3.25rem) 0}
+.hero h1{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,3.4vw,2.5rem);
+  line-height:1.18;letter-spacing:-.025em;color:#fff;max-width:22ch}
+.hero .role{font-family:var(--display);font-weight:500;font-size:clamp(1rem,2.1vw,1.28rem);
+  color:var(--brass-lo);margin-top:.85rem;letter-spacing:-.01em}
+.hero .lede{color:#AFB8C3;max-width:56ch;margin-top:1.4rem;font-size:1.02rem;line-height:1.75}
+.portrait{width:200px;height:200px;justify-self:center;border-radius:2px;overflow:hidden;filter:grayscale(1) contrast(1.06);
+  border:1px solid var(--rule-dk)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 
-    .intro-content h1 {
-      font-size: clamp(2.3rem, 5vw, 3rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-      margin-bottom: 0.5rem;
-    }
-    .tagline { font-size: 1.08rem; font-weight: 600; color: var(--accent); margin-bottom: 1.4rem; }
-    .intro-content .prose p { margin-bottom: 0; max-width: 620px; }
-    .intro-actions { margin-top: 1.75rem; }
+/* ---------- ledger strip: the signature element ---------- */
+.ledger{border-top:1px solid var(--rule-dk);border-bottom:1px solid var(--rule-dk);
+  font-family:var(--mono);font-size:.82rem;margin-bottom:clamp(2rem,4vw,2.75rem)}
+.ledger-row{display:grid;grid-template-columns:1.05fr 1fr 1fr;gap:0}
+.ledger-cell{padding:1.35rem 0;border-right:1px solid var(--rule-dk)}
+.ledger-cell:last-child{border-right:0}
+.ledger-cell:not(:first-child){padding-left:clamp(1rem,3vw,2rem)}
+.ledger-k{color:#6C7684;letter-spacing:.14em;text-transform:uppercase;font-size:.68rem;display:block;margin-bottom:.45rem}
+.ledger-v{color:var(--paper);font-weight:500;font-size:.95rem;letter-spacing:-.01em}
+.ledger-v em{font-style:normal;color:var(--brass-lo)}
 
-    /* ===== Approach ===== */
-    .approach-content { max-width: 780px; }
-    .approach-lead { font-family: var(--font-prose); font-size: 1.2rem; line-height: 1.6; color: var(--ink); font-weight: 500; margin-bottom: 1.75rem; }
+.sec-desc a{color:var(--brass);text-decoration:none;border-bottom:1px solid rgba(166,124,61,.35);
+  font-family:var(--mono);font-size:.94em}
+.sec-desc a:hover{border-bottom-color:var(--brass)}
 
-    .approach-list { list-style: none; margin: 1.5rem 0; display: grid; gap: 1.5rem; }
-    .approach-list li { position: relative; padding-left: 1.9rem; font-family: var(--font-prose); color: var(--ink-soft); font-size: 1.05rem; line-height: 1.75; }
-    .approach-list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.55em;
-      width: 9px;
-      height: 9px;
-      border-radius: 2px;
-      background: var(--accent);
-    }
-    .approach-list strong { display: block; font-family: var(--font-ui); font-size: 1.05rem; color: var(--ink); font-weight: 700; margin-bottom: 0.55rem; }
-    .approach-list li p { margin: 0 0 0.95rem; }
-    .approach-list li p:last-child { margin-bottom: 0; }
+/* ---------- availability ---------- */
+.avail{display:flex;gap:1rem;align-items:flex-start;margin:0;
+  padding:1.25rem 1.5rem;background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.11);border-left:3px solid var(--signal);border-radius:2px}
+.avail-dot{width:9px;height:9px;border-radius:50%;background:var(--signal);flex:none;
+  margin-top:.5rem;position:relative}
+.avail-dot::after{content:'';position:absolute;inset:-5px;border-radius:50%;
+  border:1px solid var(--signal);opacity:.5;animation:pulse 2.4s var(--ease) infinite}
+.avail-k{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+  color:#5FBF8A;display:block;margin-bottom:.4rem}
+.avail-v{font-family:var(--body);font-size:1rem;line-height:1.6;color:var(--paper);font-weight:500}
 
-    .bullet-list { margin: 0 0 1.4rem; padding-left: 1.9rem; }
-    .bullet-list li { font-family: var(--font-prose); color: var(--ink-soft); font-size: 1.05rem; line-height: 1.75; margin-bottom: 0.7rem; }
-    .bullet-list li::marker { color: var(--accent); }
+/* ---------- generic section ---------- */
+.sec{padding:clamp(3.5rem,8vw,6rem) 0}
+.sec-head{margin-bottom:clamp(1.75rem,4vw,2.5rem)}
+.sec-head .label{color:var(--brass);display:block;margin-bottom:.9rem}
+.sec-title{font-family:var(--display);font-weight:600;letter-spacing:-.03em;
+  font-size:clamp(1.55rem,3.4vw,2.1rem);line-height:1.15;color:var(--ink)}
+.sec-desc{color:var(--text-soft);max-width:62ch;margin-top:.9rem;font-size:1.02rem}
 
-    /* ===== Projects ===== */
-    .featured-card {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 2rem;
-      align-items: center;
-      background: linear-gradient(135deg, #ffffff 0%, var(--accent-soft) 140%);
-      border: 1px solid var(--accent-line);
-      border-radius: var(--radius);
-      padding: 2.25rem;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: var(--shadow);
-      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
-      margin-bottom: 1.5rem;
-    }
-    .featured-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+.method{background:var(--paper-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem)}
+.method p{color:var(--text-soft);font-size:1.02rem;line-height:1.8}
+.method p + p{margin-top:1.1rem}
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 0.66rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent-ink);
-      background: var(--bg);
-      border: 1px solid var(--accent-line);
-      padding: 4px 11px;
-      border-radius: 100px;
-      margin-bottom: 0.85rem;
-    }
-    .featured-card .p-name { font-size: 1.6rem; }
-    .featured-card .p-desc { font-size: 1rem; max-width: 600px; }
+/* ---------- project cards ---------- */
+.feature{display:block;text-decoration:none;background:var(--ink);color:var(--paper);
+  padding:clamp(1.75rem,4vw,2.5rem);border:1px solid var(--ink);position:relative;overflow:hidden;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.feature::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--brass)}
+.feature:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(11,15,20,.22)}
+.feature .p-name{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,3.2vw,2rem);
+  letter-spacing:-.03em;color:#fff;margin:.7rem 0 .6rem}
+.feature .p-desc{color:#AFB8C3;max-width:64ch;font-size:1rem}
+.feature .meta .label{color:var(--brass-lo)}
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 1.5rem;
-    }
-    .project-card {
-      display: flex;
-      flex-direction: column;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.6rem;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: var(--shadow);
-      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
-    }
-    .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:var(--rule);border:1px solid var(--rule);margin-top:1px}
+.card{display:flex;flex-direction:column;text-decoration:none;background:var(--paper);
+  padding:clamp(1.4rem,3vw,1.9rem);transition:background .3s var(--ease)}
+.card:hover{background:#fff}
+.card .p-name{font-family:var(--display);font-weight:600;font-size:1.2rem;letter-spacing:-.02em;
+  color:var(--ink);margin:.65rem 0 .5rem}
+.card .p-desc{color:var(--text-soft);font-size:.95rem;flex:1}
 
-    .p-name { font-family: var(--font-ui); font-size: 1.18rem; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 0.5rem; }
-    .p-desc { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 1.1rem; flex-grow: 1; }
+.meta{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.meta .label{color:var(--brass)}
+.p-foot{display:flex;align-items:center;gap:.5rem;margin-top:1.4rem;
+  font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-mute)}
+.feature .p-foot{color:#8792A0;margin-top:1.8rem}
+.card:hover .p-foot,.feature:hover .p-foot{color:var(--brass)}
+.feature:hover .p-foot{color:var(--brass-lo)}
+.live{width:6px;height:6px;border-radius:50%;background:var(--signal);flex:none}
 
-    .p-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
-    .p-tag {
-      font-size: 0.68rem;
-      font-weight: 500;
-      padding: 3px 9px;
-      border-radius: 6px;
-      background: var(--accent-soft);
-      border: 1px solid var(--accent-line);
-      color: var(--accent-ink);
-    }
+/* ---------- connect ---------- */
+.connect{background:var(--ink);color:var(--paper)}
+.connect .sec-title{color:#fff}
+.connect .sec-head .label{color:var(--brass-lo)}
+.connect .sec-desc{color:#AFB8C3}
+.links{display:flex;gap:1px;background:var(--rule-dk);border:1px solid var(--rule-dk);margin-top:2rem;flex-wrap:wrap}
+.links a{flex:1;min-width:170px;display:flex;align-items:center;gap:.7rem;padding:1.15rem 1.4rem;
+  background:var(--ink);text-decoration:none;font-family:var(--mono);font-size:.8rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--paper);transition:background .3s var(--ease)}
+.links a:hover{background:var(--ink-2);color:var(--brass-lo)}
+.links svg{width:17px;height:17px;fill:currentColor;flex:none}
 
-    .p-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--accent);
-      transition: gap 0.25s var(--ease);
-      margin-top: auto;
-    }
-    .project-card:hover .p-cta, .featured-card:hover .p-cta { gap: 12px; }
-    .featured-card .p-cta { font-size: 0.9rem; }
+footer{background:var(--ink);color:#5D6773;font-family:var(--mono);font-size:.73rem;
+  letter-spacing:.08em;text-transform:uppercase;padding:1.6rem 0 2.4rem;border-top:1px solid var(--rule-dk)}
 
-    .live-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--live);
-      position: relative;
-      flex-shrink: 0;
-    }
-    .live-dot::after {
-      content: '';
-      position: absolute; inset: -3px;
-      border-radius: 50%;
-      border: 1px solid var(--live);
-      opacity: 0.6;
-      animation: pulse 2.2s ease-out infinite;
-    }
-    @keyframes pulse {
-      0%   { transform: scale(0.7); opacity: 0.7; }
-      70%  { transform: scale(2.2); opacity: 0; }
-      100% { transform: scale(2.2); opacity: 0; }
-    }
+/* ---------- motion ---------- */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.on{opacity:1;transform:none}
 
-    .repos-link { text-align: center; margin-top: 2.75rem; }
-
-    /* ===== Connect ===== */
-    #connect { position: relative; overflow: hidden; text-align: center; }
-    #connect::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 110%, rgba(36, 86, 199, 0.09), transparent 60%);
-      pointer-events: none;
-    }
-    #connect .container { position: relative; z-index: 1; }
-    #connect .section-desc { margin-left: auto; margin-right: auto; }
-    .connect-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.9rem; }
-
-    /* ===== Footer ===== */
-    footer { padding: 2.25rem 0; text-align: center; border-top: 1px solid var(--border); }
-    footer p { font-size: 0.8rem; color: var(--ink-mute); letter-spacing: 0.01em; }
-
-    /* ===== Reveal animation ===== */
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* ===== Focus ===== */
-    a:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 860px) {
-      .intro-layout { grid-template-columns: 1fr; gap: 1.75rem; text-align: center; justify-items: center; }
-      .intro-content .prose p { margin-left: auto; margin-right: auto; }
-      .availability { margin-left: auto; margin-right: auto; }
-      .featured-card { grid-template-columns: 1fr; gap: 1.5rem; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .reveal { opacity: 1; transform: none; transition: none; }
-      .live-dot::after { animation: none; }
-      .btn, .project-card, .featured-card, .p-cta { transition: none; }
-    }
-  </style>
+/* ---------- responsive ---------- */
+@media(max-width:820px){
+  .grid{grid-template-columns:1fr}
+  .hero-main{grid-template-columns:1fr;align-items:start}
+  .portrait{width:132px;height:132px;order:-1}
+  .ledger-row{grid-template-columns:1fr}
+  .ledger-cell{border-right:0;border-bottom:1px solid var(--rule-dk);padding:1.1rem 0}
+  .ledger-cell:last-child{border-bottom:0}
+  .ledger-cell:not(:first-child){padding-left:0}
+  .method-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important}
+  .rv{opacity:1;transform:none;transition:none}
+  .feature,.card,.links a{transition:none}
+  html{scroll-behavior:auto}
+}
+</style>
 </head>
 <body>
 
-  <!-- ===== INTRO ===== -->
-  <section id="intro">
-    <div class="container">
-      <div class="intro-layout reveal">
-        <div class="headshot">
-          <img src="https://johnsimpson.io/assets/headshot.jpeg" alt="John Simpson" loading="eager">
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <span class="hero-name">John Simpson</span>
+    </div>
+
+    <div class="hero-main">
+      <div>
+        <h1>Twenty years in payments and fintech, serving in positions such as Developer Support, Sales Engineering, and Senior Product Management.</h1>
+        <div class="role">Solutions Engineer &middot; Payments &amp; Fintech</div>
+      </div>
+      <div class="portrait">
+        <img src="assets/headshot.jpeg" alt="John Simpson" loading="eager" width="200" height="200">
+      </div>
+    </div>
+
+    <div class="ledger">
+      <div class="ledger-row">
+        <div class="ledger-cell">
+          <span class="ledger-k">Presales</span>
+          <span class="ledger-v">150+ demos and proofs of concept, <em>$12M+ team revenue</em></span>
         </div>
-        <div class="intro-content">
-          <span class="availability"><span class="dot"></span> Open to Product Management, Sales Engineering &amp; Solutions Architect positions</span>
-          <h1>John Simpson</h1>
-          <div class="tagline">Product Manager &amp; Sales Engineer | Payments, Fintech &amp; AI</div>
-          <div class="prose">
-            <p>With over 20 years of experience spanning Sales Engineering and Product Management positions, I am currently open to new opportunities in either Product Management or Sales Engineering roles. The prototypes and demonstrations below show how I apply AI in both. For the full picture of my career achievements, experience, working style, and recommendations, my LinkedIn profile is just a click away at the bottom of this page.</p>
-          </div>
+        <div class="ledger-cell">
+          <span class="ledger-k">Product</span>
+          <span class="ledger-v">Semi-integrated EMV, <em>$5M to $40M ARR</em></span>
+        </div>
+        <div class="ledger-cell">
+          <span class="ledger-k">Portfolio</span>
+          <span class="ledger-v">Four products, <em>60% of company revenue</em></span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ===== MY APPROACH ===== -->
-  <section id="approach" class="panel-alt">
-    <div class="container">
-      <div class="approach-content">
-        <div class="eyebrow reveal">Philosophy</div>
-        <div class="section-title reveal">My Approach</div>
-
-        <div class="reveal">
-          <p class="approach-lead">The focus of this site is to highlight AI-assisted prototypes and demonstrations that I have built using primarily Claude Code CLI or my hosted LLM environment.</p>
-
-          <div class="prose">
-            <p><strong>You may be asking "Why the focus on AI, and how does it relate to Product Management or Sales Engineer roles?"</strong></p>
-            <p>My answer is multi-faceted:</p>
-          </div>
-
-          <ul class="approach-list">
-            <li>
-              <strong>I strongly believe that AI is the future, and that future is now.</strong>
-              One must remain up-to-date on everything related to AI, or risk falling behind the learning curve.
-            </li>
-            <li>
-              <strong>AI is transforming how Product Managers and Sales Engineers work.</strong>
-              <p>As an example, in 2019, would a Product Manager be able to create a functional prototype (or ready-for-production application) in a matter of hours? Or complex Product Requirements Documents in a matter of hours? Likely not.</p>
-              <p>The same holds true for a Sales Engineer (SE) or Solutions Architect (SA) role. An example that I frequently encountered as a Sales Engineer: A prospect would like a one-day onsite deep dive whiteboard session to walk through a complex API integration. As an SE I would spend many days preparing for the walkthrough and creating demonstration materials.</p>
-              <p>However, with the assistance of AI, the SE/SA now has the ability to build an interactive walkthrough of complex API/integration scenarios in a matter of hours, instead of days. It could be tailored to the prospect's requirements, and built using the same programming language of the prospect. With the end goal of effectively demonstrating live API calls while simultaneously speaking through the details of each step.</p>
-              <p>Overall, the benefits to daily productivity and creativity that AI brings to either role only touch the surface of what is possible.</p>
-            </li>
-          </ul>
-
-          <div class="prose">
-            <p>My approach to AI-assisted prototyping is to provide detailed requirements via .MD file, breaking the work into phases rather than a singular approach. I have found this method to be effective, especially when combined with Anthropic-built skills, or open-source skills available in Github.</p>
-            <p><strong>The common theme in either role is that AI is a game changer in terms of:</strong></p>
-          </div>
-          <ul class="bullet-list">
-            <li>Translating complexity into simplicity, whether that is in the form of product requirements for engineering teams as a Product Manager, or demonstrating complex topics to prospective clients as an SE/SA.</li>
-          </ul>
-
-          <div class="prose">
-            <p><strong>With the end goal being:</strong></p>
-          </div>
-          <ul class="bullet-list">
-            <li>As a Product Manager, utilizing the benefits provided by AI to quickly and efficiently launch a successful revenue-producing product.</li>
-            <li>As an SE/SA, utilizing the benefits provided by AI to create effective job aids, leading to increased conversion rates from prospect to actual revenue-generating client for the organization.</li>
-          </ul>
-        </div>
+    <div class="avail rv">
+      <span class="avail-dot"></span>
+      <div>
+        <span class="avail-k">Available now &middot; Full-time &middot; Remote, US</span>
+        <span class="avail-v">Sales Engineer, Solutions Engineer, Solutions Architect, Senior Solutions Engineer, and Solutions Consultant positions.</span>
       </div>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- ===== PROJECTS ===== -->
-  <section id="portfolio">
-    <div class="container">
-      <div class="eyebrow reveal">Portfolio</div>
-      <div class="section-title reveal">Prototypes &amp; Demonstrations</div>
-      <p class="section-desc reveal">The following prototypes represent various real-world use cases that a Product Manager may encounter, customized interactive demonstrations that would apply to a SE/SA position, and creative interactive demos based on concepts such as autonomous purchasing agents with human oversight. I will continue to add to this collection as I progress through emerging AI technology and use cases, such as those <a href="https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/ai-use-cases.html" target="_blank" rel="noopener">listed here</a>.</p>
+<!-- ================= WHAT I BUILD ================= -->
+<section class="sec method">
+  <div class="wrap">
+    <div class="method-grid">
+      <div class="rv">
+        <span class="label" style="color:var(--brass);display:block;margin-bottom:.9rem">What I Build</span>
+        <h2 class="sec-title">Customized demonstrations for the sales cycle</h2>
+      </div>
+      <div class="rv">
+        <p>As a sales engineer, I build interactive demonstrations tailored to the prospect in front of me. Each one is assembled from public API documentation and walks the integration path for their scenario.</p>
+        <p>The purpose is to make the integration lift visible rather than described, so the technical evaluation moves forward on evidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Featured -->
-      <a href="https://johnsimpson.io/interchange-iq/" target="_blank" rel="noopener" class="featured-card reveal">
-        <div>
-          <span class="badge">&#9733; Featured Project</span>
-          <div class="p-name">InterchangeIQ</div>
-          <div class="p-desc">Six interactive tools for interchange fee optimization: transaction validation, downgrade simulation, routing comparison, CEDP readiness checking, rate lookup, and agentic commerce risk analysis.</div>
-          <div class="p-tags">
-            <span class="p-tag">Interchange</span>
-            <span class="p-tag">Visa / Mastercard</span>
-            <span class="p-tag">Optimization</span>
-            <span class="p-tag">Live Demo</span>
-          </div>
-        </div>
-        <div class="p-cta"><span class="live-dot"></span> Live Demo &rarr;</div>
+<!-- ================= DEMOS ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="label">Portfolio</span>
+      <h2 class="sec-title">Interactive demos</h2>
+      <p class="sec-desc">Below you will find interactive demos that I have built using AI coding tools. Each demo is accompanied by a description. Click the Open demo button to view it in your web browser. No setup or download is required. I will continue adding new demos to this section, so feel free to bookmark this page and check back.</p>
+    </div>
+
+    <a class="feature rv" href="https://johnsimpson.io/interchange-iq/" target="_blank" rel="noopener">
+      <div class="meta"><span class="label">Interchange &middot; Visa / Mastercard</span></div>
+      <div class="p-name">InterchangeIQ</div>
+      <p class="p-desc">Six tools for interchange fee optimization: transaction validation, downgrade simulation, routing comparison, CEDP readiness checking, rate lookup, and agentic commerce risk analysis.</p>
+      <div class="p-foot"><span class="live"></span> Open demo &rarr;</div>
+    </a>
+
+    <div class="grid">
+      <a class="card rv" href="https://johnsimpson.io/nuvei-payment-rails-explorer/" target="_blank" rel="noopener">
+        <div class="meta"><span class="label">ACH / RTP / FedNow</span></div>
+        <div class="p-name">US Payment Rails Explorer</div>
+        <p class="p-desc">Bank-based payment rails across gaming, prediction market, and crypto verticals, with an animated transaction lifecycle.</p>
+        <div class="p-foot"><span class="live"></span> Open demo &rarr;</div>
       </a>
 
-      <div class="projects-grid">
-        <!-- Agent Trust Dashboard -->
-        <a href="https://johnsimpson.io/agent-trust-dashboard/" target="_blank" rel="noopener" class="project-card reveal">
-          <div class="p-name">Agent Trust Dashboard</div>
-          <div class="p-desc">Real-time command center for monitoring, governing, and intervening in autonomous AI purchasing agents. Features live activity feeds, decision audit trails, anomaly detection, and per-agent kill switches.</div>
-          <div class="p-tags">
-            <span class="p-tag">AI Agents</span>
-            <span class="p-tag">Governance</span>
-            <span class="p-tag">Live Demo</span>
-          </div>
-          <div class="p-cta"><span class="live-dot"></span> Live Demo &rarr;</div>
-        </a>
+      <a class="card rv" href="https://jesimpsonjr-prodmgmt.github.io/stripe-commerce-explorer" target="_blank" rel="noopener">
+        <div class="meta"><span class="label">Checkout &middot; Identity &middot; Fraud</span></div>
+        <div class="p-name">Checkout &amp; Fraud Explorer</div>
+        <p class="p-desc">Three simulations showing how checkout, identity verification, and fraud screening fit together in a single commerce flow.</p>
+        <div class="p-foot"><span class="live"></span> Open demo &rarr;</div>
+      </a>
 
-        <!-- Nuvei Payment Rails Explorer -->
-        <a href="https://johnsimpson.io/nuvei-payment-rails-explorer/" target="_blank" rel="noopener" class="project-card reveal">
-          <div class="p-name">Nuvei US Payment Rails Explorer</div>
-          <div class="p-desc">Interactive product demo exploring US bank-based payment rails (ACH, RTP, FedNow) across Gaming, Prediction Market, and Crypto verticals with animated transaction lifecycle simulation.</div>
-          <div class="p-tags">
-            <span class="p-tag">ACH / RTP / FedNow</span>
-            <span class="p-tag">Payments</span>
-            <span class="p-tag">Live Demo</span>
-          </div>
-          <div class="p-cta"><span class="live-dot"></span> Live Demo &rarr;</div>
-        </a>
+      <a class="card rv" href="https://johnsimpson.io/agent-trust-dashboard/" target="_blank" rel="noopener">
+        <div class="meta"><span class="label">Agentic Commerce</span></div>
+        <div class="p-name">Agent Trust Dashboard</div>
+        <p class="p-desc">Monitoring and intervention for autonomous purchasing agents: live activity feed, decision audit trail, anomaly detection, per-agent kill switches.</p>
+        <div class="p-foot"><span class="live"></span> Open demo &rarr;</div>
+      </a>
 
-        <!-- Stripe Commerce Explorer -->
-        <a href="https://jesimpsonjr-prodmgmt.github.io/stripe-commerce-explorer" target="_blank" rel="noopener" class="project-card reveal">
-          <div class="p-name">Stripe Commerce Explorer</div>
-          <div class="p-desc">Three interactive simulations showcasing how Stripe's checkout, identity, and fraud products work together to power modern commerce.</div>
-          <div class="p-tags">
-            <span class="p-tag">Stripe</span>
-            <span class="p-tag">Payments</span>
-            <span class="p-tag">Live Demo</span>
-          </div>
-          <div class="p-cta"><span class="live-dot"></span> Live Demo &rarr;</div>
-        </a>
-
-        <!-- FundraiseAI -->
-        <a href="https://jesimpsonjr-prodmgmt.github.io/fundraising-portfolio-optimizer/" target="_blank" rel="noopener" class="project-card reveal">
-          <div class="p-name">FundraiseAI</div>
-          <div class="p-desc">Portfolio-level AI optimization with Monte Carlo scenario simulation for capital campaign planning.</div>
-          <div class="p-tags">
-            <span class="p-tag">AI / LLM</span>
-            <span class="p-tag">Monte Carlo</span>
-            <span class="p-tag">Live Demo</span>
-          </div>
-          <div class="p-cta"><span class="live-dot"></span> Live Demo &rarr;</div>
-        </a>
-
-        <!-- Transaction Data Analyzer -->
-        <a href="https://github.com/jesimpsonjr-prodmgmt/payment-transaction-analyzer" target="_blank" rel="noopener" class="project-card reveal">
-          <div class="p-name">Transaction Data Analyzer</div>
-          <div class="p-desc">Python CLI tool for analyzing payment transaction data including auth rates, declines, chargebacks, and volume metrics.</div>
-          <div class="p-tags">
-            <span class="p-tag">Python</span>
-            <span class="p-tag">CLI</span>
-            <span class="p-tag">Analytics</span>
-          </div>
-          <div class="p-cta">View Code &rarr;</div>
-        </a>
-
-        <!-- AI-Powered PRD Generator -->
-        <a href="https://github.com/jesimpsonjr-prodmgmt/prd-generator" target="_blank" rel="noopener" class="project-card reveal">
-          <div class="p-name">AI-Powered PRD Generator</div>
-          <div class="p-desc">CLI tool that generates structured PRDs from feature ideas using Anthropic Claude or local Ollama models.</div>
-          <div class="p-tags">
-            <span class="p-tag">Claude API</span>
-            <span class="p-tag">Ollama</span>
-            <span class="p-tag">CLI</span>
-          </div>
-          <div class="p-cta">View Code &rarr;</div>
-        </a>
-
-        <!-- Automated Report Engine -->
-        <a href="https://github.com/jesimpsonjr-prodmgmt/scheduled-report-generator" target="_blank" rel="noopener" class="project-card reveal">
-          <div class="p-name">Automated Report Engine</div>
-          <div class="p-desc">Configuration-driven Python tool for generating and distributing automated HTML/PDF reports from multiple data sources.</div>
-          <div class="p-tags">
-            <span class="p-tag">Python</span>
-            <span class="p-tag">Automation</span>
-            <span class="p-tag">PDF</span>
-          </div>
-          <div class="p-cta">View Code &rarr;</div>
-        </a>
-
-        <!-- Social Media Lead Monitor -->
-        <a href="https://github.com/jesimpsonjr-prodmgmt/lead-monitor" target="_blank" rel="noopener" class="project-card reveal">
-          <div class="p-name">Social Media Lead Monitor</div>
-          <div class="p-desc">AI-assisted lead generation tool that monitors social media for high-intent sales signals and sends real-time Discord alerts.</div>
-          <div class="p-tags">
-            <span class="p-tag">AI</span>
-            <span class="p-tag">Lead Gen</span>
-            <span class="p-tag">Discord</span>
-          </div>
-          <div class="p-cta">View Code &rarr;</div>
-        </a>
-
-        <!-- Fintech Buzzword Bingo -->
-        <a href="https://github.com/jesimpsonjr-prodmgmt/fintech-buzzword-bingo" target="_blank" rel="noopener" class="project-card reveal">
-          <div class="p-name">Fintech Buzzword Bingo</div>
-          <div class="p-desc">A tongue-in-cheek Python tool that analyzes earnings calls and corporate communications for buzzword density.</div>
-          <div class="p-tags">
-            <span class="p-tag">Python</span>
-            <span class="p-tag">NLP</span>
-            <span class="p-tag">Satire</span>
-          </div>
-          <div class="p-cta">View Code &rarr;</div>
-        </a>
-      </div>
-
-      <div class="repos-link reveal">
-        <a href="https://github.com/jesimpsonjr-prodmgmt" target="_blank" rel="noopener" class="btn btn-ghost">Explore All Repos on GitHub &rarr;</a>
-      </div>
+      <a class="card rv" href="https://jesimpsonjr-prodmgmt.github.io/fundraising-portfolio-optimizer/" target="_blank" rel="noopener">
+        <div class="meta"><span class="label">Monte Carlo &middot; Optimization</span></div>
+        <div class="p-name">FundraiseAI</div>
+        <p class="p-desc">Portfolio-level optimization with Monte Carlo scenario simulation for capital campaign planning.</p>
+        <div class="p-foot"><span class="live"></span> Open demo &rarr;</div>
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== CONNECT ===== -->
-  <section id="connect" class="panel-alt">
-    <div class="container">
-      <div class="eyebrow reveal">Connect</div>
-      <div class="section-title reveal">Let's build something together.</div>
-      <p class="section-desc reveal">Whether you have a role in mind, a product challenge, or just want to connect, I'd love to hear from you.</p>
-      <div class="connect-actions reveal">
-        <a href="https://www.linkedin.com/in/johnsjr" target="_blank" rel="noopener" class="btn btn-ghost">
-          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://github.com/jesimpsonjr-prodmgmt" target="_blank" rel="noopener" class="btn btn-ghost">
-          <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          GitHub
-        </a>
-      </div>
+<!-- ================= TOOLS ================= -->
+<section class="sec method">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="label">Command Line Utilities</span>
+      <p class="sec-desc">I have built smaller utilities that require local installation from GitHub and command line interaction. These can be viewed on my GitHub page at <a href="https://github.com/jesimpsonjr-prodmgmt" target="_blank" rel="noopener">github.com/jesimpsonjr-prodmgmt</a>.</p>
     </div>
-  </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 John Simpson. Product Manager &amp; Sales Engineer.</p>
+  </div>
+</section>
+
+<!-- ================= CONNECT ================= -->
+<section class="sec connect">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 class="sec-title">Connect with Me</h2>
     </div>
-  </footer>
+    <div class="links rv">
+      <a href="https://www.linkedin.com/in/johnsjr" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/jesimpsonjr-prodmgmt" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</section>
 
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          const delay = entry.target.classList.contains('project-card') ? (i % 3) * 70 : 0;
-          setTimeout(() => entry.target.classList.add('visible'), delay);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
+<footer><div class="wrap">&copy; 2026 John Simpson &middot; Solutions Engineer, Payments &amp; Fintech</div></footer>
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+<script>
+const io=new IntersectionObserver(function(es){
+  es.forEach(function(e,i){
+    if(e.isIntersecting){
+      var d=e.target.classList.contains('card')||e.target.classList.contains('tool')?(i%3)*60:0;
+      setTimeout(function(){e.target.classList.add('on')},d);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+</script>
 </body>
 </html>
